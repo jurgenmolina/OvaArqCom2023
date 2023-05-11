@@ -1,78 +1,133 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-<meta charset="utf-8">
-<title>Inicio</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+<head th:replace="menu/menu :: head">
+	<meta charset="utf-8">
 </head>
+
 <body>
 
+	<header th:replace="menu/menu :: header"></header>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registro y
-					inicio de sesión</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar
-							sesión</a></li>
-				</ul>
+	<section th:replace="menu/menu :: section"></section>
+
+	<main class="mt-5 pt-3">
+		<div class="container-fluid py-5 bg-light">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="display-4">¡Bienvenido!</h1>
+					<h2><span sec:authentication="principal.username"></span></h2>
+					<h2>Tu rol es: <span sec:authentication="principal.authorities"></span></h2>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem ac elit euismod tincidunt. Aenean ac tincidunt ex, sit amet ullamcorper risus. Nulla bibendum urna sapien, vel lobortis mi finibus ac.</p>
+					<a href="#" class="btn btn-secondary">Más información</a>
+				</div>
+				<div class="col-md-6">
+					<img src="https://picsum.photos/600/400" class="img-fluid rounded" alt="Imagen de bienvenida">
+				</div>
 			</div>
 		</div>
-	</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- Carrusel de imágenes -->
+					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="https://picsum.photos/1200/400" class="d-block w-100" alt="Imagen 1">
+							</div>
+							<div class="carousel-item">
+								<img src="https://picsum.photos/1200/400?random=1" class="d-block w-100" alt="Imagen 2">
+							</div>
+							<div class="carousel-item">
+								<img src="https://picsum.photos/1200/400?random=2" class="d-block w-100" alt="Imagen 3">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Anterior</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Siguiente</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-md-4">
+					<!-- Tarjeta 1 -->
+					<div class="card">
+						<img src="https://picsum.photos/400/250" class="card-img-top" alt="Imagen tarjeta 1">
+						<div class="card-body">
+							<h5 class="card-title">Tarjeta 1</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem
+								ac elit euismod tincidunt.</p>
+							<a href="#" class="btn btn-secondary">Más información</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<!-- Tarjeta 2 -->
+					<div class="card">
+						<img src="https://picsum.photos/400/250" class="card-img-top" alt="Imagen tarjeta 2">
+						<div class="card-body">
+							<h5 class="card-title">Tarjeta 2</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem
+								ac elit euismod tincidunt.</p>
+							<a href="#" class="btn btn-secondary">Más información</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<!-- Tarjeta 3 -->
+					<div class="card">
+						<img src="https://picsum.photos/400/250" class="card-img-top" alt="Imagen tarjeta 3">
+						<div class="card-body">
+							<h5 class="card-title">Tarjeta 3</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem
+								ac elit euismod tincidunt.</p>
+							<a href="#" class="btn btn-secondary">Más información</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Espacio para noticias -->
+			<div class="row mt-4">
+				<div class="col-md-12">
+					<h2>Últimas noticias</h2>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<img src="https://picsum.photos/400/250" class="card-img-top" alt="Imagen noticia 1">
+						<div class="card-body">
+							<h5 class="card-title">Noticia 1</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem
+								ac elit euismod tincidunt.</p>
+							<a href="#" class="btn btn-secondary">Más información</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<img src="https://picsum.photos/400/250" class="card-img-top" alt="Imagen noticia 2">
+						<div class="card-body">
+							<h5 class="card-title">Noticia 2</h5>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lorem
+								ac elit euismod tincidunt.</p>
+							<a href="#" class="btn btn-secondary">Más información</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-	<br>
-	<br>
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
 
-	<div class="container">
-		<h1>Registro e inicio de sesión con Spring Boot + Spring Security
-			+ Thymeleaf + Hibernate + MySQL y Bootstrap</h1>
-		<br>
-		<h4>
-			Bienvenido <span sec:authentication="principal.username"></span>
-		</h4>
-
-		<br> <br>
-
-		<table class="table table-striped table-bordered">
-			<thead class="table-dark">
-				<tr>
-					<th>ID</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="usuario : ${usuarios}">
-					<td th:text="${usuario.id}">ID</td>
-					<td th:text="${usuario.nombre}">ID</td>
-					<td th:text="${usuario.apellido}">ID</td>
-					<td th:text="${usuario.email}">ID</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+</html>
 
 
 
