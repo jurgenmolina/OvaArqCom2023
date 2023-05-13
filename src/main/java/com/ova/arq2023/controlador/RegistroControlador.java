@@ -1,17 +1,12 @@
 package com.ova.arq2023.controlador;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.ova.arq2023.servicio.UsuarioServicio;
 
 @Controller
 public class RegistroControlador {
-
-	@Autowired
-	private UsuarioServicio servicio;
 	
 	@GetMapping("/login")
 	public String iniciarSesion() {
@@ -20,7 +15,6 @@ public class RegistroControlador {
 	
 	@GetMapping("/")
 	public String verPaginaDeInicio(Model modelo) {
-		modelo.addAttribute("usuarios", servicio.listarUsuarios());
 		return "index";
 	}
 }
