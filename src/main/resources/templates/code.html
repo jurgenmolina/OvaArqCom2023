@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
 	<title>Code Labs</title>
-
-	<link rel="stylesheet" type="text/css" th:href="@{css/Menu.css}"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	
 </head>
-
 <body>
-
-	<div class="header">
-		<h1>Code Labs</h1>
-	</div>
-
-	<div class="content">
-		<p>Code Labs is a platform where you can learn new technologies and improve your coding skills. Our interactive tutorials and hands-on labs provide you with the opportunity to practice coding in a real-world environment. Get started today!</p>
-	</div>
-
-	<div class="cards">
-		<div class="card" onclick="location.href='lab1.html';">
-			<h2>Lab 1: Introduction to HTML and CSS</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web page.</p>
-			<button>Start Lab</button>
+	
+	<div class="container">
+		<div class="sidebar">
+			<ul>
+				<li><a href="#" data-content="content1" onclick="showContent(this)">Título 1</a></li>
+				<li><a href="# data-content="content2" onclick="showContent(this)">Título 2</a></li>
+				<li><a href="#1" data-content="content3" onclick="showContent(this)">Título 3</a></li>
+			</ul>
 		</div>
-
-		<div class="card" onclick="location.href='lab2.html';">
-			<h2>Lab 2: Building a Responsive Website</h2>
-			<p>Learn how to make your website look great on any device using responsive design techniques.</p>
-			<button>Start Lab</button>
+		<div class="content">
+			<div id="content1" class="animated">
+				<h2>Título 1</h2>
+				<p>Contenido del Título 1</p>
+			</div>
+			<div id="content2" class="animated">
+				<h2>Título 2</h2>
+				<p>Contenido del Título 2</p>
+			</div>
+			<div id="content3" class="animated">
+				<h2>Título 3</h2>
+				<p>Contenido del Título 3</p>
+			</div>
 		</div>
 	</div>
-
-	<footer>
-		<p>© 2023 Code Labs. All rights reserved.</p>
-	</footer>
-
 </body>
-
 </html>
