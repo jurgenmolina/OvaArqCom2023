@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-	<meta charset="utf-8">
+<meta charset="utf-8">
 </head>
 
 <body>
 
 	<header th:replace="menu/menu :: header"></header>
 
-	<section th:replace="menu/menu :: section"></section>
+	<section class="section-container" th:replace="menu/menu :: section">
 
-	<main class="mt-5 pt-3">
+	</section>
+	<style>
+.section-container {
+	margin-top: 60px;
+}
+
+.main-container {
+	padding-top: 100px;
+	margin-left: 300px;
+}
+</style>
+
+	<main class="main-container  ">
 		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>UC ALU ARQUITECTURA</h1>
+		<h1>SISTEMAS NUMERICOS</h1>
+		<div class="content">
+			<div id="content1" class="animated">
+				<h2>Título 1</h2>
+				<p>Contenido del Título 1</p>
+			</div>
+			<div id="content2" class="animated">
+				<h2>Título 2</h2>
+				<p>Contenido del Título 2</p>
+			</div>
+			<div id="content3" class="animated">
+				<h2>Título 3</h2>
+				<p>Contenido del Título 3</p>
+			</div>
+		</div>
 	</main>
+	<script th:src="@{/js/Efecto.js}"></script>
 
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
