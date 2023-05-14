@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code Labs</title>
+
+	<link rel="stylesheet" type="text/css" th:href="@{css/Menu.css}"/>
+</head>
+
+<body>
+
+	<div class="header">
+		<h1>Code Labs</h1>
+	</div>
+
+	<div class="content">
+		<p>Code Labs is a platform where you can learn new technologies and improve your coding skills. Our interactive tutorials and hands-on labs provide you with the opportunity to practice coding in a real-world environment. Get started today!</p>
+	</div>
+
+	<div class="cards">
+		<div class="card" onclick="location.href='lab1.html';">
+			<h2>Lab 1: Introduction to HTML and CSS</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web page.</p>
+			<button>Start Lab</button>
+		</div>
+
+		<div class="card" onclick="location.href='lab2.html';">
+			<h2>Lab 2: Building a Responsive Website</h2>
+			<p>Learn how to make your website look great on any device using responsive design techniques.</p>
+			<button>Start Lab</button>
+		</div>
+	</div>
+
+	<footer>
+		<p>© 2023 Code Labs. All rights reserved.</p>
+	</footer>
+
+</body>
+
+</html>

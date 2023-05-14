@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UcAluControlador {
+public class code {
 
-    @GetMapping("/uc-alu-otros")
+    @GetMapping("/code")
 	public String showSistemasNumericos() {
-		return "uc-alu-otros";
+		return "code";
 	}
     
 }
