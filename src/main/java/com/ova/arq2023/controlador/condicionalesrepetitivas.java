@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class SistemaNumericoControlador {
+public class condicionalesrepetitivas {
 
-    @GetMapping("/sistemanumerico")
+    @GetMapping("/condicionales-saltos-e-instrucciones-repetitivas")
 	public String showSistemasNumericos() {
-		return "sistemanumerico";
+		return "condicionales-saltos-e-instrucciones-repetitivas";
 	}
     
 }
