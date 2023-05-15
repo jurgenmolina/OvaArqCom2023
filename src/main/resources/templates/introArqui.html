@@ -1,50 +1,388 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-	<meta charset="utf-8">
-	
-		
-		<link rel="stylesheet" type="text/css" th:href="@{css/EfectoDiv.css}" />
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" type="text/css" th:href="@{css/EfectoDiv.css}" />
 </head>
 
 <body>
 
 	<header th:replace="menu/menu :: header"></header>
 
-	<section class="section-container" th:replace="menu/menu :: section">
-	
+		<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+
+						<li class="my-2">
+							<!-- Espaciado	 -->
+						</li>
+
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+
+						<!-- Menu gestionar Temática -->
+
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li><!-- Espaciado	 <a th:href="@{/introArqui}"
+										class="nav-link px-3 text-secondary"><span class="me-2"></span>
+									</a>
+									!-->
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)">Introducción
+														a la Arquitectura de Computadores </a>
+														
+												</li>
+												<li><a href="javascript:void(0)"
+													data-content="content2" onclick="showContent(this)">Sistemas
+														numéricos: Hexadecimal, Octal, Decimal y Binario</a>
+												</li>
+												<li><a href="javascript:void(0)"
+													data-content="content3" onclick="showContent(this)">IEEE
+														754 Punto Flotante y Números negativos </a>
+														</li>
+												<li><a href="javascript:void(0)"
+													data-content="content4" onclick="showContent(this)">Representación
+														de los datos y almacenamiento </a>
+														</li>
+												<li><a href="javascript:void(0)"
+													data-content="content5" onclick="showContent(this)">Estructura
+														interna del procesador: Unidad de Control, Unidad
+														Aritmética y Lógica, Registros, Cache </a>
+														
+													</li>
+											</ul>
+										</div></li>
+
+								</ul>
+							</div></li>
+					</ul>
+
+
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+
+				</nav>
+			</div>
+		</div>
 	</section>
-	<style>
-	
+
+
+<style>
 .section-container {
-  margin-top: 60px;
+	margin-top: 60px;
 }
 
 .main-container {
- padding-top: 100px;
- margin-left: 300px;
+	padding-top: 100px;
+	margin-left: 300px;
 }
-	</style>
+</style>
 
-	<main class="main-container  ">
+	
+		<main class="main-container  ">
 		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Introducion</h1>	
-			<div class="content">
+		<h1>Programacion en Ensamblador</h1>
+		<div class="content">
 			<div id="content1" class="animated">
-				<h2>Título 1</h2>
-				<p>Contenido del Título 1</p>
+				<div class="container my-5">
+  <h1 class="text-center">Introducción a la arquitectura de computadores</h1>
+  <h2 class="text-center">Unidad: Introducción a la arquitectura de computadores</h2>
+  
+  <h3 class="my-4">Sistemas numéricos</h3>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sistema numérico</th>
+        <th scope="col">Base</th>
+        <th scope="col">Símbolos</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Binario</th>
+        <td>2</td>
+        <td>0, 1</td>
+        <td>0b1101 = 1*2^0 + 0*2^1 + 1*2^2 + 1*2^3 = 13</td>
+      </tr>
+      <tr>
+        <th scope="row">Octal</th>
+        <td>8</td>
+        <td>0-7</td>
+        <td>072 = 7*8^0 + 2*8^1 = 58</td>
+      </tr>
+      <tr>
+        <th scope="row">Decimal</th>
+        <td>10</td>
+        <td>0-9</td>
+        <td>123 = 1*10^2 + 2*10^1 + 3*10^0 = 123</td>
+      </tr>
+      <tr>
+        <th scope="row">Hexadecimal</th>
+        <td>16</td>
+        <td>0-9, A-F</td>
+        <td>0x1A = 1*16^1 + 10*16^0 = 26</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="my-4">Recursos</h3>
+
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=5rLqvM4TCNk">Sistemas Numéricos - Academia Código</a></li>
+    <li><a href="https://www.geeksforgeeks.org/number-systems-in-digital-logic/">Number Systems in Digital Logic - GeeksforGeeks</a></li>
+    <li><a href="https://www.electronics-tutorials.ws/binary/bin_1.html">Binary Tutorial - Electronics Tutorials</a></li>
+  </ul>
+  
+</div>
+				
 			</div>
 			<div id="content2" class="animated">
-				<h2>Título 2</h2>
-				<p>Contenido del Título 2</p>
-			</div>
+				<div class="container">
+	<h2>Introducción a la arquitectura de computadores</h2>
+	<h3>Unidad: Sistemas numéricos</h3>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Sistema numérico</th>
+				<th>Base</th>
+				<th>Dígitos</th>
+				<th>Valor</th>
+				<th>Representación en C</th>
+				<th>Representación en Java</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Decimal</td>
+				<td>10</td>
+				<td>0-9</td>
+				<td>456</td>
+				<td>456</td>
+				<td>456</td>
+			</tr>
+			<tr>
+				<td>Binario</td>
+				<td>2</td>
+				<td>0-1</td>
+				<td>0b111001000</td>
+				<td>0b111001000</td>
+				<td>0b111001000</td>
+			</tr>
+			<tr>
+				<td>Octal</td>
+				<td>8</td>
+				<td>0-7</td>
+				<td>710</td>
+				<td>0710</td>
+				<td>0710</td>
+			</tr>
+			<tr>
+				<td>Hexadecimal</td>
+				<td>16</td>
+				<td>0-9, A-F</td>
+				<td>0x1C8</td>
+				<td>0x1C8</td>
+				<td>0x1C8</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Recursos adicionales:</p>
+	<ul>
+		<li><a href="https://www.youtube.com/watch?v=ZL-LhaaMTTE">Video tutorial sobre sistemas numéricos</a></li>
+		<li><a href="https://www.calculadora-online.xyz/sistemas-numericos">Calculadora de sistemas numéricos</a></li>
+		<li><a href="https://es.wikipedia.org/wiki/Sistema_num%C3%A9rico">Artículo de Wikipedia sobre sistemas numéricos</a></li>
+	</ul>
+</div>
+				
+							</div>
+							
+							
 			<div id="content3" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
+				<div class="container my-5">
+  <h2 class="text-center mb-4">Unidad: Representación de los datos y almacenamiento</h2>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center mb-4">Sistemas Numéricos</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sistema Numérico</th>
+            <th>Características</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Binario</td>
+            <td>Sólo utiliza dos dígitos (0 y 1)</td>
+          </tr>
+          <tr>
+            <td>Octal</td>
+            <td>Utiliza ocho dígitos (0 al 7)</td>
+          </tr>
+          <tr>
+            <td>Decimal</td>
+            <td>Utiliza diez dígitos (0 al 9)</td>
+          </tr>
+          <tr>
+            <td>Hexadecimal</td>
+            <td>Utiliza dieciséis dígitos (0 al 9 y A a F)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="col-md-6">
+      <h3 class="text-center mb-4">Almacenamiento</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Tipo de almacenamiento</th>
+            <th>Características</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Memoria Cache</td>
+            <td>Es la más rápida, pero también la más cara y de menor capacidad.</td>
+          </tr>
+          <tr>
+            <td>Memoria RAM</td>
+            <td>Es más lenta que la cache, pero más económica y con mayor capacidad.</td>
+          </tr>
+          <tr>
+            <td>Disco Duro</td>
+            <td>Es más lento que la memoria RAM, pero más económico y con mayor capacidad.</td>
+          </tr>
+          <tr>
+            <td>Disco SSD</td>
+            <td>Es más rápido que el disco duro, pero más caro y con menor capacidad.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="text-center my-4">
+    <a href="#" class="btn btn-primary">Ver más recursos sobre Sistemas Numéricos</a>
+    <a href="#" class="btn btn-primary">Ver más recursos sobre Almacenamiento</a>
+  </div>
+  
+</div>
+				
+				
+			</div>
+			<div id="content4" class="animated">
+				<div class="container">
+		<h1>Resumen Arquitectura de Computadores</h1>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Unidad</th>
+					<th>Tema</th>
+					<th>Recursos</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Estructura interna del procesador</td>
+					<td>Unidad de Control</td>
+					<td><a href="https://www.youtube.com/watch?v=8d7kF6-ICBk">Video explicativo</a></td>
+				</tr>
+				<tr>
+					<td rowspan="3">Estructura interna del procesador</td>
+					<td>Unidad Aritmética y Lógica</td>
+					<td><a href="https://www.tutorialspoint.com/computer_logical_organization/arithmetic_logic_unit.htm">Tutorial</a></td>
+				</tr>
+				<tr>
+					<td>Registros</td>
+					<td><a href="https://www.youtube.com/watch?v=7kT_CNOU9Hs">Video explicativo</a></td>
+				</tr>
+				<tr>
+					<td>Cache</td>
+					<td><a href="https://www.geeksforgeeks.org/cache-organization/">Artículo explicativo</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+			</div>
+			<div id="content5" class="animated">
+	<div class="container">
+  <h2>Introducción a la arquitectura de computadores</h2>
+  <h3>Unidad: Estructura interna del procesador</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Descripción</th>
+        <th>Función</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="bi bi-cpu"></i> Unidad de Control</td>
+        <td>Encargada de coordinar el flujo de datos y señales entre las diferentes partes del procesador.</td>
+        <td>Controlar y sincronizar las operaciones del procesador.</td>
+      </tr>
+      <tr>
+        <td><i class="bi bi-calculator"></i> Unidad Aritmética y Lógica</td>
+        <td>Encargada de realizar operaciones matemáticas y lógicas sobre los datos almacenados en los registros del procesador.</td>
+        <td>Realizar cálculos y operaciones lógicas en los datos.</td>
+      </tr>
+      <tr>
+        <td><i class="bi bi-card-list"></i> Registros</td>
+        <td>Pequeñas áreas de almacenamiento dentro del procesador donde se guardan los datos y las direcciones de memoria necesarias para las operaciones.</td>
+        <td>Almacenar temporalmente los datos necesarios para las operaciones del procesador.</td>
+      </tr>
+      <tr>
+        <td><i class="bi bi-database"></i> Cache</td>
+        <td>Memoria de alta velocidad integrada en el procesador que almacena los datos y las instrucciones que se usan con más frecuencia.</td>
+        <td>Reducir el tiempo de acceso a los datos y las instrucciones más utilizadas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-4">
+    <h4>Recursos adicionales:</h4>
+    <ul>
+      <li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad Central de Procesamiento - Wikipedia</a></li>
+      <li><a href="https://www.profesionalreview.com/2019/04/17/cache-memoria-ram/">Qué es la memoria caché y para qué sirve - Profesional Review</a></li>
+    </ul>
+  </div>
+</div>
+	
+
 			</div>
 		</div>
 	</main>
+	
 	<script th:src="@{/js/Efecto.js}"></script>
 
 	<footer th:replace="menu/menu :: footer"></footer>
