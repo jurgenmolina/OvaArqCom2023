@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="menu/menu :: head">
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" type="text/css" th:href="@{css/EfectoDiv.css}" />
+</head>
+
+<body>
+
+	<header th:replace="menu/menu :: header"></header>
+
+
+<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+			tabindex="-1" id="sidebar">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+
+						<li class="my-2">
+							<!-- Espaciado	 -->
+						</li>
+
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+
+						<!-- Menu gestionar Temática -->
+
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 mt-3">
+									<li>
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)" data-content="content1"
+													onclick="showContent(this)">Virtualizado, emuladores y Contenedores</a>
+													</li>
+												<li><a  href="javascript:void(0)" data-content="content2"
+													onclick="showContent(this)">Carga de programas y Depuradores (Ensambladores y Desensambladores) </a>
+</li>
+												<li><a href="javascript:void(0)" data-content="content3"
+													onclick="showContent(this)">Introducción computación cuántica
+													</a></li>
+													<li><a href="javascript:void(0)" data-content="content4"
+													onclick="showContent(this)">Arquitectura 16, 32 y 64 bits
+
+													</a></li>
+													<li><a href="javascript:void(0)" data-content="content5"
+													onclick="showContent(this)">Compiladores y Estructura de un programa en ensamblador, binario y código simbólico
+													
+													</a></li>
+											</ul>
+										</div></li>
+
+								</ul>
+							</div>
+							
+							</li>
+					</ul>
+
+
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</section>
+
+	<style>
+.section-container {
+	margin-top: 60px;
+}
+
+.main-container {
+	padding-top: 100px;
+	margin-left: 300px;
+}
+</style>
+
+	<main class="main-container  ">
+		<!-- DESARROLLA EL OVA AQUI -->
+		<h1>Virtualizacion</h1>
+		<div class="content">
+			<div id="content1" class="animated">
+				<div class="container my-5">
+  <h2>Visualización, Emuladores y entornos de arquitectura</h2>
+  <h3>Unidad: virtualizado, emuladores y Contenedores</h3>
+  <p>En esta unidad se abordan los conceptos de virtualización, emuladores y contenedores y su relación con la arquitectura de computadores.</p>
+  
+  <h4>Recursos de investigación:</h4>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Recurso</th>
+        <th>Descripción</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>VirtualBox</td>
+        <td>Software de virtualización de código abierto para Windows, macOS, Linux y Solaris.</td>
+        <td>Software</td>
+      </tr>
+      <tr>
+        <td>QEMU</td>
+        <td>Emulador de procesador que permite ejecutar sistemas operativos completos.</td>
+        <td>Software</td>
+      </tr>
+      <tr>
+        <td>Docker</td>
+        <td>Plataforma de contenedores que permite empaquetar, distribuir y ejecutar aplicaciones en cualquier entorno.</td>
+        <td>Software</td>
+      </tr>
+      <tr>
+        <td>VMware Workstation</td>
+        <td>Software de virtualización para Windows y Linux.</td>
+        <td>Software</td>
+      </tr>
+      <tr>
+        <td>Kubernetes</td>
+        <td>Plataforma de orquestación de contenedores que automatiza la implementación, el escalado y la gestión de aplicaciones en contenedores.</td>
+        <td>Software</td>
+      </tr>
+      <tr>
+        <td>Virtualización de hardware</td>
+        <td>Tecnología que permite que múltiples sistemas operativos se ejecuten en un único hardware.</td>
+        <td>Concepto</td>
+      </tr>
+      <tr>
+        <td>Contenedores</td>
+        <td>Tecnología de virtualización que permite la ejecución de aplicaciones en entornos aislados y portables.</td>
+        <td>Concepto</td>
+      </tr>
+      <tr>
+        <td>Emuladores de procesador</td>
+        <td>Software que simula la arquitectura de un procesador en un entorno de software para permitir la ejecución de aplicaciones de manera aislada.</td>
+        <td>Concepto</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="row my-5">
+    <div class="col-md-6">
+      <img src="https://www.virtualbox.org/graphics/vbox_logo2_gradient.png" alt="VirtualBox">
+    </div>
+    <div class="col-md-6">
+      <img src="https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png" alt="Docker">
+    </div>
+  </div>
+  
+  <p>En resumen, esta unidad es fundamental para comprender cómo la virtualización, los emuladores y los contenedores están </p>
+</div>
+			</div>
+			<div id="content2" class="animated">
+			<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Visualización, Emuladores y entornos de arquitectura</h2>
+			<p>Este tema aborda la importancia de las herramientas de visualización y emulación en la arquitectura de computadoras, y cómo pueden ayudar en el diseño y desarrollo de sistemas. Algunos de los conceptos que se cubren son:</p>
+			<ul>
+				<li>Emuladores de arquitectura de computadoras</li>
+				<li>Herramientas de visualización de sistemas</li>
+				<li>Entornos de simulación de sistemas</li>
+				<li>Comparación de diferentes herramientas y entornos</li>
+			</ul>
+			<p>Este tema puede ser de gran ayuda para estudiantes de arquitectura de computadoras que deseen profundizar en la visualización y simulación de sistemas.</p>
+			<a href="#">Ver más información</a>
+		</div>
+		<div class="col-md-6">
+			<h2>Carga de programas y Depuradores (Ensambladores y Desensambladores)</h2>
+			<p>Este tema se enfoca en la carga de programas y la depuración de sistemas, utilizando herramientas como ensambladores y desensambladores. Algunos de los puntos que se abordan son:</p>
+			<ul>
+				<li>Carga de programas en memoria</li>
+				<li>Utilización de ensambladores y desensambladores</li>
+				<li>Técnicas de depuración de sistemas</li>
+				<li>Análisis de errores y fallas en sistemas</li>
+			</ul>
+			<p>Este tema es de gran importancia para estudiantes y profesionales de arquitectura de computadoras que deseen profundizar en la depuración y análisis de sistemas.</p>
+			<a href="#">Ver más información</a>
+		</div>
+	</div>
+</div>
+			
+
+				
+			</div>
+			<div id="content3" class="animated">
+				<div class="container">
+  <h2>Introducción a la computación cuántica</h2>
+  
+  <h3>Visualización, Emuladores y entornos de arquitectura</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Enlace</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Quantum Composer</td>
+        <td>Un entorno de desarrollo integrado (IDE) que permite la visualización y diseño de circuitos cuánticos.</td>
+        <td><a href="https://www.ibm.com/quantum-computing/technology/composer">https://www.ibm.com/quantum-computing/technology/composer</a></td>
+      </tr>
+      <tr>
+        <td>Qiskit</td>
+        <td>Un entorno de desarrollo de software (SDE) que permite la creación y ejecución de circuitos cuánticos, así como la simulación y visualización de resultados.</td>
+        <td><a href="https://qiskit.org/">https://qiskit.org/</a></td>
+      </tr>
+      <tr>
+        <td>Microsoft Quantum Development Kit</td>
+        <td>Un kit de herramientas para el desarrollo de software cuántico que incluye un simulador de circuitos cuánticos y un lenguaje de programación específico (Q#).</td>
+        <td><a href="https://docs.microsoft.com/en-us/quantum/">https://docs.microsoft.com/en-us/quantum/</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3>Recursos educativos</h3>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Quantum Mechanics for Everyone</h4>
+          <p class="card-text">Un curso gratuito en línea que introduce los conceptos fundamentales de la mecánica cuántica, necesario para comprender la computación cuántica.</p>
+          <a href="https://www.edx.org/course/quantum-mechanics-for-everyone">https://www.edx.org/course/quantum-mechanics-for-everyone</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">IBM Quantum Challenge</h4>
+          <p class="card-text">Una competencia en línea que permite a los participantes resolver problemas cuánticos utilizando el entorno de desarrollo de IBM, Quantum Composer.</p>
+          <a href="https://quantum-computing.ibm.com/challenges">https://quantum-computing.ibm.com/challenges</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+				
+			</div>
+			<div id="content4" class="animated">
+				<div class="container mt-5">
+  <h2 class="text-center mb-4">Resumen de investigación</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tema</th>
+        <th>Descripción</th>
+        <th>Recursos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Visualización de arquitectura</td>
+        <td>Aplicaciones y técnicas de visualización de arquitecturas de computadoras</td>
+        <td><a href="https://www.computer.org/csdl/magazine/co/2000/12/rx216-abs.html">Artículo: "Visualizing Computer Systems"</a></td>
+      </tr>
+      <tr>
+        <td>Emuladores de arquitectura</td>
+        <td>Herramientas para emular arquitecturas de computadoras</td>
+        <td><a href="https://www.qemu.org/">QEMU: Emulador de sistemas</a></td>
+      </tr>
+      <tr>
+        <td>Entornos de arquitectura</td>
+        <td>Herramientas y entornos para desarrollar y depurar sistemas a nivel de arquitectura</td>
+        <td><a href="https://www.gnu.org/software/gdb/">GNU Debugger</a></td>
+      </tr>
+      <tr>
+        <td>Arquitectura de 16 bits</td>
+        <td>Características y uso de sistemas de 16 bits</td>
+        <td><a href="https://es.wikipedia.org/wiki/8086">Intel 8086: el procesador de 16 bits de Intel</a></td>
+      </tr>
+      <tr>
+        <td>Arquitectura de 32 bits</td>
+        <td>Características y uso de sistemas de 32 bits</td>
+        <td><a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 80386: el procesador de 32 bits de Intel</a></td>
+      </tr>
+      <tr>
+        <td>Arquitectura de 64 bits</td>
+        <td>Características y uso de sistemas de 64 bits</td>
+        <td><a href="https://es.wikipedia.org/wiki/AMD64">AMD64: el procesador de 64 bits de AMD</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+				
+				
+			</div>
+			<div id="content5" class="animated">
+				<div class="container">
+  <h2>Visualización, Emuladores y entornos de arquitectura</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tema</th>
+        <th>Descripción</th>
+        <th>Imagen</th>
+        <th>Recursos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compiladores</td>
+        <td>Programa que traduce el código fuente a código objeto</td>
+        <td><img src="ruta/a/imagen1.jpg"></td>
+        <td><a href="ruta/a/recursos1.pdf">Recursos</a></td>
+      </tr>
+      <tr>
+        <td>Estructura de un programa en ensamblador</td>
+        <td>Organización básica de un programa en lenguaje ensamblador</td>
+        <td><img src="ruta/a/imagen2.jpg"></td>
+        <td><a href="ruta/a/recursos2.pdf">Recursos</a></td>
+      </tr>
+      <tr>
+        <td>Código simbólico</td>
+        <td>Representación simbólica de un programa en ensamblador</td>
+        <td><img src="ruta/a/imagen3.jpg"></td>
+        <td><a href="ruta/a/recursos3.pdf">Recursos</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+				
+				
+							</div>
+		</div>
+	</main>
+	<script th:src="@{/js/Efecto.js}"></script>
+
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UcAluControlador {
+public class CadenasMemoriaAuxiliar{
 
-    @GetMapping("/arquitectura")
+    @GetMapping("/cadenas-y-memoria-auxiliar")
 	public String showSistemasNumericos() {
-		return "uc-alu-otros";
+		return "cadenas-y-memoria-auxiliar";
 	}
     
 }

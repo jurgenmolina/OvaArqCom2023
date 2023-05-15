@@ -17,4 +17,14 @@ public class RegistroControlador {
 	public String verPaginaDeInicio(Model modelo) {
 		return "index";
 	}
+   
+    @GetMapping("/loginSuccess")
+    public String loginSuccess() {
+        return "redirect:/";
+    }
+
+    @GetMapping("/loginFailure")
+    public String loginFailure() {
+        return "loginFailure";
+    }
 }

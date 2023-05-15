@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="menu/menu :: head">
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" type="text/css" th:href="@{css/EfectoDiv.css}" />
+</head>
+
+<body>
+
+	<header th:replace="menu/menu :: header"></header>
+
+
+	<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+			tabindex="-1" id="sidebar">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+
+						<li class="my-2">
+							<!-- Espaciado	 -->
+						</li>
+
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+
+						<!-- Menu gestionar Temática -->
+
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts3"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts3">
+								<ul class="navbar-nav ps-3 mt-3">
+									<li>
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)" data-content="content1"
+													onclick="showContent(this)">Concepto Main vs System Board</a></li>
+												<li><a  href="javascript:void(0)" data-content="content2"
+													onclick="showContent(this)">Componentes internos y Evolución de tamaños y sockets
+</a></li>
+												<li><a href="javascript:void(0)" data-content="content3"
+													onclick="showContent(this)"> Puertos y Chipset (Puente Norte y Puente Sur</a></li>
+											<li><a href="javascript:void(0)" data-content="content4"
+													onclick="showContent(this)"> Puertos y Chipset (Puente Norte y Puente Sur</a></li>
+											
+											</ul>
+										</div></li>
+
+								</ul>
+							</div>
+							
+							</li>
+					</ul>
+
+
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</section>
+
+
+	</section>
+				<style>
+			.section-container {
+				margin-top: 60px;
+			}
+			
+			.main-container {
+				padding-top: 100px;
+				margin-left: 300px;
+			}
+			</style>
+
+	<main class="main-container  ">
+		<!-- DESARROLLA EL OVA AQUI -->
+		<h1>Tarjeta Madre Y Memorias</h1>
+		<div class="content">
+			<div id="content1" class="animated">
+			}<div class="container">
+	<h2>Concepto de Main y System Board</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Unidad</th>
+				<th>Concepto</th>
+				<th>Imagen</th>
+				<th>Recursos</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Main Board</td>
+				<td>La placa base o tarjeta madre es el componente principal de un ordenador y está diseñada para conectar todos los demás componentes entre sí. </td>
+				<td><img src="imagen1.jpg" alt="Main Board"></td>
+				<td><a href="https://www.youtube.com/watch?v=VRSFgZQ0yUk">Video sobre la placa base</a></td>
+			</tr>
+			<tr>
+				<td>System Board</td>
+				<td>La System Board es una parte de la placa madre y se encarga de controlar el sistema en general. </td>
+				<td><img src="imagen2.jpg" alt="System Board"></td>
+				<td><a href="https://www.geeksforgeeks.org/difference-between-motherboard-and-system-board/">Diferencia entre placa base y system board</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+			
+			</div>
+			<div id="content2" class="animated">
+				<div class="container">
+  <h2>Componentes internos y Evolución de tamaños y sockets</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CPU</td>
+        <td>Unidad central de procesamiento que ejecuta instrucciones y controla el flujo de datos en la computadora</td>
+      </tr>
+      <tr>
+        <td>Memoria RAM</td>
+        <td>Memoria volátil de acceso aleatorio utilizada por la CPU para almacenar datos y programas mientras se están ejecutando</td>
+      </tr>
+      <tr>
+        <td>Disco duro</td>
+        <td>Dispositivo de almacenamiento no volátil utilizado para almacenar permanentemente datos y programas en la computadora</td>
+      </tr>
+      <tr>
+        <td>Placa madre</td>
+        <td>Placa de circuito impreso que conecta todos los componentes internos de la computadora y proporciona una interfaz para los dispositivos externos</td>
+      </tr>
+      <tr>
+        <td>Tarjeta de red</td>
+        <td>Dispositivo utilizado para conectar la computadora a una red de área local o a Internet</td>
+      </tr>
+      <tr>
+        <td>Puerto USB</td>
+        <td>Interfaz de entrada/salida utilizada para conectar dispositivos externos como teclados, ratones, unidades flash USB, etc.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>La evolución de los componentes internos ha permitido el aumento de la capacidad y velocidad de procesamiento de las computadoras. Además, la reducción en el tamaño de los componentes ha permitido la creación de computadoras portátiles y dispositivos móviles. Los sockets son los conectores en la placa madre que permiten la conexión de los componentes internos. A medida que los componentes han evolucionado, también lo han hecho los sockets para adaptarse a los nuevos estándares y tecnologías.</p>
+  <p>Recursos adicionales:</p>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=1zx2mOQEBW0">Video: Cómo funciona una CPU</a></li>
+    <li><a href="https://www.youtube.com/watch?v=jl9FVcwI5dE">Video: Cómo funciona la memoria RAM</a></li>
+    <li><a href="https://www.youtube.com/watch?v=7Txpwl5D0e4">Video: Cómo funciona un disco duro</a></li>
+    <li><a href="https://www.youtube.com/watch?v=ycAihCtGho0">Video: Cómo funciona una tarjeta de red</a></li>
+  </ul>
+</div>
+
+			</div>
+			<div id="content3" class="animated">
+				<div class="container">
+  <h2>Puertos y Chipset (Puente Norte y Puente Sur)</h2>
+  <p>En el mundo de la informática, los puertos y el chipset son componentes fundamentales que permiten la comunicación y la transferencia de datos entre distintos dispositivos. El chipset es un conjunto de circuitos integrados que se encarga de la gestión de los distintos componentes de la placa base, mientras que los puertos son interfaces físicas que permiten la conexión de periféricos y dispositivos externos.</p>
+
+  <h3>El Puente Norte</h3>
+  <p>El puente norte es uno de los componentes principales del chipset, que se encarga de la comunicación entre la CPU y los dispositivos conectados al bus de memoria. También gestiona la transferencia de datos entre la CPU y otros componentes importantes como la tarjeta gráfica y los puertos PCI y PCIe.</p>
+  <img src="/img/puente-norte.jpg" alt="Imagen del Puente Norte">
+
+  <h3>El Puente Sur</h3>
+  <p>El puente sur, por su parte, se encarga de la gestión de los periféricos conectados a la placa base, como discos duros, unidades de CD/DVD, puertos USB, tarjetas de sonido y red, entre otros. También se encarga de la gestión de la alimentación y el control de temperatura de la placa base y los componentes conectados.</p>
+  <img src="/img/puente-sur.jpg" alt="Imagen del Puente Sur">
+
+  <h3>Tabla de Puertos</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Puerto</th>
+        <th>Descripción</th>
+        <th>Tipo de Conector</th>
+        <th>Velocidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>USB</td>
+        <td>Interfaz estándar para conectar dispositivos externos a la computadora.</td>
+        <td>USB-A, USB-B, Mini-USB, Micro-USB, USB-C</td>
+        <td>480 Mbps (USB 2.0), 5 Gbps (USB 3.0), 10 Gbps (USB 3.1)</td>
+      </tr>
+      <tr>
+        <td>HDMI</td>
+        <td>Interfaz digital para la transmisión de audio y video de alta definición.</td>
+        <td>HDMI-A, HDMI-B, HDMI-C</td>
+        <td>10.2 Gbps (HDMI 1.4), 18 Gbps (HDMI 2.0)</td>
+      </tr>
+      <tr>
+        <td>Audio</td>
+        <td>Conector para la salida y entrada de señales de audio.</td>
+        <td>Jack 3.5 mm</td>
+        <td>N/A</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+				
+			</div>
+			<div id="content4" class="animated">
+			<div class="container">
+    <h1>Memoria RAM y Memoria ROM</h1>
+    <p>La memoria RAM y la memoria ROM son componentes importantes en la arquitectura de computadores. A continuación se presentan algunas características de cada una de ellas:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Memoria RAM</th>
+          <th>Memoria ROM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Es una memoria volátil que almacena temporalmente los datos y programas que están siendo utilizados por la CPU.</td>
+          <td>Es una memoria no volátil que almacena permanentemente los programas y datos que son necesarios para el funcionamiento de la computadora.</td>
+        </tr>
+        <tr>
+          <td>Tiene una capacidad limitada y es más rápida que la memoria ROM.</td>
+          <td>Tiene una capacidad mayor y es más lenta que la memoria RAM.</td>
+        </tr>
+        <tr>
+          <td>Es una memoria de acceso aleatorio, lo que significa que la CPU puede acceder a cualquier ubicación de la memoria directamente y en cualquier orden.</td>
+          <td>Es una memoria de acceso secuencial, lo que significa que la CPU solo puede acceder a la información almacenada en ella en el orden en que está almacenada.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>A continuación se presentan algunas imágenes de estos componentes:</p>
+    <div class="row">
+      <div class="col-md-6">
+        <img th:src="@{/img/ram.jpg}" alt="Memoria RAM" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <img th:src="@{/img/rom.jpg}" alt="Memoria ROM" class="img-fluid">
+      </div>
+    </div>
+  </div>
+			</div>
+		</div>
+	</main>
+	<script th:src="@{/js/Efecto.js}"></script>
+
+
+
+	<script th:src="@{/js/Efecto.js}"></script>
+
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

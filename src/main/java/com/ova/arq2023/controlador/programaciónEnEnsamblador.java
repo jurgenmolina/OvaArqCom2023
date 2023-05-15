@@ -4,11 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class puntoFlotanteControlador {
+public class programaciónEnEnsamblador {
 
-    @GetMapping("/puntoflotante")
+    @GetMapping("/programaciónenensamblador")
 	public String showSistemasNumericos() {
-		return "puntoflotante";
+		return "programaciónenensamblador";
+		
+		//condicionales-saltos-e-instrucciones-repetitivas
 	}
     
 }
