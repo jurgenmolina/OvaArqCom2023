@@ -1,0 +1,41 @@
+.row {
+	height: 2em;
+	width: 40em;
+}
+
+
+#row2{
+width: 45em;
+}
+
+#row3{
+width: 50em;
+}
+
+#row4{
+width: 55em;
+}
+
+#row5{
+width: 60em;
+}
+
+
+#row1,#row2,#row3,#row4,#row5 >.col-md-1{
+		background-color: lightgreen;
+}
+
+.col-md-4{
+	background-color: skyblue;
+}
+
+.col-md-7{
+	background-color: yellow;
+}
+.row .col-md-1, .col-md-4, .col-md-7{
+	border: 1px solid black;
+}
+
+.container li{
+	list-style: none;
+}
