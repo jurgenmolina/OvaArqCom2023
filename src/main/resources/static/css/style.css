@@ -48,7 +48,7 @@ body, button {
 }
 
 :root {
-  --bs-red: #dc3545;
+  --bs-red: #b43432;
 }
 
 .dataTables_wrapper .form-select.form-select-sm:focus,
@@ -57,8 +57,8 @@ body, button {
 }
 
 .dataTables_wrapper .paginate_button.page-item.active .page-link {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #b43432;
+  border-color: #b43432;
   color: #fff;
 }
 
@@ -151,7 +151,7 @@ body, button {
 }
 
 .accordion-button {
-  background-color: #dc3545;
+  background-color: #b43432;
   color: #fff;
   padding: 15px;
   width: 100%;
@@ -164,7 +164,7 @@ body, button {
 
 .accordion-button:hover {
   background-color: #fff;
-  color: #dc3545;
+  color: #b43432;
 }
 
 .accordion-button:not(.collapsed) {
@@ -180,7 +180,7 @@ body, button {
 }
 
 .accordion-button[aria-expanded="true"] h2 {
-  color: #dc3545;
+  color: #b43432;
 }
 
 .accordion-item:focus-within {
@@ -193,12 +193,27 @@ button:focus {
 
 .accordion-button:focus {
   outline: none;
-  border-color: #dc3545; /* Cambie el color aquí */
+  border-color: #b43432; /* Cambie el color aquí */
 }
 
 .accordion-button:focus,
 .accordion-button:not(.collapsed) {
-  border-color: #dc3545;
-  color: #dc3545;
+  border-color: #b43432;
+  color: #b43432;
 }
 
+.btn-outline-danger,
+.btn-danger,
+.alert-danger {
+  color: #fff !important;
+  background-color: #b43432 !important;
+  border-color: #b43432 !important;
+}
+
+.text-danger {
+  color: #b43432 !important;
+}
+
+.bg-danger {
+  background-color: #b43432 !important;
+}

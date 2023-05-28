@@ -1,120 +1,104 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-<meta charset="utf-8">
-
-
-<link rel="stylesheet" type="text/css" th:href="@{css/EfectoDiv.css}" />
+	<meta charset="utf-8">
 </head>
-<style>
-.btn-separator {
-	margin-right: 12em;
-	margin-top: 1px;
-}
-</style>
-<body>
+
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
 	<header th:replace="menu/menu :: header"></header>
-	
+
 	<section th:fragment="section">
 		<!-- top navigation bar -->
 		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
-			tabindex="-1" id="sidebar" style="margin-top: 30px">
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
+			style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
-						<li><a class="nav-link px-3 sidebar-link"
-							data-bs-toggle="collapse" href="#layouts2"> <span
-								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
-								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
-								class="ms-auto"> <span class="right-icon"> <i
-										class="bi bi-chevron-down text-dark"></i>
+						<li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span
+									class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+									class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
+									<span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
+									</span>
 								</span>
-							</span>
-						</a>
+							</a>
 							<div class="collapse show" id="layouts2">
 								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
 									<li>
-										<!-- Espaciado	 <a th:href="@{/introArqui}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span>
-									</a>
-									!-->
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)"
-													data-content="content1" onclick="showContent(this)">Introducción
-														a la Arquitectura de Computadores </a></li>
-												<li><a href="javascript:void(0)"
-													data-content="content2" onclick="showContent(this)">Sistemas
+												<li><a href="javascript:void(0)" data-content="content1"
+														onclick="showContent(this)" id="primerEnlace">
+														Introducción a la Arquitectura de Computadores</a></li>
+												<li><a href="javascript:void(0)" data-content="content2"
+														onclick="showContent(this)">Sistemas
 														numéricos: Hexadecimal, Octal, Decimal y Binario</a></li>
-												<li><a href="javascript:void(0)"
-													data-content="content3" onclick="showContent(this)">IEEE
+												<li><a href="javascript:void(0)" data-content="content3"
+														onclick="showContent(this)">IEEE
 														754 Punto Flotante y Números negativos </a></li>
-												<li><a href="javascript:void(0)"
-													data-content="content4" onclick="showContent(this)">Representación
+												<li><a href="javascript:void(0)" data-content="content4"
+														onclick="showContent(this)">Representación
 														de los datos y almacenamiento </a></li>
-												<li><a href="javascript:void(0)"
-													data-content="content5" onclick="showContent(this)">Estructura
+												<li><a href="javascript:void(0)" data-content="content5"
+														onclick="showContent(this)">Estructura
 														interna del procesador: Unidad de Control, Unidad
 														Aritmética y Lógica, Registros, Cache </a></li>
-														<li><a href="javascript:void(0)"
-													data-content="content6" onclick="showContent(this)">Examen </a></li>
+												<!-- <li><a href="javascript:void(0)" data-content="content6"
+														onclick="showContent(this)">Examen </a></li> -->
 											</ul>
 										</div>
 									</li>
-
 								</ul>
-							</div></li>
+							</div>
+						</li>
 					</ul>
-
-
 					<div>
-						<a href="#" class="nav-link px-3 text-secondary"><span
-							class="me-2"><i class="bi bi-table"></i></span> <span
-							class="fw-bold">Calendario</span> </a>
+						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
+									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
 					</div>
-
 				</nav>
 			</div>
 		</div>
 	</section>
 
-	<style>
-.section-container {
-	margin-top: 60px;
-}
-
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
 	<main class="main-container mb-5">
 		<!-- DESARROLLA EL OVA AQUI -->
+<<<<<<< HEAD
 		<h2 class="text-center mx-auto">Unidad: Introducción a la
 						arquitectura de computadores</h2>
 						<br>
 						<h2 class="my-4 " >Sistemas
 							numéricos</h3>
 					
+=======
+		<div class="row justify-content-between">
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/">Atras</a>
+			</div>
+			<div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
+				<h2 class="text-center">Unidad: Introducción a la arquitectura de computadores</h2>
+			</div>
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Siguiente</a>
+			</div>
+		</div>
+		
+>>>>>>> 5728c575a96622f403f0f38680aa5d56e6300d0f
 		<div class="content">
+
 			<div id="content1" class="animated">
 				<div class="container my-5">
+<<<<<<< HEAD
 					
 					
 
@@ -169,13 +153,21 @@
 								Tutorial - Electronics Tutorials</a></li>
 					</ul>
 
+=======
+					<div>
+						<h3 class="my-0 mx-auto" style="text-align: center;">Resumen</h3>
+					</div>
+>>>>>>> 5728c575a96622f403f0f38680aa5d56e6300d0f
 				</div>
-
 			</div>
+
 			<div id="content2" class="animated">
 				<div class="container">
-					<h2>Introducción a la arquitectura de computadores</h2>
-					<h3>Unidad: Sistemas numéricos</h3>
+					<div class="container my-5">
+						<div>
+							<h3 class="my-0 mx-auto" style="text-align: center;">Sistemas numéricos</h3>
+						</div>
+					</div>
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -226,22 +218,21 @@
 					<ul>
 						<li><a href="https://www.youtube.com/watch?v=ZL-LhaaMTTE">Video
 								tutorial sobre sistemas numéricos</a></li>
-						<li><a
-							href="https://www.calculadora-online.xyz/sistemas-numericos">Calculadora
+						<li><a href="https://www.calculadora-online.xyz/sistemas-numericos">Calculadora
 								de sistemas numéricos</a></li>
-						<li><a
-							href="https://es.wikipedia.org/wiki/Sistema_num%C3%A9rico">Artículo
+						<li><a href="https://es.wikipedia.org/wiki/Sistema_num%C3%A9rico">Artículo
 								de Wikipedia sobre sistemas numéricos</a></li>
 					</ul>
 				</div>
-
 			</div>
 
-
 			<div id="content3" class="animated">
-				<div class="container my-5">
-					<h2 class="text-center mb-4">Unidad: Representación de los
-						datos y almacenamiento</h2>
+				<div class="container">
+					<div class="container my-5">
+						<div>
+							<h3 class="my-0 mx-auto" style="text-align: center;">Punto Flotante</h3>
+						</div>
+					</div>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -310,18 +301,21 @@
 					</div>
 
 					<div class="text-center my-4">
-						<a href="#" class="btn btn-primary">Ver más recursos sobre
-							Sistemas Numéricos</a> <a href="#" class="btn btn-primary">Ver
+						<a href="#" class="btn btn-danger">Ver más recursos sobre
+							Sistemas Numéricos</a> <a href="#" class="btn btn-danger">Ver
 							más recursos sobre Almacenamiento</a>
 					</div>
-
 				</div>
-
-
 			</div>
+
 			<div id="content4" class="animated">
 				<div class="container">
-					<h1>Resumen Arquitectura de Computadores</h1>
+					<div class="container my-5">
+						<div>
+							<h3 class="my-0 mx-auto" style="text-align: center;">Representación datos y almacenamiento
+							</h3>
+						</div>
+					</div>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -341,7 +335,8 @@
 								<td rowspan="3">Estructura interna del procesador</td>
 								<td>Unidad Aritmética y Lógica</td>
 								<td><a
-									href="https://www.tutorialspoint.com/computer_logical_organization/arithmetic_logic_unit.htm">Tutorial</a></td>
+										href="https://www.tutorialspoint.com/computer_logical_organization/arithmetic_logic_unit.htm">Tutorial</a>
+								</td>
 							</tr>
 							<tr>
 								<td>Registros</td>
@@ -350,18 +345,22 @@
 							</tr>
 							<tr>
 								<td>Cache</td>
-								<td><a
-									href="https://www.geeksforgeeks.org/cache-organization/">Artículo
+								<td><a href="https://www.geeksforgeeks.org/cache-organization/">Artículo
 										explicativo</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
+
 			<div id="content5" class="animated">
 				<div class="container">
-					<h2>Introducción a la arquitectura de computadores</h2>
-					<h3>Unidad: Estructura interna del procesador</h3>
+					<div class="container my-5">
+						<div>
+							<h3 class="my-0 mx-auto" style="text-align: center;">Estructura interna del procesador</h3>
+						</div>
+					</div>
+
 					<table class="table">
 						<thead>
 							<tr>
@@ -405,11 +404,9 @@
 					<div class="mt-4">
 						<h4>Recursos adicionales:</h4>
 						<ul>
-							<li><a
-								href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad
+							<li><a href="https://es.wikipedia.org/wiki/Unidad_central_de_procesamiento">Unidad
 									Central de Procesamiento - Wikipedia</a></li>
-							<li><a
-								href="https://www.profesionalreview.com/2019/04/17/cache-memoria-ram/">Qué
+							<li><a href="https://www.profesionalreview.com/2019/04/17/cache-memoria-ram/">Qué
 									es la memoria caché y para qué sirve - Profesional Review</a></li>
 						</ul>
 					</div>
@@ -417,40 +414,18 @@
 
 
 			</div>
-			<div id="content6" class="animated">
-				<iframe src="https://jonnyedwardjs.h5p.com/content/1291955784468827708/embed" aria-label="¿Qué es la cache en la estructura interna del procesador?" width="600" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
-
-			</div>
+			<!-- <div id="content6" class="animated">
+				<iframe src="https://jonnyedwardjs.h5p.com/content/1291955784468827708/embed"
+					aria-label="¿Qué es la cache en la estructura interna del procesador?" width="600" height="637"
+					frameborder="0" allowfullscreen="allowfullscreen"
+					allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe>
+				<script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+			</div> -->
 		</div>
 	</main>
-	<div class="row justify-content-center">
-
-		<div class="col-sm-6 col-md-3 d-flex flex-column align-items-center btn-separator mt-1 ">
-			<button class="btn btn-secondary"><a href="/introArqui"> Atras</a></button>
-		</div>
-		<div class="col-sm-6 col-md-3 d-flex flex-column align-items-center mt-1">
-			<button class="btn btn-secondary "><a href="/tarjetamadreymemoria"> Siguiente</a></button>
-		</div>
-	</div>
-	<script th:src="@{/js/Efecto.js}"></script>
 
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
