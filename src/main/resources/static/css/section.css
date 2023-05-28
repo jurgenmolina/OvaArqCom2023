@@ -1,6 +1,6 @@
 /* Color scheme */
 :root {
-  --primary-color: #ff00ff;
+  --danger-color: #ff00ff;
   --secondary-color: #6c757d;
 }
 
@@ -20,11 +20,11 @@
 
 .navbar-white .nav-link:hover,
 .navbar-white .nav-link:focus {
-  color: var(--primary-color);
+  color: var(--danger-color);
 }
 
 .navbar-white .active {
-  color: var(--primary-color);
+  color: var(--danger-color);
   font-weight: 700;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .sidebar-link:hover {
-  color: var(--primary-color);
+  color: var(--danger-color);
 }
 
 .sidebar-link .right-icon {
@@ -57,7 +57,7 @@
 
 .sidebar-link.active,
 .sidebar-link.active:hover {
-  color: var(--primary-color);
+  color: var(--danger-color);
 }
 
 .sidebar-link.active .right-icon,
@@ -89,7 +89,7 @@
 }
 
 .card-header {
-  background-color: var(--primary-color);
+  background-color: var(--danger-color);
   color: white;
   font-weight: 500;
   font-size: 1.1rem;
@@ -105,7 +105,7 @@
 }
 
 .btn {
-  background-color: var(--primary-color);
+  background-color: var(--danger-color);
   border: none;
   color: white;
   font-weight: 500;

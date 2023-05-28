@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <link rel="stylesheet" type="text/css" th:href="@{css/Menu.css}" />
+
 <head th:replace="menu/menu :: head">
-<meta charset="utf-8">
+	<meta charset="utf-8">
 </head>
 
 <body>
@@ -29,14 +29,13 @@
 					<a href="#" class="btn btn-secondary">Más información</a>
 				</div>
 				<div class="col-md-6">
-					<img src="https://picsum.photos/600/400" class="img-fluid rounded"
-						alt="Imagen de bienvenida">
+					<img src="https://picsum.photos/600/400" class="img-fluid rounded" alt="Imagen de bienvenida">
 				</div>
 			</div>
 		</div>
 	</main>
 	<div class="header">
-		<h1>Code Labs</h1>
+		<h1>Unidades</h1>
 	</div>
 
 	<div class="content">
@@ -74,32 +73,30 @@
 				responsive design techniques.</p>
 			<button>Start Lab</button>
 		</div>
-		
+
 		<div class="card" onclick="location.href='/programaciónenensamblador';">
 			<h2>Lab 5: Introducción a la programación en ensamblador</h2>
 			<p>Learn the basics of HTML and CSS by building a simple web
 				page.</p>
 			<button>Start Lab</button>
 		</div>
-			<div class="card" onclick="location.href='/condicionales-saltos-e-instrucciones-repetitivas';">
+		<div class="card" onclick="location.href='/condicionales-saltos-e-instrucciones-repetitivas';">
 			<h2>Lab 6: Condicionales, saltos e instrucciones repetitivas</h2>
 			<p>Learn the basics of HTML and CSS by building a simple web
 				page.</p>
 			<button>Start Lab</button>
 		</div>
-			<div class="card" onclick="location.href='/cadenas-y-memoria-auxiliar';">
+		<div class="card" onclick="location.href='/cadenas-y-memoria-auxiliar';">
 			<h2>Lab 7: Cadenas, I/O y memoria auxiliar</h2>
 			<p>Learn the basics of HTML and CSS by building a simple web
 				page.</p>
 			<button>Start Lab</button>
 		</div>
-
-
 	</div>
-	<div id="arqui">
+	<!-- <div id="arqui">
     <iframe src="https://jonnyedwardjs.h5p.com/content/1291955728070322238/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" aria-label="Arqui"></iframe>
     <script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-</div>
+</div> -->
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
 
@@ -108,8 +105,7 @@
 
 
 <!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
 </body>
