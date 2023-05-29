@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IntroArqui {
 
     @GetMapping("/introArqui")
-	public String showIntroArqui() {
+	public String Inicio() {
 		return "introArqui";
 	}
     

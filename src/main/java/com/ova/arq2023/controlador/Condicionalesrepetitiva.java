@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Condicionalesrepetitivas {
+public class Condicionalesrepetitiva {
 
     @GetMapping("/condicionales-saltos-e-instrucciones-repetitivas")
-	public String showSistemasNumericos() {
+	public String Inicio() {
 		return "condicionales-saltos-e-instrucciones-repetitivas";
 	}
     

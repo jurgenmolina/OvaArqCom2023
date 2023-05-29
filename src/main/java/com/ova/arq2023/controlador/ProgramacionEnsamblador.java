@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class programaciónEnEnsamblador {
+public class ProgramacionEnsamblador {
 
-    @GetMapping("/programaciónenensamblador")
-	public String showSistemasNumericos() {
-		return "programaciónenensamblador";
+    @GetMapping("/programacionenensamblador")
+	public String Inicio() {
+		return "programacionenensamblador";
 		
 		//condicionales-saltos-e-instrucciones-repetitivas
 	}
