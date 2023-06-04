@@ -1,15 +1,9 @@
-@font-face {
-  font-family: 'Gotham';
-  src: url('https://example.com/fonts/gotham.woff2') format('woff2'),
-       url('https://example.com/fonts/gotham.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-body, button {
-  font-family: 'Gotham', sans-serif;
+body,
+button {
+  font-family: "Inter", sans-serif;
 }
-
 :root {
   --offcanvas-width: 270px;
   --topNavbarHeight: 56px;
