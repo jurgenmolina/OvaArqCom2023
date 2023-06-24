@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<link rel="stylesheet" type="text/css" th:href="@{css/Menu.css}" />
 
 <head th:replace="menu/menu :: head">
 	<meta charset="utf-8">
@@ -9,19 +10,23 @@
 
 	<header th:replace="menu/menu :: header"></header>
 
-	<section th:replace="menu/menu :: section"></section>
+
 
 	<main class="mt-5 pt-3">
 		<div class="container-fluid py-5 bg-light">
 			<div class="row">
 				<div class="col-md-6">
 					<h1 class="display-4">¡Bienvenido!</h1>
-					<h2><span sec:authentication="principal.username"></span></h2>
+					<h2>
+						<span sec:authentication="principal.username"></span>
+					</h2>
 					<!-- <h2>Tu rol es: <span sec:authentication="principal.authorities"></span></h2> -->
-					<p class="lead">Explora nuestra OVA de AC para aprender sobre los fundamentos de la arquitectura de
-						sistemas informáticos. Aprovecha esta oportunidad de estudio interactiva y descubre cómo
-						funciona la estructura interna de los ordenadores. ¡Empieza a explorar hoy mismo!"</p>
-					<a href="#" class="btn btn-secondary">Más información</a>
+					<p class="lead">Explora nuestra OVA de AC para aprender sobre
+						los fundamentos de la arquitectura de sistemas informáticos.
+						Aprovecha esta oportunidad de estudio interactiva y descubre cómo
+						funciona la estructura interna de los ordenadores. ¡Empieza a
+						explorar hoy mismo!"</p>
+					<a href="#" class="btn btn-danger">Más información</a>
 				</div>
 				<div class="col-md-6">
 					<img src="https://picsum.photos/600/400" class="img-fluid rounded" alt="Imagen de bienvenida">
@@ -29,7 +34,69 @@
 			</div>
 		</div>
 	</main>
+	<div class="header">
+		<h1>Unidades</h1>
+	</div>
 
+	<div class="content">
+		<p>Code Labs is a platform where you can learn new technologies
+			and improve your coding skills. Our interactive tutorials and
+			hands-on labs provide you with the opportunity to practice coding in
+			a real-world environment. Get started today!</p>
+	</div>
+
+	<div class="cards">
+		<div class="card" onclick="location.href='/introArqui';">
+			<h2>Lab 1: Introducción a la arquitectura de computadores</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web
+				page.</p>
+			<button>Start Lab</button>
+		</div>
+
+		<div class="card" onclick="location.href='/tarjetamadreymemoria';">
+			<h2>Lab 2: Tarjeta Madre y Memorias</h2>
+			<p>Learn how to make your website look great on any device using
+				responsive design techniques.</p>
+			<button>Start Lab</button>
+		</div>
+		<div class="card" onclick="location.href='/direccionamientos';">
+			<h2>Lab 3: Direccionamientos e Introducción al S.O.</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web
+				page.</p>
+			<button>Start Lab</button>
+		</div>
+
+		<div class="card" onclick="location.href='/virtualización-emuladores-y-entornosdearquitectura';">
+			<h2>Lab 4: Virtualización, Emuladores y entornos de arquitectura
+			</h2>
+			<p>Learn how to make your website look great on any device using
+				responsive design techniques.</p>
+			<button>Start Lab</button>
+		</div>
+
+		<div class="card" onclick="location.href='/programaciónenensamblador';">
+			<h2>Lab 5: Introducción a la programación en ensamblador</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web
+				page.</p>
+			<button>Start Lab</button>
+		</div>
+		<div class="card" onclick="location.href='/condicionales-saltos-e-instrucciones-repetitivas';">
+			<h2>Lab 6: Condicionales, saltos e instrucciones repetitivas</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web
+				page.</p>
+			<button>Start Lab</button>
+		</div>
+		<div class="card" onclick="location.href='/cadenas-y-memoria-auxiliar';">
+			<h2>Lab 7: Cadenas, I/O y memoria auxiliar</h2>
+			<p>Learn the basics of HTML and CSS by building a simple web
+				page.</p>
+			<button>Start Lab</button>
+		</div>
+	</div>
+	<!-- <div id="arqui">
+    <iframe src="https://jonnyedwardjs.h5p.com/content/1291955728070322238/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" aria-label="Arqui"></iframe>
+    <script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+</div> -->
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
 

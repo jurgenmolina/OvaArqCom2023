@@ -13,26 +13,25 @@ import com.ova.arq2023.servicio.UsuarioServicio;
 @RequestMapping("/registro")
 public class RegistroUsuarioControlador {
 
-	private UsuarioServicio usuarioServicio;
+    private UsuarioServicio usuarioServicio;
 
-	public RegistroUsuarioControlador(UsuarioServicio usuarioServicio) {
-		super();
-		this.usuarioServicio = usuarioServicio;
-	}
-	
-	@ModelAttribute("usuario")
-	public UsuarioRegistroDTO retornarNuevoUsuarioRegistroDTO() {
-		return new UsuarioRegistroDTO();
-	}
+    public RegistroUsuarioControlador(UsuarioServicio usuarioServicio) {
+        this.usuarioServicio = usuarioServicio;
+    }
 
-	@GetMapping
-	public String mostrarFormularioDeRegistro() {
-		return "registro";
-	}
-	
-	@PostMapping
-	public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistroDTO registroDTO) {
-		usuarioServicio.guardar(registroDTO);
-		return "redirect:/registro?exito";
-	}
+    @ModelAttribute("usuario")
+    public UsuarioRegistroDTO retornarNuevoUsuarioRegistroDTO() {
+        return new UsuarioRegistroDTO();
+    }
+
+    @GetMapping
+    public String mostrarFormularioDeRegistro() {
+        return "registro";
+    }
+
+    @PostMapping
+    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistroDTO registroDTO) {
+        usuarioServicio.guardar(registroDTO);
+        return "redirect:/registro?exito";
+    }
 }
