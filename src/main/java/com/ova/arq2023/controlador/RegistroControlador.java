@@ -1,23 +1,34 @@
 package com.ova.arq2023.controlador;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.ova.arq2023.modelo.Usuario;
+import com.ova.arq2023.servicio.UsuarioServicio;
 
 @Controller
 public class RegistroControlador {
-	
-	@GetMapping("/login")
-	public String iniciarSesion() {
-		return "login";
-	}
-	
-	@GetMapping("/")
-	public String verPaginaDeInicio(Model modelo) {
-		return "index";
-	}
-   
+
+    @Autowired
+    private UsuarioServicio usuarioServicio;
+
+    @GetMapping("/login")
+    public String iniciarSesion() {
+        return "login";
+    }
+
+    @GetMapping("/")
+    public String verPaginaDeInicio(Model modelo) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Usuario usuario = usuarioServicio.SelectUsuario(auth.getName());
+        modelo.addAttribute("usuario", usuario);
+        return "index";
+    }
+
     @GetMapping("/loginSuccess")
     public String loginSuccess() {
         return "redirect:/";

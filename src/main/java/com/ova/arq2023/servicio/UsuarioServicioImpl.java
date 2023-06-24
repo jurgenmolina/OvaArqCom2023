@@ -58,4 +58,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	public List<Usuario> listarUsuarios() {
 		return usuarioRepositorio.findAll();
 	}
+
+	@Override
+	public Usuario SelectUsuario(String email) {
+		return usuarioRepositorio.findByEmail(email);
+	}
 }
