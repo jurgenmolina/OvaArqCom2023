@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class VtEmu {
 
-    @GetMapping("/virtualización-emuladores-y-entornosdearquitectura")
+    @GetMapping("/virtualizacion-emuladores-y-entornosdearquitectura")
 	public String showSistemasNumericos() {
-		return "virtualización-emuladores-y-entornosdearquitectura";
+		return "virtualizacion-emuladores-y-entornosdearquitectura";
 	}
     
 }
