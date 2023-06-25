@@ -1,0 +1,22 @@
+#toggleSidebarBtn {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    #toggleSidebarBtn {
+        display: block;
+    }
+    #sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+    .main-container {
+        transition: width 0.3s ease-in-out;
+    }
+    .expanded-sidebar #sidebar {
+        width: 300px;
+    }
+    .expanded-sidebar .main-container {
+        margin-left: 300px;
+    }
+}

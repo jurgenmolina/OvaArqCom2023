@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
 
-<link rel="stylesheet" type="text/css" th:href="@{css/efecto.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{css/efecto.css}" />
 </head>
 
 <body onload="showContent(document.getElementById('primerEnlace'))">
@@ -13,8 +13,6 @@
   <header th:replace="menu/menu :: header"></header>
 
   <section th:fragment="section">
-    <!-- top navigation bar -->
-    <!-- offcanvas -->
     <div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar" style="margin-top: 30px">
       <div class="offcanvas-body p-0">
         <nav class="navbar-white">
@@ -48,8 +46,10 @@
                         <li><a href="javascript:void(0)" data-content="content2" onclick="showContent(this)"> Placa Base
                         <li><a href="javascript:void(0)" data-content="content3" onclick="showContent(this)">Memoria Ram
                           </a> </li>
-                        <li><a href="javascript:void(0)" data-content="content4" onclick="showContent(this)">Memorias </a></li>
-                        <li><a href="javascript:void(0)" data-content="content5" onclick="showContent(this)">Informacion de Memorias DDR2</a></li>
+                        <li><a href="javascript:void(0)" data-content="content4" onclick="showContent(this)">Memorias
+                          </a></li>
+                        <li><a href="javascript:void(0)" data-content="content5" onclick="showContent(this)">Informacion
+                            de Memorias DDR2</a></li>
                         <!-- <li><a href="javascript:void(0)" data-content="content6"
 														onclick="showContent(this)">Examen </a></li> -->
                       </ul>
@@ -66,190 +66,101 @@
         </nav>
       </div>
     </div>
-<<<<<<< HEAD
+    <script th:src="@{/js/Efecto.js}"></script>
   </section>
 
-  <main class="main-container mb-5">
-    <!-- DESARROLLA EL OVA AQUI -->
-    <div class="row justify-content-between">
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-        <a class="btn btn-outline-danger" href="/">Atras</a>
+  </main>
+
+  <div class="main-container mb-5">
+    <h1>Memoria RAM</h1>
+    <div>
+      <p>
+        La memoria principal o RAM (Random Access Memory) es donde el ordenador guarda los datos que está
+        utilizando en el momento. Está conformada internamente por millones de registros y biestables. La
+        diferencia entre la RAM y otros tipos de memoria de almacenamiento es que la RAM es mucho más rápida y se
+        borra al apagar el ordenador.
+      </p>
+      <p>
+        Clasificación RAM por su estructura eléctrica:
+      </p>
+      <ul>
+        <li>SRAM: RAM Sincrónica o Estática, utiliza tecnología MOS (Oxido de Metal) y es la más rápida.</li>
+        <li>DRAM: RAM Dinámica, utiliza condensadores y es la RAM normal de los computadores.</li>
+      </ul>
+      <p>
+        Aquí tienes algunas imágenes relacionadas con la memoria RAM:
+      </p>
+      <div>
+        <img src="https://example.com/image1.jpg" alt="Imagen 1">
+        <img src="https://example.com/image2.jpg" alt="Imagen 2">
+        <img src="https://example.com/image3.jpg" alt="Imagen 3">
       </div>
-      <div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
-        <h2 class="text-center">Unidad: Tarjeta Madre </h2>
-      </div>
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
-        <a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Siguiente</a>
-      </div>
+      <p>
+        Si deseas obtener más información sobre la memoria RAM, puedes buscar en los siguientes enlaces:
+      </p>
+      <ul>
+        <li><a href="https://www.ejemplo1.com" target="_blank">Enlace 1</a></li>
+        <li><a href="https://www.ejemplo2.com" target="_blank">Enlace 2</a></li>
+        <li><a href="https://www.ejemplo3.com" target="_blank">Enlace 3</a></li>
+      </ul>
     </div>
-
-    <div class="content">
-
-      <div id="content1" class="animated">
-        <div class="container my-5">
-          <div>
-            <h3 class="my-0 mx-auto" style="text-align: center;">
-              <div class="container">
-                <img th:src="@{'https://m.media-amazon.com/images/I/919g9+4AGpL._AC_SL1500_.jpg'}" class="img-fluid"
-                  alt="Imagen">
-              </div>
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <div id="content2" class="animated">
-
-        <div class="container my-5">
-          <h1>Placa Base</h1>
-          <p>
-            La placa base, también conocida como mainboard o placa madre, es el elemento principal de un computador.
-            Contiene o se conecta con todos los demás dispositivos y aparatos del sistema. Algunos de los componentes
-            clave son:
-          </p>
-          <ul>
-            <li>Microprocesador</li>
-            <li>Memoria</li>
-            <li>Slots o ranuras de expansión para tarjetas</li>
-            <li>Chips de control, incluyendo la BIOS</li>
-          </ul>
-
-
-          <p>
-
-            El bus de la placa base es un sistema de comunicación eléctrica que consta de diferentes buses:
-          </p>
-          <ul>
-            <li>Bus de direcciones: transmite las direcciones que identifican los componentes de la placa.</li>
-            <li>Bus de datos: transporta los datos a través de la placa hacia los dispositivos.</li>
-            <li>Bus de control y sincronización: transmite señales de control y energía necesaria para el funcionamiento
-              de los dispositivos.</li>
-          </ul>
-
-          <h1>El Procesador</h1>
-          <p>
-            El microprocesador, también conocido como cerebro del ordenador, es un chip electrónico compuesto por
-            millones de transistores. Su velocidad se mide en gigahertzios (GHz) y consta de:
-          </p>
-          <ul>
-            <li>Velocidad interna: la velocidad a la que funciona internamente el micro.</li>
-            <li>Velocidad externa o del bus: la velocidad de comunicación entre el micro y la placa base.</li>
-            <li>Reloj base de la CPU (BCLK): establece la velocidad de la CPU y otros componentes.</li>
-            <li>Multiplicador de la CPU: determina la velocidad de reloj del procesador multiplicado por el BCLK.</li>
-          </ul>
-        </div>
-      </div>
-
-
-
-      <div id="content3" class="animated">
-=======
   </div>
-			</div>
-		</div>
-	</main>
-	<script th:src="@{/js/efecto.js}"></script>
+  </div>
 
+  </div>
 
+  <div id="content4" class="animated">
+    <div class="main-container mb-5">
+      <h1 style="padding: 10px">Memoria RAM</h1>
+      <div>
+        <p>
+          Físicamente, en la tarjeta madre, la memoria RAM se clasifica según el tipo de ranura:
+        </p>
+        <ul>
+          <li>DIPP y SIPP: Encapsulado de doble línea. 1 DIPP por cada bit.</li>
+          <li>SIMM: Simple módulo de memoria en línea. Interfaz de 30 y 72 pines.</li>
+          <li>DIMM: Doble módulo de memoria en línea. Equivale a dos SIMM. Interfaz de 168 pines.</li>
+          <li>RIMM: Módulo de memoria en única línea de Rambus. 184 pines.</li>
+          <li>RDIMM: Módulos de Memoria con Contactos Duales Registrados.</li>
+          <li>UDIMM: Módulo de Memoria con contactos sin registro.</li>
+          <li>LRDIMM: Módulo de Memoria con Contactos Duales con Registros y de Carga Reducida.</li>
+        </ul>
 
-	<script th:src="@{/js/efecto.js}"></script>
->>>>>>> 3fe37dc6f9894709fc1c2387b7f051cc33ed765d
-
-        <div class="container my-5">
-          <h1>Memoria RAM</h1>
-          <div>
-            <p>
-              La memoria principal o RAM (Random Access Memory) es donde el ordenador guarda los datos que está
-              utilizando en el momento. Está conformada internamente por millones de registros y biestables. La
-              diferencia entre la RAM y otros tipos de memoria de almacenamiento es que la RAM es mucho más rápida y se
-              borra al apagar el ordenador.
-            </p>
-            <p>
-              Clasificación RAM por su estructura eléctrica:
-            </p>
-            <ul>
-              <li>SRAM: RAM Sincrónica o Estática, utiliza tecnología MOS (Oxido de Metal) y es la más rápida.</li>
-              <li>DRAM: RAM Dinámica, utiliza condensadores y es la RAM normal de los computadores.</li>
-            </ul>
-            <p>
-              Aquí tienes algunas imágenes relacionadas con la memoria RAM:
-            </p>
-            <div>
-              <img src="https://example.com/image1.jpg" alt="Imagen 1">
-              <img src="https://example.com/image2.jpg" alt="Imagen 2">
-              <img src="https://example.com/image3.jpg" alt="Imagen 3">
-            </div>
-            <p>
-              Si deseas obtener más información sobre la memoria RAM, puedes buscar en los siguientes enlaces:
-            </p>
-            <ul>
-              <li><a href="https://www.ejemplo1.com" target="_blank">Enlace 1</a></li>
-              <li><a href="https://www.ejemplo2.com" target="_blank">Enlace 2</a></li>
-              <li><a href="https://www.ejemplo3.com" target="_blank">Enlace 3</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="content4" class="animated">
-      <div class="container my-5">
-        <h1 style="padding: 10px">Memoria RAM</h1>
-        <div>
-          <p>
-            Físicamente, en la tarjeta madre, la memoria RAM se clasifica según el tipo de ranura:
-          </p>
-          <ul>
-            <li>DIPP y SIPP: Encapsulado de doble línea. 1 DIPP por cada bit.</li>
-            <li>SIMM: Simple módulo de memoria en línea. Interfaz de 30 y 72 pines.</li>
-            <li>DIMM: Doble módulo de memoria en línea. Equivale a dos SIMM. Interfaz de 168 pines.</li>
-            <li>RIMM: Módulo de memoria en única línea de Rambus. 184 pines.</li>
-            <li>RDIMM: Módulos de Memoria con Contactos Duales Registrados.</li>
-            <li>UDIMM: Módulo de Memoria con contactos sin registro.</li>
-            <li>LRDIMM: Módulo de Memoria con Contactos Duales con Registros y de Carga Reducida.</li>
-          </ul>
-    
-          <p>
-            Aquí tienes un enlace donde puedes obtener más información sobre los módulos RDIMM y LRDIMM: <a
-              href="https://www.dasher.com/server-memory-rdimm-vs-lrdimm-and-when-to-use-them/"
-              target="_blank">Enlace</a>
-          </p>
-        </div>
+        <p>
+          Aquí tienes un enlace donde puedes obtener más información sobre los módulos RDIMM y LRDIMM: <a
+            href="https://www.dasher.com/server-memory-rdimm-vs-lrdimm-and-when-to-use-them/" target="_blank">Enlace</a>
+        </p>
       </div>
     </div>
-    
+  </div>
 
-    <div id="content5" class="animated">
-      <div class="container">
-        
-        </div>
-      </div>
 
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-        <a class="btn btn-outline-danger" href="/direccionamientos">Siguiente Unidad</a>
-      </div>
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-        <a class="btn btn-outline-danger" href="/introArqui">Atras Unidad</a>
-      </div>
+  <div id="content5" class="animated">
+    <div class="container">
+
     </div>
+  </div>
 
-    <!-- <div id="content6" class="animated">
+  <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+    <a class="btn btn-outline-danger" href="/direccionamientos">Siguiente Unidad</a>
+  </div>
+  <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+    <a class="btn btn-outline-danger" href="/introArqui">Atras Unidad</a>
+  </div>
+  </div>
+
+  <!-- <div id="content6" class="animated">
 				<iframe src="https://jonnyedwardjs.h5p.com/content/1291955784468827708/embed"
 					aria-label="¿Qué es la cache en la estructura interna del procesador?" width="600" height="637"
 					frameborder="0" allowfullscreen="allowfullscreen"
 					allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe>
 				<script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 			</div> -->
-    </div>
+  </div>
   </main>
   <script th:src="@{/js/Efecto.js}"></script>
-
-
-
-  <script th:src="@{/js/Efecto.js}"></script>
-
-  <footer th:replace="menu/menu :: footer"></footer>
+ 
 </body>
+<footer th:replace="menu/menu :: footer"></footer>
 
 </html>

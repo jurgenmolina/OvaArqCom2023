@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
 <body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
+	<header th:replace="menu/menu :: header">	
+	</header>
 
 	<section th:fragment="section">
-		<!-- top navigation bar -->
-		<!-- offcanvas -->
+		
 		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
 			style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
@@ -66,8 +68,12 @@
 						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
 									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
 					</div>
+					<button id="toggleSidebarBtn" class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
 				</nav>
 			</div>
+			
 		</div>
 	</section>
 
@@ -77,13 +83,14 @@
 			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
 				<a class="btn btn-outline-danger" href="/">Atras</a>
 			</div>
-			<div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
+			<div class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
 				<h2 class="bg-danger text-white p-2 text-center">Introducción a la arquitectura de computadores</h2>
 			</div>
 			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
 				<a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Siguiente</a>
 			</div>
 		</div>
+		
 
 		<div class="content">
 
@@ -1131,29 +1138,14 @@
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-				<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-					<a class="btn btn-outline-danger" href="/tarjetamadre">Siguiente Unidad</a>
-				  </div>
-
-
-=======
->>>>>>> 3fe37dc6f9894709fc1c2387b7f051cc33ed765d
 			</div>
 		</div>
 		</div>
-
-		<!-- <div id="content6" class="animated">
-				<iframe src="https://jonnyedwardjs.h5p.com/content/1291955784468827708/embed"
-					aria-label="¿Qué es la cache en la estructura interna del procesador?" width="600" height="637"
-					frameborder="0" allowfullscreen="allowfullscreen"
-					allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe>
-				<script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-			</div> -->
 		</div>
 	</main>
 
-	<footer th:replace="menu/menu :: footer"></footer>
+	
+	<script src="../static/js/btnsetion.js"></script> 
 </body>
-
+<footer th:replace="menu/menu :: footer"></footer>
 </html>
