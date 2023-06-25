@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<link rel="stylesheet" type="text/css" th:href="@{css/Menu.css}" />
 
 <head th:replace="menu/menu :: head">
-	<meta charset="utf-8">
 </head>
 
 <body>
-
 	<header th:replace="menu/menu :: header"></header>
+	<div class="content mt-5 pt-3 d-flex justify-content-center">
+		<div class="col-md-6">
+			<style>
+				.title-container {
+					background-color: black;
+				}
+			</style>
 
+			<h1 class="display-5 title-container" style="color: #00FF00;">
+				<span style="font-family: 'Courier New', monospace; letter-spacing: 2px;">
+					<span>¡</span>
+					<span>B</span>
+					<span>I</span>
+					<span>E</span>
+					<span>N</span>
+					<span>V</span>
+					<span>E</span>
+					<span>N</span>
+					<span>I</span>
+					<span>D</span>
+					<span>O</span>
+					<span>!</span>
+				</span>
+				<style>
+					.binary-style {
+						font-family: monospace;
+						letter-spacing: -2px;
+						animation: blink 0.5s infinite;
+					}
 
+					@keyframes blink {
+						50% {
+							opacity: 0;
+						}
+					}
+				</style>
 
+<<<<<<< HEAD
 	<main class="mt-5 pt-3">
 		<div class="container-fluid py-5 bg-light">
 			<div class="row">
@@ -32,66 +64,84 @@
 					<img src="https://picsum.photos/600/400" class="img-fluid rounded" alt="Imagen de bienvenida">
 				</div>
 			</div>
+=======
+				<span class="binary-style" style="font-family: 'Courier New', monospace; letter-spacing: 2px;"
+					th:text="${#strings.substring(usuario.nombre, 0, 1).toUpperCase() + #strings.substring(usuario.nombre, 1).toLowerCase()}"></span>
+				<span class="binary-style" style="font-family: 'Courier New', monospace; letter-spacing: 2px;"
+					th:text="${#strings.substring(usuario.apellido, 0, 1).toUpperCase() + #strings.substring(usuario.apellido, 1).toLowerCase()}"></span>
+			</h1>
+			<!-- <hr>
+			<img src="https://3.bp.blogspot.com/-aXeaPkQfJwU/WccfhAkucjI/AAAAAAAAAN8/Uy6I22cSHXcH4Pz8l3XwzmAKeNoaMV7lgCLcBGAs/s640/assembly.jpg"
+				alt="Imagen" style="max-width: 100%;" /> -->
+			<hr>
+			<p><b>Explora nuestro OVA Arquitectura de Computadores para aprender sobre
+					los fundamentos de la arquitectura de sistemas informáticos.
+					Aprovecha esta oportunidad de estudio interactiva y descubre cómo
+					funciona la estructura interna de los ordenadores. ¡Empieza a
+					explorar hoy mismo!"</b></p>
+>>>>>>> 3fe37dc6f9894709fc1c2387b7f051cc33ed765d
 		</div>
-	</main>
+	</div>
 	<div class="header">
-		<h1>Unidades</h1>
+		<h1>Temática</h1>
 	</div>
 
 	<div class="content">
-		<p>Code Labs is a platform where you can learn new technologies
-			and improve your coding skills. Our interactive tutorials and
-			hands-on labs provide you with the opportunity to practice coding in
-			a real-world environment. Get started today!</p>
+		<p>La arquitectura de computadores es una materia que se estudia en las universidades como parte de los
+			programas de informática, ingeniería de computación y electrónica. Esta materia se enfoca en el diseño,
+			organización y funcionamiento de los sistemas de hardware de los computadores, así como en la forma en que
+			interactúan con el software.</p>
 	</div>
 
 	<div class="cards">
 		<div class="card" onclick="location.href='/introArqui';">
-			<h2>Lab 1: Introducción a la arquitectura de computadores</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web
-				page.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 1: Introducción a la arquitectura de computadores</h2>
+			<p>La arquitectura de computadoras es el estudio de cómo los sistemas informáticos están diseñados y
+				organizados, tanto a nivel de hardware como de software...</p>
+			<button>Ingresar</button>
 		</div>
 
 		<div class="card" onclick="location.href='/tarjetamadreymemoria';">
-			<h2>Lab 2: Tarjeta Madre y Memorias</h2>
-			<p>Learn how to make your website look great on any device using
-				responsive design techniques.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 2: Tarjeta Madre y Memorias</h2>
+			<p>La tarjeta madre es el componente principal de una computadora, encargada de interconectar y permitir la
+				comunicación entre los demás componentes...</p>
+			<button>Ingresar</button>
 		</div>
 		<div class="card" onclick="location.href='/direccionamientos';">
-			<h2>Lab 3: Direccionamientos e Introducción al S.O.</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web
-				page.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 3: Direccionamientos e Introducción al S.O.</h2>
+			<p>Se estudian los diferentes modos de direccionamiento utilizados para acceder a datos e instrucciones en
+				la memoria...</p>
+			<button>Ingresar</button>
 		</div>
 
 		<div class="card" onclick="location.href='/virtualización-emuladores-y-entornosdearquitectura';">
-			<h2>Lab 4: Virtualización, Emuladores y entornos de arquitectura
-			</h2>
-			<p>Learn how to make your website look great on any device using
-				responsive design techniques.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 4: Virtualización, Emuladores y entornos de arquitectura</h2>
+			<p>La virtualización, los emuladores y los entornos de arquitectura son conceptos clave en el campo de la
+				informática...</p>
+			<button>Ingresar</button>
 		</div>
 
 		<div class="card" onclick="location.href='/programaciónenensamblador';">
-			<h2>Lab 5: Introducción a la programación en ensamblador</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web
-				page.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 5: Introducción a la programación en ensamblador</h2>
+			<p>La programación en ensamblador es un lenguaje de programación de bajo nivel que se utiliza para escribir
+				programas que se ejecutan directamente en el hardware de una computadora.</p>
+			<button>Ingresar</button>
 		</div>
 		<div class="card" onclick="location.href='/condicionales-saltos-e-instrucciones-repetitivas';">
-			<h2>Lab 6: Condicionales, saltos e instrucciones repetitivas</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web
-				page.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 6: Condicionales, saltos e instrucciones repetitivas</h2>
+			<p>En el lenguaje ensamblador, los condicionales se implementan utilizando instrucciones de salto
+				condicional, como "je" (salta si igual), "jne" (salta si no igual), "jg" (salta si mayor)...</p>
+			<button>Ingresar</button>
 		</div>
 		<div class="card" onclick="location.href='/cadenas-y-memoria-auxiliar';">
-			<h2>Lab 7: Cadenas, I/O y memoria auxiliar</h2>
-			<p>Learn the basics of HTML and CSS by building a simple web
-				page.</p>
-			<button>Start Lab</button>
+			<h2>Unidad 7: Cadenas, I/O y memoria auxiliar</h2>
+			<p>Las cadenas se representan como secuencias de caracteres almacenadas en
+				memoria. Para manipular cadenas, se utilizan instrucciones específicas...</p>
+			<button>Ingresar</button>
 		</div>
+	</div>
+	<div class="header">
+		<h5>© 2023 Ova Arquitectura de Computadores. Todos los derechos reservados.</h5>
 	</div>
 	<!-- <div id="arqui">
     <iframe src="https://jonnyedwardjs.h5p.com/content/1291955728070322238/embed" width="100%" height="500" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *" aria-label="Arqui"></iframe>

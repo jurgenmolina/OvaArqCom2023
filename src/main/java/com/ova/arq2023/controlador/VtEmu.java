@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Direccionamientos {
+public class VtEmu {
 
-    @GetMapping("/direccionamientos")
+    @GetMapping("/virtualización-emuladores-y-entornosdearquitectura")
 	public String showSistemasNumericos() {
-		return "direccionamientos";
+		return "virtualización-emuladores-y-entornosdearquitectura";
 	}
     
 }

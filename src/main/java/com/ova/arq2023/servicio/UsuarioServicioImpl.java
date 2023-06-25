@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.management.AttributeNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 import com.ova.arq2023.controlador.dto.UsuarioRegistroDTO;
 import com.ova.arq2023.modelo.Examen;
-import util.ResourceNotFoundException;
 import com.ova.arq2023.modelo.Notificacion;
 import com.ova.arq2023.modelo.Respuesta;
 import com.ova.arq2023.modelo.ResultadoExamen;
@@ -32,6 +29,8 @@ import com.ova.arq2023.repositorio.NotificacionRepositorio;
 import com.ova.arq2023.repositorio.ResultadoExamenRepositorio;
 import com.ova.arq2023.repositorio.UnidadRepositorio;
 import com.ova.arq2023.repositorio.UsuarioRepositorio;
+
+import util.ResourceNotFoundException;
 
 @Service
 public class UsuarioServicioImpl implements UsuarioServicio {
@@ -122,6 +121,12 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Override
     public List<Notificacion> obtenerNotificaciones() {
         return notificacionRepositorio.findAll();
+    }
+
+    @Override
+    public Usuario SelectUsuario(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'SelectUsuario'");
     }
 
 

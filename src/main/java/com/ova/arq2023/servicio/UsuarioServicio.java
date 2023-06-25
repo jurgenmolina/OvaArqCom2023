@@ -23,4 +23,7 @@ public interface UsuarioServicio extends UserDetailsService{
     public ResultadoExamen responderExamen(Long id, Respuesta respuestasForm);
     public ResultadoExamen obtenerResultadoExamen(Long id);
     public List<Notificacion> obtenerNotificaciones();
+
+	public Usuario SelectUsuario(String email);
+	
 }

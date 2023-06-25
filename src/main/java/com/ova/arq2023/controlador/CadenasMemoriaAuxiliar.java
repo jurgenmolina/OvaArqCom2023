@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CadenasMemoriaAuxiliar{
 
     @GetMapping("/cadenas-y-memoria-auxiliar")
-	public String showSistemasNumericos() {
+	public String Inicio() {
 		return "cadenas-y-memoria-auxiliar";
 	}
     
