@@ -1,11 +1,13 @@
 package com.ova.arq2023.servicio;
 
+import java.util.*;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -57,8 +59,18 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         Usuario usuario = new Usuario(registroDTO.getNombre(),
                 registroDTO.getApellido(), registroDTO.getEmail(),
                 passwordEncoder.encode(registroDTO.getPassword()), Arrays.asList(new Rol("ROLE_USER")));
-        return usuarioRepositorio.save(usuario);
+
+        if (usuarioRepositorio.count() == 0) {
+            usuario.setAdmin(true);
+        }
+
+        try {
+            return usuarioRepositorio.save(usuario);
+        } catch (DataIntegrityViolationException e) {
+            throw new IllegalStateException("El correo electrónico ya está registrado. Por favor, utilice otro correo electrónico.");
+        }
     }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -66,8 +78,17 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         if (usuario == null) {
             throw new UsernameNotFoundException("Usuario o password inválidos");
         }
-        return new User(usuario.getEmail(), usuario.getPassword(), mapearAutoridadesRoles(usuario.getRoles()));
+
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+
+        if (usuario.isAdmin()) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }
+
+        return new User(usuario.getEmail(), usuario.getPassword(), authorities);
     }
+
 
     private Collection<? extends GrantedAuthority> mapearAutoridadesRoles(Collection<Rol> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getNombre())).collect(Collectors.toList());

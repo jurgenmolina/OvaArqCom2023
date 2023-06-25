@@ -2,6 +2,7 @@ package com.ova.arq2023.modelo;
 
 import java.util.Set;
 
+import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "administradores")
 public class Administrador {

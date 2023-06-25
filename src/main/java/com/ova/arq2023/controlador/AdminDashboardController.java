@@ -14,6 +14,6 @@ public class AdminDashboardController {
         // Lógica para obtener datos y mostrarlos en el panel de control del administrador
         // Puedes pasar los datos necesarios al modelo para mostrarlos en la vista
         model.addAttribute("message", "Welcome to Admin Dashboard");
-        return "admin-dashboard";
+        return "admin/admin-dashboard";
     }
 }

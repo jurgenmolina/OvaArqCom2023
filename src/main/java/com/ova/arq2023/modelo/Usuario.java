@@ -15,6 +15,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import lombok.Data;
+
+
+@Data
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Usuario {
@@ -25,6 +29,9 @@ public class Usuario {
 
 	@Column(name = "nombre")
 	private String nombre;
+	
+	@Column(name = "admin", nullable = false)
+	private boolean admin = false;
 
 	@Column(name = "apellido")
 	private String apellido;

@@ -23,11 +23,24 @@ public class RegistroControlador {
 
     @GetMapping("/")
     public String verPaginaDeInicio(Model modelo) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Usuario usuario = usuarioServicio.SelectUsuario(auth.getName());
-        modelo.addAttribute("usuario", usuario);
-        return "index";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+            String username = authentication.getName();
+            Usuario usuario = usuarioServicio.SelectUsuario(username);
+            if (usuario != null && usuario.isAdmin()) {
+                modelo.addAttribute("usuario", usuario);
+                return "admin/admin-dashboard";
+            } else {
+                modelo.addAttribute("error", "No tienes permisos de administrador");
+                return "index";
+            }
+        } else {
+            return "redirect:/login";
+        }
     }
+
+
+
 
     @GetMapping("/loginSuccess")
     public String loginSuccess() {
@@ -39,3 +52,4 @@ public class RegistroControlador {
         return "loginFailure";
     }
 }
+

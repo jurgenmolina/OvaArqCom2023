@@ -52,6 +52,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(adminServicio).passwordEncoder(passwordEncoder());
     }
 
+    // ...
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -60,7 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/js/**",
                         "/css/**",
                         "/img/**").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN") // Requiere el rol "ADMIN" para acceder a las rutas /admin/**
+                .antMatchers("/admin/menu").hasRole("ADMIN") // Requiere el rol "ADMIN" para acceder al menú del administrador
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -74,4 +76,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout")
                 .permitAll();
     }
+
 }
