@@ -1,370 +1,336 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-<meta charset="utf-8">
+	<meta charset="utf-8">
 
+	<style>
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
 
-<link rel="stylesheet" type="text/css" th:href="@{css/efecto.css}" />
+		th,
+		td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		.text {
+			margin: 0 auto;
+			max-width: 600px;
+			padding: 20px;
+			text-align: justify;
+		}
+	</style>
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+				aria-controls="offcanvasExample">
+				<span class="navbar-toggler-icon icon-bar" data-bs-target="#sidebar"></span>
+			</button>
+			<a class="navbar-brand me-auto ms-lg-0 ms-3 text-white fw-bold" href="/">Ova Arquitectura de
+				Computadores</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar"
+				aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="topNavBar">
 
+				<div class="d-flex ms-auto my-3 my-lg-0">
+					<a class="navbar-brand"></a>
+				</div>
 
-<section th:fragment="section">
+				<ul class="navbar-nav ">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle ms-2 text-white" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-person-fill"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+							<li><a class="dropdown-item" href="#">Sobre la app</a></li>
+							<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section th:fragment="section">
 		<!-- top navigation bar -->
 		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
+			style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
-						<li><a class="nav-link px-3 sidebar-link"
-							data-bs-toggle="collapse" href="#layouts2"> <span
-								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
-								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
-								class="ms-auto"> <span class="right-icon"> <i
-										class="bi bi-chevron-down text-dark"></i>
+						<li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span
+									class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+									class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
+									<span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
+									</span>
 								</span>
-							</span>
-						</a>
+							</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
 									<li>
 										<div class="sidebar">
 											<ul>
 												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)">Virtualizado, emuladores y Contenedores</a>
-													</li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)">Carga de programas y Depuradores (Ensambladores y Desensambladores) </a>
-</li>
-												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">Introducción computación cuántica
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">Arquitectura 16, 32 y 64 bits
+														onclick="showContent(this)" id="primerEnlace">
+														Que es virtualizacion, características, ventajas y
+														desventajas</a></li>
+												<li><a href="javascript:void(0)" data-content="content2"
+														onclick="showContent(this)">Virtual Box</a></li>
 
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content5"
-													onclick="showContent(this)">Compiladores y Estructura de un programa en ensamblador, binario y código simbólico
-													
-													</a></li>
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
 							</div>
-							
-							</li>
+						</li>
 					</ul>
-
-
 					<div>
-						<a href="#" class="nav-link px-3 text-secondary"><span
-							class="me-2"><i class="bi bi-table"></i></span> <span
-							class="fw-bold">Calendario</span> </a>
+						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
+									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
 					</div>
-
 				</nav>
 			</div>
 		</div>
 	</section>
 
-	<style>
-.section-container {
-	margin-top: 60px;
-}
+	<main class="main-container mb-5">
 
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
+		<div class="row justify-content-between">
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/direccionamientos">Atras</a>
+			</div>
+			<div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
+				<h2 class="text-center">Virtualizacion</h2>
+			</div>
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/programaciónenensamblador">Siguiente</a>
+			</div>
+		</div>
 
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Virtualizacion</h1>
 		<div class="content">
-			<div id="content1" class="animated">
-				<div class="container my-5">
-  <h2>Visualización, Emuladores y entornos de arquitectura</h2>
-  <h3>Unidad: virtualizado, emuladores y Contenedores</h3>
-  <p>En esta unidad se abordan los conceptos de virtualización, emuladores y contenedores y su relación con la arquitectura de computadores.</p>
-  
-  <h4>Recursos de investigación:</h4>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Recurso</th>
-        <th>Descripción</th>
-        <th>Tipo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>VirtualBox</td>
-        <td>Software de virtualización de código abierto para Windows, macOS, Linux y Solaris.</td>
-        <td>Software</td>
-      </tr>
-      <tr>
-        <td>QEMU</td>
-        <td>Emulador de procesador que permite ejecutar sistemas operativos completos.</td>
-        <td>Software</td>
-      </tr>
-      <tr>
-        <td>Docker</td>
-        <td>Plataforma de contenedores que permite empaquetar, distribuir y ejecutar aplicaciones en cualquier entorno.</td>
-        <td>Software</td>
-      </tr>
-      <tr>
-        <td>VMware Workstation</td>
-        <td>Software de virtualización para Windows y Linux.</td>
-        <td>Software</td>
-      </tr>
-      <tr>
-        <td>Kubernetes</td>
-        <td>Plataforma de orquestación de contenedores que automatiza la implementación, el escalado y la gestión de aplicaciones en contenedores.</td>
-        <td>Software</td>
-      </tr>
-      <tr>
-        <td>Virtualización de hardware</td>
-        <td>Tecnología que permite que múltiples sistemas operativos se ejecuten en un único hardware.</td>
-        <td>Concepto</td>
-      </tr>
-      <tr>
-        <td>Contenedores</td>
-        <td>Tecnología de virtualización que permite la ejecución de aplicaciones en entornos aislados y portables.</td>
-        <td>Concepto</td>
-      </tr>
-      <tr>
-        <td>Emuladores de procesador</td>
-        <td>Software que simula la arquitectura de un procesador en un entorno de software para permitir la ejecución de aplicaciones de manera aislada.</td>
-        <td>Concepto</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <div class="row my-5">
-    <div class="col-md-6">
-      <img src="https://www.virtualbox.org/graphics/vbox_logo2_gradient.png" alt="VirtualBox">
-    </div>
-    <div class="col-md-6">
-      <img src="https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png" alt="Docker">
-    </div>
-  </div>
-  
-  <p>En resumen, esta unidad es fundamental para comprender cómo la virtualización, los emuladores y los contenedores están </p>
-</div>
-			</div>
-			<div id="content2" class="animated">
-			<div class="container mt-5">
-	<div class="row">
-		<div class="col-md-6">
-			<h2>Visualización, Emuladores y entornos de arquitectura</h2>
-			<p>Este tema aborda la importancia de las herramientas de visualización y emulación en la arquitectura de computadoras, y cómo pueden ayudar en el diseño y desarrollo de sistemas. Algunos de los conceptos que se cubren son:</p>
-			<ul>
-				<li>Emuladores de arquitectura de computadoras</li>
-				<li>Herramientas de visualización de sistemas</li>
-				<li>Entornos de simulación de sistemas</li>
-				<li>Comparación de diferentes herramientas y entornos</li>
-			</ul>
-			<p>Este tema puede ser de gran ayuda para estudiantes de arquitectura de computadoras que deseen profundizar en la visualización y simulación de sistemas.</p>
-			<a href="#">Ver más información</a>
-		</div>
-		<div class="col-md-6">
-			<h2>Carga de programas y Depuradores (Ensambladores y Desensambladores)</h2>
-			<p>Este tema se enfoca en la carga de programas y la depuración de sistemas, utilizando herramientas como ensambladores y desensambladores. Algunos de los puntos que se abordan son:</p>
-			<ul>
-				<li>Carga de programas en memoria</li>
-				<li>Utilización de ensambladores y desensambladores</li>
-				<li>Técnicas de depuración de sistemas</li>
-				<li>Análisis de errores y fallas en sistemas</li>
-			</ul>
-			<p>Este tema es de gran importancia para estudiantes y profesionales de arquitectura de computadoras que deseen profundizar en la depuración y análisis de sistemas.</p>
-			<a href="#">Ver más información</a>
-		</div>
-	</div>
-</div>
-			
 
-				
-			</div>
-			<div id="content3" class="animated">
+			<div id="content1" class="animated">
 				<div class="container">
-  <h2>Introducción a la computación cuántica</h2>
-  
-  <h3>Visualización, Emuladores y entornos de arquitectura</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Enlace</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Quantum Composer</td>
-        <td>Un entorno de desarrollo integrado (IDE) que permite la visualización y diseño de circuitos cuánticos.</td>
-        <td><a href="https://www.ibm.com/quantum-computing/technology/composer">https://www.ibm.com/quantum-computing/technology/composer</a></td>
-      </tr>
-      <tr>
-        <td>Qiskit</td>
-        <td>Un entorno de desarrollo de software (SDE) que permite la creación y ejecución de circuitos cuánticos, así como la simulación y visualización de resultados.</td>
-        <td><a href="https://qiskit.org/">https://qiskit.org/</a></td>
-      </tr>
-      <tr>
-        <td>Microsoft Quantum Development Kit</td>
-        <td>Un kit de herramientas para el desarrollo de software cuántico que incluye un simulador de circuitos cuánticos y un lenguaje de programación específico (Q#).</td>
-        <td><a href="https://docs.microsoft.com/en-us/quantum/">https://docs.microsoft.com/en-us/quantum/</a></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <h3>Recursos educativos</h3>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Quantum Mechanics for Everyone</h4>
-          <p class="card-text">Un curso gratuito en línea que introduce los conceptos fundamentales de la mecánica cuántica, necesario para comprender la computación cuántica.</p>
-          <a href="https://www.edx.org/course/quantum-mechanics-for-everyone">https://www.edx.org/course/quantum-mechanics-for-everyone</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">IBM Quantum Challenge</h4>
-          <p class="card-text">Una competencia en línea que permite a los participantes resolver problemas cuánticos utilizando el entorno de desarrollo de IBM, Quantum Composer.</p>
-          <a href="https://quantum-computing.ibm.com/challenges">https://quantum-computing.ibm.com/challenges</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
-				
+					<p class="text-start">
+						<b>Resumen</b>
+
+					<div class="container text-center">
+						<img src="https://www.profesionalreview.com/wp-content/uploads/2018/10/virtualizacion-tuto01.png"
+							alt="Virtualizacion" class="img-fluid" style="width: 250px; height: 200px; margin: auto;">
+					</div>
+
+					<br>El concepto de virtualización hace referencia a una tecnología que permite la ejecución de
+					varias máquinas virtuales sobre una máquina física con el objetivo de aprovechar al máximo los
+					recursos de un sistema y que su rendimiento sea mayor. Es importante destacar que a cada una de
+					las máquinas virtuales se le pueden asignar unos recursos (memoria, unidades de almacenamiento,
+					procesador…) y ejecutan una copia propia de sistema operativo (Windows, Linux…).
+					<br>
+					Cuando virtualizamos, creamos un entorno informático virtual en el que cada máquina puede
+					cumplir funciones diferentes (servidor web, servidor de archivos…) aun encontrándose todas en la
+					misma máquina física. Esto nos ofrece la posibilidad de crear instancias con distintos sistemas
+					operativos en un único servidor, utilizando así menos servidores para ejecutar una mayor
+					cantidad de aplicaciones.
+					<br>
+					Una de las características principales de la virtualización es que cuando ejecutamos programas
+					en dicho entorno, estos creen estar ejecutándose en el ámbito nativo, es decir, en un solo
+					ordenador de uso exclusivo para ellos. Pero, en realidad, se encuentra encapsulado dentro del
+					mismo sistema operativo donde se ejecuta la virtualización. Además de lo anterior, la
+					virtualización hace que, aunque se ejecuten varios sistemas operativos diferentes, ninguno de
+					ellos afecte al desempeño del otro o de la máquina principal que ha sido dividida para crear el
+					entorno virtual.
+					<br>
+					La virtualización se basa en el uso de un software llamado hipervisor o monitor de máquina
+					virtual, que permite la creación y gestión de máquinas virtuales. El hipervisor se instala en un
+					servidor físico y se encarga de asignar y gestionar los recursos, como la CPU, la memoria y el
+					almacenamiento, entre las máquinas virtuales.
+					</p>
+					<hr>
+					<b>Caracteristicas de la virtualización:</b>
+					<hr>
+					<p class="text-start">
+						<li>Aislamiento: Cada máquina virtual se ejecuta de forma aislada, lo que significa que un fallo
+							o problema en una máquina virtual no afectará a las demás.</li>
+						<br>
+						<li>
+							Consolidación: Varias máquinas virtuales pueden ejecutarse en un solo servidor físico, lo
+							que permite una mejor utilización de los recursos y una reducción en el número de servidores
+							físicos necesarios.S
+						</li>
+						<br>
+						<li>
+							Migración en vivo: Las máquinas virtuales se pueden mover de un servidor físico a otro sin
+							interrupción del servicio, lo que permite una mayor flexibilidad y disponibilidad.
+							<br>
+							<br>
+
+						</li>
+
+
+					</p>
+					<hr>
+					<hr>
+					<pclass="text-start">
+						<table class="table table-bordered text-center">
+							<thead class="thead-light">
+								<tr>
+									<th>Ventajas de la Virtualización</th>
+									<th>Desventajas de la Virtualización</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Mayor eficiencia y utilización de recursos</td>
+									<td>Sobrecarga de recursos</td>
+								</tr>
+								<tr>
+									<td>Flexibilidad y escalabilidad</td>
+									<td>Dependencia de la infraestructura</td>
+								</tr>
+								<tr>
+									<td>Mayor disponibilidad y tolerancia a fallos</td>
+									<td>Riesgo de seguridad</td>
+								</tr>
+								<tr>
+									<td>Simplificación de la administración</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
 			</div>
-			<div id="content4" class="animated">
-				<div class="container mt-5">
-  <h2 class="text-center mb-4">Resumen de investigación</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-        <th>Recursos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Visualización de arquitectura</td>
-        <td>Aplicaciones y técnicas de visualización de arquitecturas de computadoras</td>
-        <td><a href="https://www.computer.org/csdl/magazine/co/2000/12/rx216-abs.html">Artículo: "Visualizing Computer Systems"</a></td>
-      </tr>
-      <tr>
-        <td>Emuladores de arquitectura</td>
-        <td>Herramientas para emular arquitecturas de computadoras</td>
-        <td><a href="https://www.qemu.org/">QEMU: Emulador de sistemas</a></td>
-      </tr>
-      <tr>
-        <td>Entornos de arquitectura</td>
-        <td>Herramientas y entornos para desarrollar y depurar sistemas a nivel de arquitectura</td>
-        <td><a href="https://www.gnu.org/software/gdb/">GNU Debugger</a></td>
-      </tr>
-      <tr>
-        <td>Arquitectura de 16 bits</td>
-        <td>Características y uso de sistemas de 16 bits</td>
-        <td><a href="https://es.wikipedia.org/wiki/8086">Intel 8086: el procesador de 16 bits de Intel</a></td>
-      </tr>
-      <tr>
-        <td>Arquitectura de 32 bits</td>
-        <td>Características y uso de sistemas de 32 bits</td>
-        <td><a href="https://es.wikipedia.org/wiki/Intel_80386">Intel 80386: el procesador de 32 bits de Intel</a></td>
-      </tr>
-      <tr>
-        <td>Arquitectura de 64 bits</td>
-        <td>Características y uso de sistemas de 64 bits</td>
-        <td><a href="https://es.wikipedia.org/wiki/AMD64">AMD64: el procesador de 64 bits de AMD</a></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-				
-				
+
+			<div id="content2" class="animated">
+				<div class="container text-center">
+					<h1>VirtualBox: Plataforma de Virtualización</h1>
+					<p class="text-start">
+						VirtualBox es un software para virtualización, también conocido como hipervisor de tipo 2, que
+						se utiliza para virtualizar sistemas operativos dentro de nuestro ordenador existente, creando
+						lo que se conoce como máquina virtual. Un hipervisor de tipo 2 se diferencia de los de tipo 1 en
+						que necesita un sistema operativo para funcionar, a diferencia de los de tipo 1 en los que el
+						propio hipervisor funciona sobre el hardware, o máquina host.
+					</p>
+					<p>
+						Existen varios factores a tener en cuenta cuando necesitamos hacer uso de un hipervisor, pero
+						generalmente VirtualBox, y los hipervisores de tipo 2 en general, se usan cuando no necesitamos
+						destinar la máquina host por completo para realizar tareas de virtualización. Por ejemplo, a la
+						hora de probar software o simplemente confeccionar algunas de las guías que podemos encontrar
+						aquí en Geeknetic, podemos aislar el sistema operativo host del sistema operativo invitado.
+					</p>
+					<p>
+						VirtualBox, a diferencia de alternativas como VMWare, es gratuito, por lo que no es necesario
+						pagar una licencia para poder tener acceso a este hipervisor. Aun así, nos permite realizar
+						todas las tareas necesarias para mantener un entorno virtual, independientemente del uso que le
+						queramos dar.
+					</p>
+					<p>
+						Su compatibilidad se extiende a prácticamente todas las versiones de Windows, un gran número de
+						versiones de macOS y muchas distribuciones de Linux. También podremos encontrar perfiles para
+						sistemas menos comunes como Solaris, OS/2, DOS, QNX, Novell, BeOS y otros sistemas operativos
+						que queramos probar o utilizar sin tener que montar un equipo específicamente para ellos.
+					</p>
+					<p>
+						Si bien VirtualBox se suele ver como un producto orientado al usuario doméstico, la realidad es
+						que es capaz de competir con alternativas de pago a la hora de hacer funcionar servidores o
+						aplicaciones embebidas. Por lo tanto, en determinados casos, VirtualBox puede ser una muy buena
+						opción, especialmente si no necesitamos algunas funciones exclusivas de algunos de sus
+						competidores, entre los cuales encontramos VMWare, Microsoft Virtual PC o QEMU.
+					</p>
+				</div>
+
+				<div class="container text-center">
+					<h2 class="mt-5">Beneficios de VirtualBox:</h2>
+					<br>
+					<ul class="list-group">
+						<li class="list-group-item">Permite ejecutar múltiples sistemas operativos en un solo equipo
+							físico.</li>
+						<li class="list-group-item">Facilita el desarrollo y la prueba de software en diferentes
+							entornos sin afectar el sistema principal.</li>
+						<li class="list-group-item">Brinda aislamiento de recursos, lo que mejora la seguridad y la
+							estabilidad de los sistemas virtuales.</li>
+						<li class="list-group-item">Permite la migración y el clonado de máquinas virtuales para una
+							mayor flexibilidad y escalabilidad.</li>
+					</ul>
+
+					<h2 class="mt-5">Características de VirtualBox:</h2>
+					<ul class="list-group">
+						<li class="list-group-item">Compatibilidad con una amplia gama de sistemas operativos
+							anfitriones y huéspedes.</li>
+						<li class="list-group-item">Funcionalidades avanzadas, como instantáneas, redimensionamiento
+							dinámico de discos virtuales y gestión de redes.</li>
+						<li class="list-group-item">Soporte para extensiones y complementos que amplían las capacidades
+							de VirtualBox.</li>
+					</ul>
+
+					<h2 class="mt-5">Desventajas de VirtualBox:</h2>
+					<ul class="list-group">
+						<li class="list-group-item">El rendimiento de los sistemas virtuales puede ser inferior al de
+							las instalaciones nativas.</li>
+						<li class="list-group-item">Algunas características avanzadas pueden requerir ajustes de
+							configuración y conocimientos técnicos adicionales.</li>
+						<li class="list-group-item">La gestión de recursos puede ser compleja en entornos con múltiples
+							máquinas virtuales.</li>
+					</ul>
+				</div>
+
+				<div class="container text-center">
+					<h2 class="mt-5">Guía de Instalación de VirtualBox:</h2>
+					<ol class="list-group list-group-numbered">
+						<li class="list-group-item">
+							Descarga el instalador de VirtualBox desde el <a
+								href="https://www.virtualbox.org/wiki/Downloads">web oficial.</a>
+						</li>
+						<li class="list-group-item">
+							Ejecuta el archivo de instalación y sigue las instrucciones del asistente.
+						</li>
+						<li class="list-group-item">
+							Una vez instalado, abre VirtualBox y crea una nueva máquina virtual.
+						</li>
+						<li class="list-group-item">
+							Configura los detalles de la máquina virtual, como el sistema operativo y la cantidad de
+							memoria asignada.
+						</li>
+						<li class="list-group-item">
+							Finalmente, instala el sistema operativo en la máquina virtual siguiendo los pasos
+							habituales.
+						</li>
+					</ol>
+				</div>
+
+				<div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/YFlowDwE-1E"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen="" style="margin-left: 125px;"></iframe>
+				</div>
 			</div>
-			<div id="content5" class="animated">
-				<div class="container">
-  <h2>Visualización, Emuladores y entornos de arquitectura</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-        <th>Imagen</th>
-        <th>Recursos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Compiladores</td>
-        <td>Programa que traduce el código fuente a código objeto</td>
-        <td><img src="ruta/a/imagen1.jpg"></td>
-        <td><a href="ruta/a/recursos1.pdf">Recursos</a></td>
-      </tr>
-      <tr>
-        <td>Estructura de un programa en ensamblador</td>
-        <td>Organización básica de un programa en lenguaje ensamblador</td>
-        <td><img src="ruta/a/imagen2.jpg"></td>
-        <td><a href="ruta/a/recursos2.pdf">Recursos</a></td>
-      </tr>
-      <tr>
-        <td>Código simbólico</td>
-        <td>Representación simbólica de un programa en ensamblador</td>
-        <td><img src="ruta/a/imagen3.jpg"></td>
-        <td><a href="ruta/a/recursos3.pdf">Recursos</a></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-				
-				
-							</div>
 		</div>
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
 
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
