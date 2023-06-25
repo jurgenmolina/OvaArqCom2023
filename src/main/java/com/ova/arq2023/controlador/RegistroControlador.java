@@ -27,6 +27,7 @@ public class RegistroControlador {
 
 
     @GetMapping("/")
+<<<<<<< HEAD
     public String verPaginaDeInicio(Model model, Principal principal) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
@@ -48,3 +49,35 @@ public class RegistroControlador {
     
     
 }
+=======
+    public String verPaginaDeInicio(Model modelo) {
+        try {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Usuario usuario = usuarioServicio.SelectUsuario(auth.getName());
+        modelo.addAttribute("usuario", usuario);
+        return "index";
+        } catch (Exception e) {
+			System.out.println("Error al cargar la página de inicio: " + e.getMessage());
+			return "redirect:/";
+		}
+    }
+
+    @GetMapping("/loginSuccess")
+    public String loginSuccess() {
+        return "redirect:/";
+    }
+
+    @GetMapping("/loginFailure")
+    public String loginFailure() {
+        return "loginFailure";
+    }
+
+    @GetMapping("/CourierPrime-Regular.ttf")
+    public String error() {
+        return "redirect:/";
+    }
+
+
+    
+}
+>>>>>>> f1906f4b1a364b9a52dfe23b0fc86d43a75b62a2
