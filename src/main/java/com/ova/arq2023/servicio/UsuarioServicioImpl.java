@@ -125,9 +125,9 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     @Override
     public Usuario SelectUsuario(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'SelectUsuario'");
+        return usuarioRepositorio.findByEmail(email);
     }
+
 
 
 	

@@ -8,6 +8,5 @@ import com.ova.arq2023.modelo.ResultadoExamen;
 @Repository
 public interface ResultadoExamenRepositorio extends JpaRepository<ResultadoExamen, Long>{
 
-    public ResultadoExamen findByEmail(String email);
     
 }

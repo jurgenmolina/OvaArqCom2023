@@ -19,7 +19,7 @@ import com.ova.arq2023.servicio.UsuarioServicio;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+    @Autowired 
     private UsuarioServicio usuarioServicio;
 
     @Autowired
@@ -48,8 +48,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProviderUsuario());
-        auth.authenticationProvider(authenticationProviderAdmin());
+        auth.userDetailsService(usuarioServicio).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(adminServicio).passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -60,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/js/**",
                         "/css/**",
                         "/img/**").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN") // Requiere el rol "ADMIN" para acceder a las rutas /admin/**
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

@@ -43,28 +43,6 @@
 					}
 				</style>
 
-<<<<<<< HEAD
-	<main class="mt-5 pt-3">
-		<div class="container-fluid py-5 bg-light">
-			<div class="row">
-				<div class="col-md-6">
-					<h1 class="display-4">¡Bienvenido!</h1>
-					<h2>
-						<span sec:authentication="principal.username"></span>
-					</h2>
-					<!-- <h2>Tu rol es: <span sec:authentication="principal.authorities"></span></h2> -->
-					<p class="lead">Explora nuestra OVA de AC para aprender sobre
-						los fundamentos de la arquitectura de sistemas informáticos.
-						Aprovecha esta oportunidad de estudio interactiva y descubre cómo
-						funciona la estructura interna de los ordenadores. ¡Empieza a
-						explorar hoy mismo!"</p>
-					<a href="#" class="btn btn-danger">Más información</a>
-				</div>
-				<div class="col-md-6">
-					<img src="https://picsum.photos/600/400" class="img-fluid rounded" alt="Imagen de bienvenida">
-				</div>
-			</div>
-=======
 				<span class="binary-style" style="font-family: 'Courier New', monospace; letter-spacing: 2px;"
 					th:text="${#strings.substring(usuario.nombre, 0, 1).toUpperCase() + #strings.substring(usuario.nombre, 1).toLowerCase()}"></span>
 				<span class="binary-style" style="font-family: 'Courier New', monospace; letter-spacing: 2px;"
@@ -79,7 +57,6 @@
 					Aprovecha esta oportunidad de estudio interactiva y descubre cómo
 					funciona la estructura interna de los ordenadores. ¡Empieza a
 					explorar hoy mismo!"</b></p>
->>>>>>> 3fe37dc6f9894709fc1c2387b7f051cc33ed765d
 		</div>
 	</div>
 	<div class="header">

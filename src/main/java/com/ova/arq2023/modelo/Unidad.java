@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,6 +22,11 @@ public class Unidad {
     
     @OneToMany(mappedBy = "unidad", cascade = CascadeType.ALL)
     private List<Tema> temas = new ArrayList<>();
+    
+    @ManyToOne
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
+
     
     // Constructor, getters y setters
 }

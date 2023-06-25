@@ -8,6 +8,6 @@ import com.ova.arq2023.modelo.Examen;
 @Repository
 public interface ExamenRepositorio extends JpaRepository<Examen, Long>{
 
-	public Examen findByEmail(String email);
+	
 	
 }

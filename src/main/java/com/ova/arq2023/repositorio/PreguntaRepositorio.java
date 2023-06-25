@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ova.arq2023.modelo.Pregunta;
 
 @Repository
-public interface PreguntaRepositorio extends JpaRepository <PreguntaRepositorio, Long>{
-
-    Pregunta save(Pregunta pregunta);
-
+public interface PreguntaRepositorio extends JpaRepository <Pregunta, Long>{
     
 }

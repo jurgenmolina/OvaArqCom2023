@@ -26,5 +26,6 @@ public class Curso {
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Unidad> unidades;
     
+
     // getters y setters
 }
