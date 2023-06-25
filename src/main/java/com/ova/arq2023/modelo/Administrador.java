@@ -36,7 +36,7 @@ public class Administrador {
 
     @Column(name = "password")
     private String password;
-
+/*
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "administrador_rol",
@@ -44,7 +44,7 @@ public class Administrador {
             inverseJoinColumns = @JoinColumn(name = "rol_id")
     )
     private Set<Rol> roles;
-
+*/
 	public Long getId() {
 		return id;
 	}
@@ -85,13 +85,7 @@ public class Administrador {
 		this.password = password;
 	}
 
-	public Set<Rol> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Rol> roles) {
-		this.roles = roles;
-	}
+	
 
 	
 

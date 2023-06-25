@@ -15,6 +15,10 @@ import com.ova.arq2023.modelo.Notificacion;
 import com.ova.arq2023.modelo.Pregunta;
 import com.ova.arq2023.modelo.Tema;
 import com.ova.arq2023.modelo.Unidad;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import com.ova.arq2023.modelo.Administrador;
 import com.ova.arq2023.repositorio.AdminRepositorio;
 import com.ova.arq2023.repositorio.ExamenRepositorio;
@@ -24,6 +28,7 @@ import com.ova.arq2023.repositorio.TemaRepositorio;
 import com.ova.arq2023.repositorio.UnidadRepositorio;
 
 @Service
+@Transactional
 public class AdministradorServicio implements UserDetailsService {
     
     @Autowired
@@ -83,4 +88,15 @@ public class AdministradorServicio implements UserDetailsService {
     public Notificacion crearNotificacion(Notificacion notificacion) {
         return notificacionRepositorio.save(notificacion);
     }
+
+
+    public List<Unidad> obtenerUnidades() {
+        return unidadRepositorio.findAll();
+    }
+
+    public Unidad obtenerUnidad(Long unidadId) {
+        return unidadRepositorio.findById(unidadId).orElse(null);
+    }
+
+	
 }

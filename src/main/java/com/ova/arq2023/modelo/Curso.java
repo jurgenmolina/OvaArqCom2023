@@ -22,10 +22,10 @@ public class Curso {
 
     @Column(name = "nombre")
     private String nombre;
-
+/*
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Unidad> unidades;
-    
+    */
 
     // getters y setters
 }

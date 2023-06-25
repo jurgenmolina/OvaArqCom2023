@@ -2,15 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Panel de Administrador</title>
+    <title>Crear Unidad</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Panel de Administrador</h1>
+        <h1 class="text-center">Crear Unidad</h1>
 
-        <h2 class="mt-5">Crear Unidad</h2>
         <form action="/admin/crearUnidad" method="post" th:object="${unidadForm}">
             <div class="form-group">
                 <label for="unidadTitulo">Título de la Unidad:</label>
@@ -22,37 +21,10 @@
             </div>
             <button type="submit" class="btn btn-primary">Crear Unidad</button>
         </form>
-
-        <h2 class="mt-5">Unidades existentes</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Título</th>
-                    <th>Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="unidad : ${unidades}">
-                    <td th:text="${unidad.id}"></td>
-                    <td th:text="${unidad.titulo}"></td>
-                    <td th:text="${unidad.descripcion}"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div th:if="${mensaje}">
-            <p th:text="${mensaje}" class="text-success"></p>
-        </div>
         
         <div th:if="${error}">
             <p th:text="${error}" class="text-danger"></p>
-            
         </div>
-        
-        <form action="/logout" method="post">
-            <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
-        </form>
     </div>
 </body>
 

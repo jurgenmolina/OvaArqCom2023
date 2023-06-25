@@ -7,7 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 public class Tema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +23,8 @@ public class Tema {
     @ManyToOne
     @JoinColumn(name = "unidad_id")
     private Unidad unidad;
+
+	
     
     // Constructor, getters y setters
 }

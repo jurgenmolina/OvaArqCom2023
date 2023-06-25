@@ -9,5 +9,9 @@ import com.ova.arq2023.modelo.Usuario;
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 
 	public Usuario findByEmail(String email);
+
+	public Usuario findByNombre(String nombre);
+
+	
 	
 }

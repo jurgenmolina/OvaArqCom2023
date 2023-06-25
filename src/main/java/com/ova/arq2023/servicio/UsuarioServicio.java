@@ -25,5 +25,7 @@ public interface UsuarioServicio extends UserDetailsService{
     public List<Notificacion> obtenerNotificaciones();
 
 	public Usuario SelectUsuario(String email);
+
+	public Usuario obtenerUsuarioActual();
 	
 }

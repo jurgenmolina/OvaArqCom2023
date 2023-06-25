@@ -149,6 +149,17 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         return usuarioRepositorio.findByEmail(email);
     }
 
+    @Override
+    public Usuario obtenerUsuarioActual() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+            String nombre = authentication.getName();
+            return usuarioRepositorio.findByNombre(nombre);
+        }
+        return null;
+    }
+
+
 
 
 	

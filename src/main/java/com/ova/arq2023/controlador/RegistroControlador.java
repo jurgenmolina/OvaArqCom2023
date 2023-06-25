@@ -1,5 +1,6 @@
 package com.ova.arq2023.controlador;
 
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +14,9 @@ import com.ova.arq2023.servicio.UsuarioServicio;
 @Controller
 public class RegistroControlador {
 
+	 
+	
+	
     @Autowired
     private UsuarioServicio usuarioServicio;
 
@@ -21,17 +25,18 @@ public class RegistroControlador {
         return "login";
     }
 
+
     @GetMapping("/")
-    public String verPaginaDeInicio(Model modelo) {
+    public String verPaginaDeInicio(Model model, Principal principal) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated()) {
-            String username = authentication.getName();
+            String username = principal.getName();
             Usuario usuario = usuarioServicio.SelectUsuario(username);
             if (usuario != null && usuario.isAdmin()) {
-                modelo.addAttribute("usuario", usuario);
-                return "admin/admin-dashboard";
+                return "redirect:/admin/admin-dashboard";
             } else {
-                modelo.addAttribute("error", "No tienes permisos de administrador");
+                model.addAttribute("usuario", usuario);
+                // Aquí puedes cargar los quices y pasarlos al modelo para mostrarlos en la vist
                 return "index";
             }
         } else {
@@ -39,17 +44,7 @@ public class RegistroControlador {
         }
     }
 
-
-
-
-    @GetMapping("/loginSuccess")
-    public String loginSuccess() {
-        return "redirect:/";
-    }
-
-    @GetMapping("/loginFailure")
-    public String loginFailure() {
-        return "loginFailure";
-    }
+    
+    
+    
 }
-

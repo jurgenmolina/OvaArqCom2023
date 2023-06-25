@@ -9,7 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 public class Notificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +26,8 @@ public class Notificacion {
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
+
+	
     
     // Constructor, getters y setters
 }
