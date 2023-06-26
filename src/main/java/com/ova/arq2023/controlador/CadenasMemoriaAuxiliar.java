@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CadenasMemoriaAuxiliar{
 
-    @GetMapping("/cadenas-y-memoria-auxiliar")
+    @GetMapping("/unidad-siete")
 	public String Inicio() {
-		return "cadenas-y-memoria-auxiliar";
+		return "unidad-siete";
 	}
     
 }

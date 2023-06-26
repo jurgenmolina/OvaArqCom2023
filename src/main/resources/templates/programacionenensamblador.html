@@ -1,321 +1,742 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-<meta charset="utf-8">
+	<meta charset="utf-8">
+	<script>
+		function mostrarAlerta() {
+		  alert("Se han registrado tus resultados");
+		}
+	  </script>
+	<style>
+		.my-paragraph {
+			margin-bottom: 20px;
+		}
+	</style>
+
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+				aria-controls="offcanvasExample">
+				<span class="navbar-toggler-icon icon-bar" data-bs-target="#sidebar"></span>
+			</button>
+			<a class="navbar-brand me-auto ms-lg-0 ms-3 text-white fw-bold" href="/">Ova Arquitectura de
+				Computadores</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar"
+				aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="topNavBar">
 
+				<div class="d-flex ms-auto my-3 my-lg-0">
+					<a class="navbar-brand"></a>
+				</div>
 
-	
+				<ul class="navbar-nav ">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle ms-2 text-white" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-person-fill"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+							<li><a class="dropdown-item" href="#">Sobre la app</a></li>
+							<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
 	<section th:fragment="section">
 		<!-- top navigation bar -->
 		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
+			style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
-						<li><a class="nav-link px-3 sidebar-link"
-							data-bs-toggle="collapse" href="#layouts2"> <span
-								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
-								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
-								class="ms-auto"> <span class="right-icon"> <i
-										class="bi bi-chevron-down text-dark"></i>
+						<li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span
+									class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+									class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
+									<span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
+									</span>
 								</span>
-							</span>
-						</a>
+							</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
-									<li><a th:href="@{/programaciónenensamblador}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
 										<div class="sidebar">
 											<ul>
 												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)">Entornos de desarrollo</a></li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)">Generación de fuentes, ensamblado y desensamblado
-													</a></li>
+														onclick="showContent(this)" id="primerEnlace">
+														Lenguaje Ensamblador</a></li>
+												<li><a href="javascript:void(0)" data-content="content2"
+														onclick="showContent(this)">Conjuntos enunciados</a></li>
 												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">Compilación, enlazamiento y archivos ejecutables
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">Depuración de ejecutables en memoria
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content5"
-													onclick="showContent(this)">Comandos básicos, recorrido de la memoria y procesador
-													</a></li>
+														onclick="showContent(this)">Definicion de Variables en
+														ensamblador</a></li>
+												<li><a href="javascript:void(0)" data-content="content4"
+														onclick="showContent(this)">Operaciones aritmeticas</a></li>
+												<li><a href="javascript:void(0)" data-content="content5"
+														onclick="showContent(this)">Cuestionario</a></li>
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
 							</div>
-							
-							</li>
+						</li>
 					</ul>
-
-
 					<div>
-						<a href="#" class="nav-link px-3 text-secondary"><span
-							class="me-2"><i class="bi bi-table"></i></span> <span
-							class="fw-bold">Calendario</span> </a>
+						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
+									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
 					</div>
-
 				</nav>
 			</div>
 		</div>
 	</section>
-	<style>
-.section-container {
-	margin-top: 60px;
-}
 
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
+	<main class="main-container mb-5">
 
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Programacion en Ensamblador</h1>
+		<div class="row justify-content-between">
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/virtualización-emuladores-y-entornosdearquitectura">Atras</a>
+			</div>
+			<div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
+				<h2 class="text-center">Ensamblador</h2>
+			</div>
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/condicionales-saltos-e-instrucciones-repetitivas">Siguiente</a>
+			</div>
+		</div>
+
 		<div class="content">
+
 			<div id="content1" class="animated">
-				<div>
-		<h2>Introducción a la programación en ensamblador</h2>
-		<h3>Unidad: Entornos de desarrollo</h3>
-		<p>En la programación de sistemas y software de bajo nivel, la programación en ensamblador es esencial para entender cómo funcionan las instrucciones de la CPU. A continuación, se presenta un resumen de los temas de esta unidad y algunos recursos útiles:</p>
-		<table>
-			<tr>
-				<th>Tema</th>
-				<th>Descripción</th>
-				<th>Recursos</th>
-			</tr>
-			<tr>
-				<td>Introducción a la programación en ensamblador</td>
-				<td>Definición de ensamblador y su importancia en la programación de sistemas y software de bajo nivel</td>
-				<td><a href="https://es.wikipedia.org/wiki/Lenguaje_ensamblador" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Entornos de desarrollo para programación en ensamblador</td>
-				<td>Descripción de los entornos de desarrollo más populares para programar en ensamblador</td>
-				<td><a href="https://www.ghidra-sre.org/" target="_blank">Ghidra</a>, <a href="https://visualstudio.microsoft.com/es/downloads/" target="_blank">Visual Studio</a></td>
-			</tr>
-			<tr>
-				<td>Tipos de datos en ensamblador</td>
-				<td>Tipos de datos y su representación en ensamblador</td>
-				<td><a href="https://es.wikipedia.org/wiki/Tipos_de_datos" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Instrucciones básicas en ensamblador</td>
-				<td>Descripción de las instrucciones básicas en ensamblador, como carga de datos, almacenamiento y operaciones aritméticas</td>
-				<td><a href="https://www.cs.cmu.edu/~fp/courses/15122-f10/lectures/06-instructions.pdf" target="_blank">Carnegie Mellon University</a></td>
-			</tr>
-		</table>
-	</div>
+				<div class="container">
+					<p class="text-start">
+						<b>Lenguaje Ensamblador:</b>
+					</p>
+					<p>Para objetivo de este curso se toma como referencia el siguiente libro:</p>
+
+					<div class="container text-center" style="margin-left: 40%;">
+						<a href="https://virushatake.files.wordpress.com/2010/10/peterabel.pdf" target="_blank">
+							<img src="https://i.ibb.co/Px8LTSz/lenguaje-ensamblador-y-programacion-para-pc-ibm-y-compatibles-peter-abel-a98b966bf39070e385052cbcdf8.jpg"
+								alt="Virtualizacion" class="img-fluid"
+								style="width: 250px; height: 250px; margin: auto;">
+						</a>
+
+					</div>
+
+					<div class="container">
+						<div class="text-center">
+							<p class="my-paragraph">El lenguaje ensamblador, también conocido como assembly, es un
+								lenguaje de programación de bajo nivel que se utiliza para escribir programas que se
+								ejecutan directamente en un procesador o en un microcontrolador. A diferencia de los
+								lenguajes de programación de alto nivel como C++ o Python, el lenguaje ensamblador se
+								encuentra más cerca del lenguaje máquina y proporciona una representación legible por
+								humanos de las instrucciones y operaciones que comprende el hardware de la computadora.
+							</p>
+							<p class="my-paragraph">En el lenguaje ensamblador, cada instrucción representa una
+								operación específica que el procesador puede realizar, como cargar un valor en un
+								registro, realizar una operación matemática o transferir datos entre la memoria y los
+								registros. Estas instrucciones se escriben utilizando mnemónicos, que son abreviaturas o
+								palabras clave que representan las operaciones.
+							</p>
+							<p class="my-paragraph">Una característica importante del lenguaje ensamblador es que cada
+								instrucción generalmente se traduce en una instrucción de lenguaje máquina específica
+								que el procesador puede ejecutar directamente. Por lo tanto, el lenguaje ensamblador
+								proporciona un mayor control sobre el hardware y permite una programación muy eficiente.
+							</p>
+
+							<p class="my-paragraph">Sin embargo, el lenguaje ensamblador también es más complejo y menos
+								portátil que los lenguajes de programación de alto nivel. Dado que el lenguaje
+								ensamblador está fuertemente vinculado al hardware específico de una computadora, los
+								programas escritos en ensamblador suelen ser específicos para una arquitectura de
+								procesador particular y pueden no ser fácilmente transferibles a otros sistemas.</p>
+
+							<hr class="red-hr">
+						</div>
+					</div>
+				</div>
+
+
 			</div>
 			<div id="content2" class="animated">
-				<div class="container my-5">
-  <h2 class="text-center">Introducción a la programación en ensamblador</h2>
-  <h3 class="my-4">Unidad: Generación de fuentes, ensamblado y desensamblado</h3>
-  <div class="row">
-    <div class="col-md-6">
-      <h4 class="text-center">Temas</h4>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Introducción al ensamblador</li>
-        <li class="list-group-item">Generación de fuentes</li>
-        <li class="list-group-item">Proceso de ensamblado</li>
-        <li class="list-group-item">Desensamblado de código</li>
-        <li class="list-group-item">Uso de registros y memoria</li>
-        <li class="list-group-item">Directivas de ensamblado</li>
-        <li class="list-group-item">Instrucciones de ensamblado</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h4 class="text-center">Recursos</h4>
-      <div class="card">
-        <img src="ensamblador.jpg" class="card-img-top" alt="Imagen de ensamblador">
-        <div class="card-body">
-          <h5 class="card-title">Curso de programación en ensamblador</h5>
-          <p class="card-text">Este curso ofrece una introducción completa al ensamblador, incluyendo la generación de fuentes y el proceso de ensamblado.</p>
-          <a href="#" class="btn btn-danger">Ir al curso</a>
-        </div>
-      </div>
-      <div class="card my-4">
-        <img src="registro.jpg" class="card-img-top" alt="Imagen de registro">
-        <div class="card-body">
-          <h5 class="card-title">Uso de registros en ensamblador</h5>
-          <p class="card-text">Este artículo detalla el uso de registros y memoria en ensamblador.</p>
-          <a href="#" class="btn btn-danger">Leer artículo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> 
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>I. Comentarios en Ensamblador:</strong> Se realizan al final de cada l&iacute;nea
+					comenzando
+					por el ;
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplo:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					; esto es un ejemplo</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					ADD AX,BX ; guardo en AX la suma de los valores de los dos registros AX y BX.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>II. Palabras reservadas:</strong> Como todo lenguaje el ensamblador posee sus palabras
+					reservadas,
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					las cuales son de uso exclusivo de &eacute;l. Nunca pueden ser utilizadas en la
+					programaci&oacute;n.
+					Las</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					categor&iacute;as de las palabras reservadas son:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; Instrucciones: MOV , ADD , Etc. &ldquo;Operaciones a realizar&rdquo;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; Directivas: SEGMENT, PROC, Etc. &ldquo;utilizadas para proporcionar comandos en
+					ASM&rdquo;
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; Operadores: FAR, SIZE , DUP , SEG , Etc. &ldquo;Se utilizan en expresiones&rdquo;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; S&iacute;mbolos predefinidos: @Data , @Model , Etc. &ldquo;regresan informaci&oacute;n al
+					programa&rdquo;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>III. Identificadores:</strong> Son los nombres que se escogen para darle a elementos
+					dentro
+					del
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					programa.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					En ensamblador se manejan dos tipos de identificadores:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>1.Nombre:</strong> Utilizado para referirse a la direcci&oacute;n de elemento de dato.
+					(Elemento o Directiva)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>2.Etiqueta:</strong> Utilizado para referirse a la direcci&oacute;n de una
+					instrucci&oacute;n. (Instrucci&oacute;n)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Caracteres utilizados para los identificadores:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; Letras de a-z o A-Z para el no hay diferencias entre may&uacute;sculas y
+					min&uacute;sculas.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; N&uacute;meros del 0 al 9 pero no pueden empezar por este d&iacute;gito.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&bull; Caracteres especiales como: ?, _ , $ , @ y . &ldquo;Este . no puede ser el 1
+					car&aacute;cter
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					El tama&ntilde;o m&aacute;ximo es de 31 caracteres.<br>&nbsp;<br><strong>IV.
+						Instrucciones:</strong>
+					Es un conjunto de enunciados que conforman un programa en</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					ensamblador.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Existen dos tipos de enunciados:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					a) Instrucciones las cuales se pasan a c&oacute;digo objeto.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					MOV , ADD , SUB , etc</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					b) Directivas las cuales realizan una funci&oacute;n especifica como inicializar un elemento de
+					dato.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					.DATA .CODE etc</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Formato general de un enunciado: Los que est&aacute;n en <strong>[ ]</strong> son opcionales.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:70.8pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<br>&nbsp;<br>&nbsp;[ Identificador ] Operaci&oacute;n [ Operando(s) ] [ ; Comentarios ]
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:70.8pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplos: COUNT DB 1 ; Elemento nombre count</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MOV AX,BX ; Sume AX con BX
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp;
+					&nbsp; &nbsp; RET ; Regresar<br>&nbsp;<br><strong>V. Directivas:</strong> Solo act&uacute;an
+					durante
+					el ensamblado de un programa y no generan c&oacute;digo</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					ejecutable de m&aacute;quina.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>PAGE</strong>: Designa el n&uacute;mero m&aacute;ximo de l&iacute;neas para listar en
+					una
+					p&aacute;gina y el n&uacute;mero m&aacute;ximo de
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					caracteres en una l&iacute;nea. Sus valores por defecto son de 50,80. El n&uacute;mero
+					m&aacute;ximo
+					de l&iacute;neas</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					por p&aacute;gina es de 255 y de caracteres por l&iacute;nea es de 132.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Sintaxis: PAGE [ Longitud ] , [ Ancho ]</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Nota: PAGE solo dentro del ensamblador hace que el programa salte a la siguiente p&aacute;gina a
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					partir de encontrar esta directiva y no realizando las instrucciones que segu&iacute;an
+					despu&eacute;s de &eacute;l.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>TITLE</strong>: Es el t&iacute;tulo para el programa.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Sintaxis: TITLE [ Nombre del programa ]</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>SEGMENT</strong>: Es la directiva en la cual se definen los diferentes segmentos de
+					ensamblador.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Todo segmento finaliza con la directiva ENDS. &ldquo;C/U segmentos es de un m&aacute;ximo de
+					64K&rdquo;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Sintaxis:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:70.8pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					[Nombre] SEGMENT [ Alineaci&oacute;n ] [ Combinar ] [ ́Clase ́ ]</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:70.8pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:70.8pt;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Por lo general los segmentos que mas se manejan son los de datos, pila y c&oacute;digo.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Nombre: Indica el nombre al segmento, puede ser cualquier nombre en particular, por lo</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					general se manejan los utilizados por ensamblador como lo son:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					STACKSG DATASG CODESG</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Alineaci&oacute;n: Indica el limite donde inicia el segmento por lo general se deja PARA, debido
+					a
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					que &eacute;l reconoce el limite de p&aacute;rrafo donde iniciara el segmento, pero puede ser:
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>BYTE</strong>: Siguiente direcci&oacute;n
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>WORD:</strong> Siguiente direcci&oacute;n par (divisible entre 2)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>DWORD:</strong> Siguiente direcci&oacute;n de palabra doble (divisible entre 4)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>PARA:</strong> Siguiente p&aacute;rrafo (Divisible entre 10H &oacute;sea 16)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>PAGE:</strong> Siguiente direcci&oacute;n de p&aacute;gina (Divisible entre 100H
+					&oacute;sea
+					256)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Combinar: Indica si el segmento se combina con otros segmentos, indicando la manera en</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					que el enlazador maneja el segmento. Los valores que puede tomar son:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>STACK&nbsp;</strong>(Utilizado para enlazar con el segmento de pila)
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>PUBLIC</strong>
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>COMMON</strong>
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>&nbsp;</strong>
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Clase: Ayuda al enlazador a asociar segmentos con diferentes nombres, identificar segmentos</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					y controlar su orden. Se utilizan para agrupar segmentos cuando se enlazan, se encierran</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					entre ap&oacute;strofes.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<em>&nbsp;́Code ́</em> para el segmento de c&oacute;digo.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<em>&nbsp;́Data ́</em> para el segmento de datos.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<em>&nbsp;́Stack ́</em> para el segmento de pila.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplo:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Inisegmento SEGMENT PARA</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					....</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					....</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Inisegmento ENDS</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>PROC</strong>: Es la que define los procedimientos a seguir, por lo general esta dentro
+					del
+					segmento
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					de c&oacute;digo. Todo procedimiento debe tener un nombre y cumplir con dichas normas. Todo</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					procedimiento finaliza con la directiva ENDP. Para un programa .exe el PROC principal que es</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					el punto de entrada debe ser FAR.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplo:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					procUno PROC FAR (FAR indica al DOS la primera instrucci&oacute;n a ejecutar.)</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					...</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					...</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					procUno ENDP</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Mas adelante veremos llamadas a procedimientos cercanos (Near) o lejanos (Far) con CALL</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>ASSUME</strong>: Es la directiva que define cada uno de los segmentos con los nombres
+					colocados a
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					cada uno de los segmentos para su funcionamiento dentro del programa. Realiza la
+					asociaci&oacute;n
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					de nombres con los segmentos.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplo:</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					ASSUME SS:SegPila , CS: SegCodigo , DS: SegDatos , ES: SegExtra , FS:NOTHING.</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Se puede omitir</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					&nbsp;</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					<strong>END</strong>: Directiva que finaliza todo el programa realizado en ensamblador.
+				</p>
+				<p
+					style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+					Ejemplo: END BEGIN finaliza programa y vuelve el control al procedimiento llamado BEGIN.</p>
+				<p><strong><span
+							style='font-size:15px;line-height:107%;font-family:"Calibri",sans-serif;'>EQU</span></strong><span
+						style='font-size:15px;line-height:107%;font-family:"Calibri",sans-serif;'>: No define
+						elementos
+						de datos, solo redefine. Es utilizada para</span></p>
 			</div>
+
+
 			<div id="content3" class="animated">
-				<div class="container mt-3">
-  <h2>Introducción a la programación en ensamblador</h2>
-  <h3>Unidad: Compilación, enlazamiento y archivos ejecutables</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-        <th>Recursos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Compilación y enlazamiento</td>
-        <td>Explicación del proceso de compilación y enlazamiento de programas escritos en lenguaje ensamblador</td>
-        <td>
-          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
-          <br>
-          <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=concepts-link-editing">IBM Knowledge Center</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Archivos ejecutables</td>
-        <td>Descripción de los archivos ejecutables y cómo se ejecutan programas escritos en lenguaje ensamblador</td>
-        <td>
-          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
-          <br>
-          <a href="https://www.gnu.org/software/binutils/">GNU Binutils</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-				
-			</div>
-			<div id="content4" class="animated">
-				<div class="container mt-5">
-  <h2>Introducción a la programación en ensamblador</h2>
-  <h3>Unidad: Depuración de ejecutables en memoria</h3>
-  <p>En esta unidad se aborda el proceso de depuración de ejecutables en memoria y se enseña a utilizar herramientas como <strong>gdb</strong> para identificar y corregir errores en programas escritos en ensamblador.</p>
-  <h4>Temas de la unidad</h4>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Depuración en ensamblador</td>
-        <td>Introducción a las técnicas y herramientas de depuración de programas escritos en ensamblador</td>
-      </tr>
-      <tr>
-        <td>Uso de gdb</td>
-        <td>Uso de la herramienta gdb para depurar programas en ensamblador</td>
-      </tr>
-      <tr>
-        <td>Identificación de errores</td>
-        <td>Identificación de errores comunes en programas en ensamblador y cómo corregirlos</td>
-      </tr>
-    </tbody>
-  </table>
-  <h4>Recursos recomendados</h4>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <img src="imagen1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Debugging with GDB</h5>
-          <p class="card-text">Libro sobre el uso de gdb para depurar programas en C y ensamblador</p>
-          <a href="#" class="btn btn-danger">Ver recurso</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-        <img src="imagen2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">GDB Tutorial</h5>
-          <p class="card-text">Tutorial en línea sobre el uso de gdb para depurar programas en ensamblador</p>
-          <a href="#" class="btn btn-danger">Ver recurso</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+				<body>
+					<h1>Declaración de Variables en Ensamblador</h1>
+
+					<h2>Ensamblador x86 (NASM):</h2>
+					<pre>
+						SECTION .data
+							variable_entero  dd  42         ; Variable entera de 32 bits inicializada a 42
+							variable_cadena  db  'Hola', 0  ; Variable cadena terminada en cero
+						</pre>
+
+					<h2>Ensamblador ARM (GNU Assembler):</h2>
+					<pre>
+						.data
+							variable_entero:    .word  42          ; Variable entera de 32 bits inicializada a 42
+							variable_cadena:    .asciz "Hola"      ; Variable cadena terminada en cero
+						</pre>
+
+
+					<hr>
+
+
+
+					<h1>Tipos de Variables en Ensamblador</h1>
+
+					<h2>Variables Enteras:</h2>
+					<ul>
+						<li>Byte: Un solo byte de datos (8 bits)</li>
+						<li>Word: Dos bytes de datos (16 bits)</li>
+						<li>Double Word: Cuatro bytes de datos (32 bits)</li>
+						<li>Quad Word: Ocho bytes de datos (64 bits)</li>
+					</ul>
+
+					<h2>Variables de Punto Flotante:</h2>
+					<ul>
+						<li>Single: Representación de punto flotante de precisión simple (32 bits)</li>
+						<li>Double: Representación de punto flotante de precisión doble (64 bits)</li>
+					</ul>
+
+					<h2>Variables Cadenas:</h2>
+					<ul>
+						<li>String: Una secuencia de caracteres almacenada en la memoria</li>
+					</ul>
+
+					<h2>Variables de Banderas/Flags:</h2>
+					<ul>
+						<li>Flags: Variables especiales utilizadas para indicar ciertas condiciones o resultados de
+							operaciones lógicas y aritméticas</li>
+					</ul>
+
+					<hr>
+
+
+
+
 
 			</div>
+
+			<div id="content4" class="animated">
+				<div class="container">
+					<h1 class="mt-5">Operaciones Aritméticas en Ensamblador</h1>
+					<div>
+						<h2 class="mt-5">Suma:</h2>
+						<pre>
+					  mov eax, 10     ; Valor 1
+					  add eax, 20     ; Valor 2
+					  mov resultado, eax  ; Almacenar el resultado en una variable llamada "resultado"
+					</pre>
+						<br>
+					</div>
+
+					<div>
+						<h2 class="mt-5">Resta:</h2>
+						<pre>
+					  mov eax, 30     ; Valor 1
+					  sub eax, 15     ; Valor 2
+					  mov resultado, eax  ; Almacenar el resultado en una variable llamada "resultado"
+					</pre>
+						<br>
+					</div>
+					<div>
+						<h2 class="mt-5">Multiplicación:</h2>
+						<pre>
+					  mov eax, 5      ; Valor 1
+					  mov ebx, 8      ; Valor 2
+					  imul eax, ebx   ; Multiplicar eax por ebx y almacenar el resultado en eax
+					  mov resultado, eax  ; Almacenar el resultado en una variable llamada "resultado"
+					</pre>
+					</div>
+					<br>
+					<div>
+						<h2 class="mt-5">División:</h2>
+						<pre>
+					  mov eax, 20     ; Dividendo
+					  mov ebx, 5      ; Divisor
+					  mov edx, 0      ; Limpiar edx (registro de residuo)
+					  div ebx         ; Realizar la división (cociente en eax, residuo en edx)
+					  mov cociente, eax   ; Almacenar el cociente en una variable llamada "cociente"
+					</pre>
+					</div>
+				</div>
+
+			</div>
+
+
 			<div id="content5" class="animated">
-				<div class="container my-5">
-	<h2 class="text-center">Comandos básicos, recorrido de la memoria y procesador</h2>
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>Temas</th>
-				<th>Descripción</th>
-				<th>Recursos</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Arquitectura del procesador</td>
-				<td>Conceptos básicos del procesador y su arquitectura</td>
-				<td><a href="https://es.wikipedia.org/wiki/Arquitectura_de_la_CPU" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Sistemas numéricos</td>
-				<td>Hexadecimal, Octal, Decimal y Binario</td>
-				<td><a href="https://www.ecured.cu/Sistemas_Numericos_(Inform%C3%A1tica)" target="_blank">EcuRed</a></td>
-			</tr>
-			<tr>
-				<td>Registros del procesador</td>
-				<td>Tipos de registros y su uso en el procesador</td>
-				<td><a href="https://www.monografias.com/trabajos97/registros-procesador/registros-procesador.shtml" target="_blank">Monografías</a></td>
-			</tr>
-			<tr>
-				<td>Memoria del procesador</td>
-				<td>Tipos de memoria y su uso en el procesador</td>
-				<td><a href="https://es.wikipedia.org/wiki/Memoria_computacional" target="_blank">Wikipedia</a></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+				<h1>Cuestionario de Ensamblador</h1>
+
+				<form action="#" onsubmit="mostrarAlerta()">
+					<h2>Comentarios en Ensamblador:</h2>
+					<label for="comentarios">¿Cuál es el símbolo utilizado para iniciar un comentario en
+						ensamblador?</label><br>
+					<select id="comentarios" name="comentarios" required>
+						<option value="">Selecciona una opción</option>
+						<option value="//">Doble barra (//)</option>
+						<option value=";/* */">Comillas y punto y coma (;/* */)</option>
+						<option value="#">Signo de almohadilla (#)</option>
+					</select><br><br>
+
+					<h2>Palabras Reservadas:</h2>
+					<label for="palabras_reservadas">Menciona tres palabras reservadas en ensamblador:</label><br>
+					<input type="text" id="palabras_reservadas" name="palabras_reservadas" required><br><br>
+
+					<h2>Identificadores:</h2>
+					<label for="identificadores">¿Cuáles son las reglas para nombrar identificadores en
+						ensamblador?</label><br>
+					<textarea id="identificadores" name="identificadores" required></textarea><br><br>
+
+					<h2>Instrucciones de Variables:</h2>
+					<label for="instrucciones_variables">Escribe una instrucción de ensamblador para reservar memoria
+						para una variable entera de 4 bytes:</label><br>
+					<input type="text" id="instrucciones_variables" name="instrucciones_variables" required><br><br>
+
+					<h2>Declaración de Variables:</h2>
+					<label for="declaracion_variables">¿Cuál es la directiva utilizada para declarar variables en
+						ensamblador NASM?</label><br>
+					<select id="declaracion_variables" name="declaracion_variables" required>
+						<option value="">Selecciona una opción</option>
+						<option value="DB">DB</option>
+						<option value="DW">DW</option>
+						<option value="DD">DD</option>
+						<option value="DQ">DQ</option>
+					</select><br><br>
+
+					<h2>Operaciones Aritméticas:</h2>
+					<label for="operaciones_aritmeticas">Escribe una operación aritmética en ensamblador que sume dos
+						valores y almacene el resultado en una variable:</label><br>
+					<input type="text" id="operaciones_aritmeticas" name="operaciones_aritmeticas" required><br><br>
+
+					<input type="submit" value="Enviar">
+				</form>
+
+				<script>
+					if (window.location.search.includes('submitted=true')) {
+						mostrarAlerta();
+					}
+				</script>
 
 			</div>
 		</div>
+
+
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
+
 	<footer th:replace="menu/menu :: footer"></footer>
 </body>
 
 </html>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

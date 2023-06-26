@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head th:replace="menu/menu :: head">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <header th:replace="menu/menu :: header"></header>
+
+
+
+
+        <section th:fragment="section">
+            <!-- top navigation bar -->
+            <!-- offcanvas -->
+            <div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+                 tabindex="-1" id="sidebar">
+                <div class="offcanvas-body p-0">
+                    <nav class="navbar-white">
+                        <ul class="navbar-nav">
+
+                            <li class="my-2">
+                                <!-- Espaciado	 -->
+                            </li>
+
+                            <li>
+                                <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                                    Navegación</div>
+                            </li>
+
+                            <!-- Menu gestionar Temática -->
+
+                            <li><a class="nav-link px-3 sidebar-link"
+                                   data-bs-toggle="collapse" href="#layouts2"> <span
+                                        class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+                                        class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+                                        class="ms-auto"> <span class="right-icon"> <i
+                                                class="bi bi-chevron-down text-dark"></i>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div class="collapse show" id="layouts2">
+                                    <ul class="navbar-nav ps-3 mt-3">
+                                        <li><a th:href="@{/cadenas-y-memoria-auxiliar}"
+                                               class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+                                            <div class="sidebar">
+                                                <ul>
+                                                    <li><a href="javascript:void(0)" data-content="content1"
+                                                           onclick="showContent(this)">Cadenas y Dispositivos de entrada y salida
+                                                        </a></li>
+                                                    <li><a  href="javascript:void(0)" data-content="content2"
+                                                            onclick="showContent(this)">Representación de números y ascii</a></li>
+                                                    <li><a href="javascript:void(0)" data-content="content3"
+                                                           onclick="showContent(this)">Buffers y memoria</a></li>
+                                                    <li><a href="javascript:void(0)" data-content="content4"
+                                                           onclick="showContent(this)">Dispositivos de almacenamiento auxiliar: Discos Duros, Unidades de estado sólido y Memorias auxiliares (USB)
+                                                        </a></li>
+                                                </ul>
+                                            </div></li>
+
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </ul>
+
+
+                        <div>
+                            <a href="#" class="nav-link px-3 text-secondary"><span
+                                    class="me-2"><i class="bi bi-table"></i></span> <span
+                                    class="fw-bold">Calendario</span> </a>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <style>
+
+            .section-container {
+                margin-top: 60px;
+            }
+
+            .main-container {
+                padding-top: 100px;
+                margin-left: 300px;
+            }
+        </style>
+
+        <main class="main-container  ">
+            <!-- DESARROLLA EL OVA AQUI -->
+            <h1>Cadenas y memorias</h1>	
+            <div class="content">
+                <div id="content1" class="animated">
+                    <h2>Cadenas y Dispositivos de entrada y salida</h2>
+                    <p>Las cadenas son secuencias de caracteres utilizadas 
+                        en programación para representar texto. En el contexto
+                        de la informática, los dispositivos de entrada y
+                        salida son componentes del sistema informático que 
+                        permiten la interacción con el usuario y la transferencia de 
+                        datos hacia y desde el sistema.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operación</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MOV</td>
+                                <td>Mueve una cadena de un lugar a otro</td>
+                            </tr>
+                            <tr>
+                                <td>CMP</td>
+                                <td>Compara dos cadenas</td>
+                            </tr>
+                            <tr>
+                                <td>LODSB</td>
+                                <td>Carga el siguiente byte de una cadena</td>
+                            </tr>
+                            <tr>
+                                <td>STOSB</td>
+                                <td>Almacena un byte en una cadena</td>
+                            </tr>
+                            <tr>
+                                <td>SCASB</td>
+                                <td>Compara un byte en una cadena con otro valor</td>
+                            </tr>
+                            <tr>
+                                <td>REP MOVSB</td>
+                                <td>Mueve una cadena bloque a bloque</td>
+                            </tr>
+                            <tr>
+                                <td>REPNE SCASB</td>
+                                <td>Busca un byte en una cadena</td>
+                            </tr>
+                            <tr>
+                                <td>IN</td>
+                                <td>Lee datos de un dispositivo de entrada</td>
+                            </tr>
+                            <tr>
+                                <td>OUT</td>
+                                <td>Escribe datos en un dispositivo de salida</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="content2" class="animated">
+                    <h2>Representación de números ASCII:/</h2>
+                    <p>La representación de números ASCII es un estándar 
+                        de codificación que asigna valores numéricos a caracteres. 
+                        Permite la comunicación y el procesamiento de texto en sistemas informáticos.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Carácter</th>
+                                <th>Valor ASCII</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>'A'</td>
+                                <td>65</td>
+                            </tr>
+                            <tr>
+                                <td>'B'</td>
+                                <td>66</td>
+                            </tr>
+                            <tr>
+                                <td>'C'</td>
+                                <td>67</td>
+                            </tr>
+                            <tr>
+                                <td>'a'</td>
+                                <td>97</td>
+                            </tr>
+                            <tr>
+                                <td>'b'</td>
+                                <td>98</td>
+                            </tr>
+                            <tr>
+                                <td>'c'</td>
+                                <td>99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="content3" class="animated">
+                    <h2>Buffers y memoria</h2>
+                    <p>Un buffer es una zona de memoria utilizada para
+                        almacenar temporalmente datos durante su procesamiento. 
+                        La memoria, por otro lado, es el componente del sistema 
+                        informático que almacena datos y programas.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Registro</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ESI</td>
+                                <td>Puntero fuente de datos</td>
+                            </tr>
+                            <tr>
+                                <td>EDI</td>
+                                <td>Puntero destino de datos</td>
+                            </tr>
+                            <tr>
+                                <td>ECX</td>
+                                <td>Contador de repeticiones</td>
+                            </tr>
+                            <tr>
+                                <td>EAX</td>
+                                <td>Registro general de propósito</td>
+                            </tr>
+                            <tr>
+                                <td>EBX</td>
+                                <td>Registro general de propósito</td>
+                            </tr>
+                            <tr>
+                                <td>ECX</td>
+                                <td>Registro general de propósito</td>
+                            </tr>
+                            <tr>
+                                <td>EDX</td>
+                                <td>Registro general de propósito</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="content4" class="animated">
+                    <h2>Dispositivos de almacenamiento auxiliar: Discos Duros, 
+                        Unidades de estado sólido y Memorias auxiliares (USB)</h2>
+                    <p>Los dispositivos de almacenamiento auxiliar, como los discos 
+                        duros, las unidades de estado sólido (SSD) y las memorias auxiliares
+                        (USB), son componentes utilizados para almacenar datos de forma permanente
+                        o portátil en un sistema informático.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dispositivo</th>
+                                <th>Características</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Disco Duro</td>
+                                <td>Almacenamiento magnético de alta capacidad</td>
+                            </tr>
+                            <tr>
+                                <td>Unidad de estado sólido (SSD)</td>
+                                <td>Almacenamiento basado en memoria flash</td>
+                            </tr>
+                            <tr>
+                                <td>Memorias auxiliares (USB)</td>
+                                <td>Almacenamiento portátil en dispositivos USB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <script th:src="@{/js/efecto.js}"></script>
+
+        <footer th:replace="menu/menu :: footer"></footer>
+    </body>
+
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
