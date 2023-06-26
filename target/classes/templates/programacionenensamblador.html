@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="menu/menu :: head">
+<meta charset="utf-8">
+</head>
+
+<body>
+
+	<header th:replace="menu/menu :: header"></header>
+
+
+	
+	<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+			tabindex="-1" id="sidebar">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+
+						<li class="my-2">
+							<!-- Espaciado	 -->
+						</li>
+
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+
+						<!-- Menu gestionar Temática -->
+
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 mt-3">
+									<li><a th:href="@{/programaciónenensamblador}"
+										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)" data-content="content1"
+													onclick="showContent(this)">Entornos de desarrollo</a></li>
+												<li><a  href="javascript:void(0)" data-content="content2"
+													onclick="showContent(this)">Generación de fuentes, ensamblado y desensamblado
+													</a></li>
+												<li><a href="javascript:void(0)" data-content="content3"
+													onclick="showContent(this)">Compilación, enlazamiento y archivos ejecutables
+													</a></li>
+													<li><a href="javascript:void(0)" data-content="content4"
+													onclick="showContent(this)">Depuración de ejecutables en memoria
+													</a></li>
+													<li><a href="javascript:void(0)" data-content="content5"
+													onclick="showContent(this)">Comandos básicos, recorrido de la memoria y procesador
+													</a></li>
+											</ul>
+										</div></li>
+
+								</ul>
+							</div>
+							
+							</li>
+					</ul>
+
+
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</section>
+	<style>
+.section-container {
+	margin-top: 60px;
+}
+
+.main-container {
+	padding-top: 100px;
+	margin-left: 300px;
+}
+</style>
+
+	<main class="main-container  ">
+		<!-- DESARROLLA EL OVA AQUI -->
+		<h1>Programacion en Ensamblador</h1>
+		<div class="content">
+			<div id="content1" class="animated">
+				<div>
+		<h2>Introducción a la programación en ensamblador</h2>
+		<h3>Unidad: Entornos de desarrollo</h3>
+		<p>En la programación de sistemas y software de bajo nivel, la programación en ensamblador es esencial para entender cómo funcionan las instrucciones de la CPU. A continuación, se presenta un resumen de los temas de esta unidad y algunos recursos útiles:</p>
+		<table>
+			<tr>
+				<th>Tema</th>
+				<th>Descripción</th>
+				<th>Recursos</th>
+			</tr>
+			<tr>
+				<td>Introducción a la programación en ensamblador</td>
+				<td>Definición de ensamblador y su importancia en la programación de sistemas y software de bajo nivel</td>
+				<td><a href="https://es.wikipedia.org/wiki/Lenguaje_ensamblador" target="_blank">Wikipedia</a></td>
+			</tr>
+			<tr>
+				<td>Entornos de desarrollo para programación en ensamblador</td>
+				<td>Descripción de los entornos de desarrollo más populares para programar en ensamblador</td>
+				<td><a href="https://www.ghidra-sre.org/" target="_blank">Ghidra</a>, <a href="https://visualstudio.microsoft.com/es/downloads/" target="_blank">Visual Studio</a></td>
+			</tr>
+			<tr>
+				<td>Tipos de datos en ensamblador</td>
+				<td>Tipos de datos y su representación en ensamblador</td>
+				<td><a href="https://es.wikipedia.org/wiki/Tipos_de_datos" target="_blank">Wikipedia</a></td>
+			</tr>
+			<tr>
+				<td>Instrucciones básicas en ensamblador</td>
+				<td>Descripción de las instrucciones básicas en ensamblador, como carga de datos, almacenamiento y operaciones aritméticas</td>
+				<td><a href="https://www.cs.cmu.edu/~fp/courses/15122-f10/lectures/06-instructions.pdf" target="_blank">Carnegie Mellon University</a></td>
+			</tr>
+		</table>
+	</div>
+			</div>
+			<div id="content2" class="animated">
+				<div class="container my-5">
+  <h2 class="text-center">Introducción a la programación en ensamblador</h2>
+  <h3 class="my-4">Unidad: Generación de fuentes, ensamblado y desensamblado</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <h4 class="text-center">Temas</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Introducción al ensamblador</li>
+        <li class="list-group-item">Generación de fuentes</li>
+        <li class="list-group-item">Proceso de ensamblado</li>
+        <li class="list-group-item">Desensamblado de código</li>
+        <li class="list-group-item">Uso de registros y memoria</li>
+        <li class="list-group-item">Directivas de ensamblado</li>
+        <li class="list-group-item">Instrucciones de ensamblado</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Recursos</h4>
+      <div class="card">
+        <img src="ensamblador.jpg" class="card-img-top" alt="Imagen de ensamblador">
+        <div class="card-body">
+          <h5 class="card-title">Curso de programación en ensamblador</h5>
+          <p class="card-text">Este curso ofrece una introducción completa al ensamblador, incluyendo la generación de fuentes y el proceso de ensamblado.</p>
+          <a href="#" class="btn btn-danger">Ir al curso</a>
+        </div>
+      </div>
+      <div class="card my-4">
+        <img src="registro.jpg" class="card-img-top" alt="Imagen de registro">
+        <div class="card-body">
+          <h5 class="card-title">Uso de registros en ensamblador</h5>
+          <p class="card-text">Este artículo detalla el uso de registros y memoria en ensamblador.</p>
+          <a href="#" class="btn btn-danger">Leer artículo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+			</div>
+			<div id="content3" class="animated">
+				<div class="container mt-3">
+  <h2>Introducción a la programación en ensamblador</h2>
+  <h3>Unidad: Compilación, enlazamiento y archivos ejecutables</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tema</th>
+        <th>Descripción</th>
+        <th>Recursos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compilación y enlazamiento</td>
+        <td>Explicación del proceso de compilación y enlazamiento de programas escritos en lenguaje ensamblador</td>
+        <td>
+          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
+          <br>
+          <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=concepts-link-editing">IBM Knowledge Center</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Archivos ejecutables</td>
+        <td>Descripción de los archivos ejecutables y cómo se ejecutan programas escritos en lenguaje ensamblador</td>
+        <td>
+          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
+          <br>
+          <a href="https://www.gnu.org/software/binutils/">GNU Binutils</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+				
+			</div>
+			<div id="content4" class="animated">
+				<div class="container mt-5">
+  <h2>Introducción a la programación en ensamblador</h2>
+  <h3>Unidad: Depuración de ejecutables en memoria</h3>
+  <p>En esta unidad se aborda el proceso de depuración de ejecutables en memoria y se enseña a utilizar herramientas como <strong>gdb</strong> para identificar y corregir errores en programas escritos en ensamblador.</p>
+  <h4>Temas de la unidad</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tema</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Depuración en ensamblador</td>
+        <td>Introducción a las técnicas y herramientas de depuración de programas escritos en ensamblador</td>
+      </tr>
+      <tr>
+        <td>Uso de gdb</td>
+        <td>Uso de la herramienta gdb para depurar programas en ensamblador</td>
+      </tr>
+      <tr>
+        <td>Identificación de errores</td>
+        <td>Identificación de errores comunes en programas en ensamblador y cómo corregirlos</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Recursos recomendados</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <img src="imagen1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Debugging with GDB</h5>
+          <p class="card-text">Libro sobre el uso de gdb para depurar programas en C y ensamblador</p>
+          <a href="#" class="btn btn-danger">Ver recurso</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <img src="imagen2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">GDB Tutorial</h5>
+          <p class="card-text">Tutorial en línea sobre el uso de gdb para depurar programas en ensamblador</p>
+          <a href="#" class="btn btn-danger">Ver recurso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+			</div>
+			<div id="content5" class="animated">
+				<div class="container my-5">
+	<h2 class="text-center">Comandos básicos, recorrido de la memoria y procesador</h2>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Temas</th>
+				<th>Descripción</th>
+				<th>Recursos</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Arquitectura del procesador</td>
+				<td>Conceptos básicos del procesador y su arquitectura</td>
+				<td><a href="https://es.wikipedia.org/wiki/Arquitectura_de_la_CPU" target="_blank">Wikipedia</a></td>
+			</tr>
+			<tr>
+				<td>Sistemas numéricos</td>
+				<td>Hexadecimal, Octal, Decimal y Binario</td>
+				<td><a href="https://www.ecured.cu/Sistemas_Numericos_(Inform%C3%A1tica)" target="_blank">EcuRed</a></td>
+			</tr>
+			<tr>
+				<td>Registros del procesador</td>
+				<td>Tipos de registros y su uso en el procesador</td>
+				<td><a href="https://www.monografias.com/trabajos97/registros-procesador/registros-procesador.shtml" target="_blank">Monografías</a></td>
+			</tr>
+			<tr>
+				<td>Memoria del procesador</td>
+				<td>Tipos de memoria y su uso en el procesador</td>
+				<td><a href="https://es.wikipedia.org/wiki/Memoria_computacional" target="_blank">Wikipedia</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+			</div>
+		</div>
+	</main>
+	<script th:src="@{/js/efecto.js}"></script>
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

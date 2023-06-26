@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="menu/menu :: head">
+	<meta charset="utf-8">
+
+	<style>
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		.text {
+			margin: 0 auto;
+			max-width: 600px;
+			padding: 20px;
+			text-align: justify;
+		}
+	</style>
+</head>
+
+<body onload="showContent(document.getElementById('primerEnlace'))">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+				aria-controls="offcanvasExample">
+				<span class="navbar-toggler-icon icon-bar" data-bs-target="#sidebar"></span>
+			</button>
+			<a class="navbar-brand me-auto ms-lg-0 ms-3 text-white fw-bold" href="/">Ova Arquitectura de
+				Computadores</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar"
+				aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon icon-bar"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="topNavBar">
+
+				<div class="d-flex ms-auto my-3 my-lg-0">
+					<a class="navbar-brand"></a>
+				</div>
+
+				<ul class="navbar-nav ">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle ms-2 text-white" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-person-fill"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+							<li><a class="dropdown-item" href="#">Sobre la app</a></li>
+							<li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
+			style="margin-top: 30px">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+						<li class="my-2">
+							<!-- Espaciado-->
+						</li>
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+						<!-- Menu gestionar Temática -->
+						<li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span
+									class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+									class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
+									<span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
+									</span>
+								</span>
+							</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)" data-content="content1"
+														onclick="showContent(this)" id="primerEnlace">
+														Que es virtualizacion, características, ventajas y
+														desventajas</a></li>
+												<li><a href="javascript:void(0)" data-content="content2"
+														onclick="showContent(this)">Virtual Box</a></li>
+
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
+									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</section>
+
+	<main class="main-container mb-5">
+
+		<div class="row justify-content-between">
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/direccionamientos">Atras</a>
+			</div>
+			<div class="col-sm-6 col-md-4 d-flex flex-column align-items-center mt-1">
+				<h2 class="text-center">Virtualizacion</h2>
+			</div>
+			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/programaciónenensamblador">Siguiente</a>
+			</div>
+		</div>
+
+		<div class="content">
+
+			<div id="content1" class="animated">
+				<div class="container">
+					<p class="text-start">
+						<b>Resumen</b>
+
+					<div class="container text-center">
+						<img src="https://www.profesionalreview.com/wp-content/uploads/2018/10/virtualizacion-tuto01.png"
+							alt="Virtualizacion" class="img-fluid" style="width: 250px; height: 200px; margin: auto;">
+					</div>
+
+					<br>El concepto de virtualización hace referencia a una tecnología que permite la ejecución de
+					varias máquinas virtuales sobre una máquina física con el objetivo de aprovechar al máximo los
+					recursos de un sistema y que su rendimiento sea mayor. Es importante destacar que a cada una de
+					las máquinas virtuales se le pueden asignar unos recursos (memoria, unidades de almacenamiento,
+					procesador…) y ejecutan una copia propia de sistema operativo (Windows, Linux…).
+					<br>
+					Cuando virtualizamos, creamos un entorno informático virtual en el que cada máquina puede
+					cumplir funciones diferentes (servidor web, servidor de archivos…) aun encontrándose todas en la
+					misma máquina física. Esto nos ofrece la posibilidad de crear instancias con distintos sistemas
+					operativos en un único servidor, utilizando así menos servidores para ejecutar una mayor
+					cantidad de aplicaciones.
+					<br>
+					Una de las características principales de la virtualización es que cuando ejecutamos programas
+					en dicho entorno, estos creen estar ejecutándose en el ámbito nativo, es decir, en un solo
+					ordenador de uso exclusivo para ellos. Pero, en realidad, se encuentra encapsulado dentro del
+					mismo sistema operativo donde se ejecuta la virtualización. Además de lo anterior, la
+					virtualización hace que, aunque se ejecuten varios sistemas operativos diferentes, ninguno de
+					ellos afecte al desempeño del otro o de la máquina principal que ha sido dividida para crear el
+					entorno virtual.
+					<br>
+					La virtualización se basa en el uso de un software llamado hipervisor o monitor de máquina
+					virtual, que permite la creación y gestión de máquinas virtuales. El hipervisor se instala en un
+					servidor físico y se encarga de asignar y gestionar los recursos, como la CPU, la memoria y el
+					almacenamiento, entre las máquinas virtuales.
+					</p>
+					<hr>
+					<b>Caracteristicas de la virtualización:</b>
+					<hr>
+					<p class="text-start">
+						<li>Aislamiento: Cada máquina virtual se ejecuta de forma aislada, lo que significa que un fallo
+							o problema en una máquina virtual no afectará a las demás.</li>
+						<br>
+						<li>
+							Consolidación: Varias máquinas virtuales pueden ejecutarse en un solo servidor físico, lo
+							que permite una mejor utilización de los recursos y una reducción en el número de servidores
+							físicos necesarios.S
+						</li>
+						<br>
+						<li>
+							Migración en vivo: Las máquinas virtuales se pueden mover de un servidor físico a otro sin
+							interrupción del servicio, lo que permite una mayor flexibilidad y disponibilidad.
+							<br>
+							<br>
+
+						</li>
+
+
+					</p>
+					<hr>
+					<hr>
+					<pclass="text-start">
+						<table class="table table-bordered text-center">
+							<thead class="thead-light">
+								<tr>
+									<th>Ventajas de la Virtualización</th>
+									<th>Desventajas de la Virtualización</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Mayor eficiencia y utilización de recursos</td>
+									<td>Sobrecarga de recursos</td>
+								</tr>
+								<tr>
+									<td>Flexibilidad y escalabilidad</td>
+									<td>Dependencia de la infraestructura</td>
+								</tr>
+								<tr>
+									<td>Mayor disponibilidad y tolerancia a fallos</td>
+									<td>Riesgo de seguridad</td>
+								</tr>
+								<tr>
+									<td>Simplificación de la administración</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+
+			<div id="content2" class="animated">
+				<div class="container text-center">
+					<h1>VirtualBox: Plataforma de Virtualización</h1>
+					<p class="text-start">
+						VirtualBox es un software para virtualización, también conocido como hipervisor de tipo 2, que
+						se utiliza para virtualizar sistemas operativos dentro de nuestro ordenador existente, creando
+						lo que se conoce como máquina virtual. Un hipervisor de tipo 2 se diferencia de los de tipo 1 en
+						que necesita un sistema operativo para funcionar, a diferencia de los de tipo 1 en los que el
+						propio hipervisor funciona sobre el hardware, o máquina host.
+					</p>
+					<p>
+						Existen varios factores a tener en cuenta cuando necesitamos hacer uso de un hipervisor, pero
+						generalmente VirtualBox, y los hipervisores de tipo 2 en general, se usan cuando no necesitamos
+						destinar la máquina host por completo para realizar tareas de virtualización. Por ejemplo, a la
+						hora de probar software o simplemente confeccionar algunas de las guías que podemos encontrar
+						aquí en Geeknetic, podemos aislar el sistema operativo host del sistema operativo invitado.
+					</p>
+					<p>
+						VirtualBox, a diferencia de alternativas como VMWare, es gratuito, por lo que no es necesario
+						pagar una licencia para poder tener acceso a este hipervisor. Aun así, nos permite realizar
+						todas las tareas necesarias para mantener un entorno virtual, independientemente del uso que le
+						queramos dar.
+					</p>
+					<p>
+						Su compatibilidad se extiende a prácticamente todas las versiones de Windows, un gran número de
+						versiones de macOS y muchas distribuciones de Linux. También podremos encontrar perfiles para
+						sistemas menos comunes como Solaris, OS/2, DOS, QNX, Novell, BeOS y otros sistemas operativos
+						que queramos probar o utilizar sin tener que montar un equipo específicamente para ellos.
+					</p>
+					<p>
+						Si bien VirtualBox se suele ver como un producto orientado al usuario doméstico, la realidad es
+						que es capaz de competir con alternativas de pago a la hora de hacer funcionar servidores o
+						aplicaciones embebidas. Por lo tanto, en determinados casos, VirtualBox puede ser una muy buena
+						opción, especialmente si no necesitamos algunas funciones exclusivas de algunos de sus
+						competidores, entre los cuales encontramos VMWare, Microsoft Virtual PC o QEMU.
+					</p>
+				</div>
+
+				<div class="container text-center">
+					<h2 class="mt-5">Beneficios de VirtualBox:</h2>
+					<br>
+					<ul class="list-group">
+						<li class="list-group-item">Permite ejecutar múltiples sistemas operativos en un solo equipo
+							físico.</li>
+						<li class="list-group-item">Facilita el desarrollo y la prueba de software en diferentes
+							entornos sin afectar el sistema principal.</li>
+						<li class="list-group-item">Brinda aislamiento de recursos, lo que mejora la seguridad y la
+							estabilidad de los sistemas virtuales.</li>
+						<li class="list-group-item">Permite la migración y el clonado de máquinas virtuales para una
+							mayor flexibilidad y escalabilidad.</li>
+					</ul>
+
+					<h2 class="mt-5">Características de VirtualBox:</h2>
+					<ul class="list-group">
+						<li class="list-group-item">Compatibilidad con una amplia gama de sistemas operativos
+							anfitriones y huéspedes.</li>
+						<li class="list-group-item">Funcionalidades avanzadas, como instantáneas, redimensionamiento
+							dinámico de discos virtuales y gestión de redes.</li>
+						<li class="list-group-item">Soporte para extensiones y complementos que amplían las capacidades
+							de VirtualBox.</li>
+					</ul>
+
+					<h2 class="mt-5">Desventajas de VirtualBox:</h2>
+					<ul class="list-group">
+						<li class="list-group-item">El rendimiento de los sistemas virtuales puede ser inferior al de
+							las instalaciones nativas.</li>
+						<li class="list-group-item">Algunas características avanzadas pueden requerir ajustes de
+							configuración y conocimientos técnicos adicionales.</li>
+						<li class="list-group-item">La gestión de recursos puede ser compleja en entornos con múltiples
+							máquinas virtuales.</li>
+					</ul>
+				</div>
+
+				<div class="container text-center">
+					<h2 class="mt-5">Guía de Instalación de VirtualBox:</h2>
+					<ol class="list-group list-group-numbered">
+						<li class="list-group-item">
+							Descarga el instalador de VirtualBox desde el <a
+								href="https://www.virtualbox.org/wiki/Downloads">web oficial.</a>
+						</li>
+						<li class="list-group-item">
+							Ejecuta el archivo de instalación y sigue las instrucciones del asistente.
+						</li>
+						<li class="list-group-item">
+							Una vez instalado, abre VirtualBox y crea una nueva máquina virtual.
+						</li>
+						<li class="list-group-item">
+							Configura los detalles de la máquina virtual, como el sistema operativo y la cantidad de
+							memoria asignada.
+						</li>
+						<li class="list-group-item">
+							Finalmente, instala el sistema operativo en la máquina virtual siguiendo los pasos
+							habituales.
+						</li>
+					</ol>
+				</div>
+
+				<div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/YFlowDwE-1E"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen="" style="margin-left: 125px;"></iframe>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
