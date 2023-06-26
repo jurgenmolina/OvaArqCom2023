@@ -1,0 +1,17 @@
+com\ova\arq2023\modelo\Usuario.class
+com\ova\arq2023\OvaArquitecturaComputadoresApplication.class
+com\ova\arq2023\controlador\Direccionamiento.class
+com\ova\arq2023\controlador\dto\UsuarioRegistroDTO.class
+com\ova\arq2023\servicio\UsuarioServicio.class
+com\ova\arq2023\modelo\Rol.class
+com\ova\arq2023\controlador\IntroArqui.class
+com\ova\arq2023\seguridad\SecurityConfiguration.class
+com\ova\arq2023\controlador\RegistroUsuarioControlador.class
+com\ova\arq2023\controlador\TarjetaMadreMemoria.class
+com\ova\arq2023\controlador\Condicionalesrepetitiva.class
+com\ova\arq2023\controlador\ProgramacionEnsamblador.class
+com\ova\arq2023\servicio\UsuarioServicioImpl.class
+com\ova\arq2023\repositorio\UsuarioRepositorio.class
+com\ova\arq2023\controlador\RegistroControlador.class
+com\ova\arq2023\controlador\VtEmu.class
+com\ova\arq2023\controlador\CadenasMemoriaAuxiliar.class
