@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head th:replace="menu/menu :: head">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <header th:replace="menu/menu :: header"></header>
+
+        <section th:fragment="section">
+            <!-- top navigation bar -->
+            <!-- offcanvas -->
+            <div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+                 tabindex="-1" id="sidebar">
+                <div class="offcanvas-body p-0">
+                    <nav class="navbar-white">
+                        <ul class="navbar-nav">
+
+                            <li class="my-2">
+                                <!-- Espaciado	 -->
+                            </li>
+
+                            <li>
+                                <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                                    Navegación</div>
+                            </li>
+
+                            <!-- Menu gestionar Temática -->
+
+                            <li><a class="nav-link px-3 sidebar-link"
+                                   data-bs-toggle="collapse" href="#layouts2"> <span
+                                        class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+                                        class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+                                        class="ms-auto"> <span class="right-icon"> <i
+                                                class="bi bi-chevron-down text-dark"></i>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div class="collapse show" id="layouts2">
+                                    <ul class="navbar-nav ps-3 mt-3">
+                                        <li><a th:href="@{/unidad-seis}"
+                                               class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+                                            <div class="sidebar">
+                                                <ul>
+                                                    <li><a href="javascript:void(0)" data-content="content1"
+                                                           onclick="showContent(this)">Etiquetas y comparaciones
+                                                        </a></li>
+                                                    <li><a  href="javascript:void(0)" data-content="content2"
+                                                            onclick="showContent(this)">Condicionales e incondicionales</a></li>
+                                                    <li><a href="javascript:void(0)" data-content="content3"
+                                                           onclick="showContent(this)">Procedimientos y operaciones básicas</a></li>
+                                                    <li><a href="javascript:void(0)" data-content="content4"
+                                                           onclick="showContent(this)">Simulación de while, do-while y for
+                                                        </a></li>
+                                                    <li><a href="javascript:void(0)" data-content="content5"
+                                                           onclick="showContent(this)">Instrucciones repetitivas
+                                                        </a></li>	
+                                                    <li><a th:href="@{../examen/unidad-seis}">Examen
+                                                        </a></li>
+                                                </ul>
+                                            </div></li>
+
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </ul>
+
+
+                        <div>
+                            <a href="#" class="nav-link px-3 text-secondary"><span
+                                    class="me-2"><i class="bi bi-table"></i></span> <span
+                                    class="fw-bold">Calendario</span> </a>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <style>
+        .section-container {
+            margin-top: 60px;
+        }
+
+        .main-container {
+            padding-top: 100px;
+            margin-left: 300px;
+        }
+    </style>
+
+    <main class="main-container">
+        <!-- DESARROLLA EL OVA AQUI -->
+        <h1>Condicionales, saltos e Instrucciones</h1>
+        <div class="content">
+            <div id="content1" class="animated">
+                <h2>Etiquetas y comparaciones</h2>
+                <p>
+                    En el lenguaje ensamblador, las etiquetas son utilizadas para identificar
+                    ubicaciones específicas en el código. Las comparaciones permiten realizar
+                    evaluaciones de igualdad, diferencia, mayor que, menor que, etc.
+                </p>
+                <style>
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+
+                    th, td {
+                        padding: 8px;
+                        text-align: left;
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                    th {
+                        background-color: #f2f2f2;
+                    }
+                </style>
+                </head>
+                <body>
+                    <table>
+                        <tr>
+                            <th>Etiqueta</th>
+                            <th>Descripción</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                        <tr>
+                            <td>MOV</td>
+                            <td>Transfiere el contenido de un origen a un destino</td>
+                            <td>MOV AX, BX</td>
+                        </tr>
+                        <tr>
+                            <td>ADD</td>
+                            <td>Suma dos valores y almacena el resultado en un destino</td>
+                            <td>ADD CX, DX</td>
+                        </tr>
+                        <tr>
+                            <td>SUB</td>
+                            <td>Resta un valor de otro y almacena el resultado en un destino</td>
+                            <td>SUB BX, AX</td>
+                        </tr>
+                        <tr>
+                            <td>CMP</td>
+                            <td>Compara dos valores y actualiza los flags de estado</td>
+                            <td>CMP AX, 0</td>
+                        </tr>
+                    </table>
+            </div>
+            <div id="content2" class="animated">
+                <h2>Condicionales e incondicionales</h2>
+                <p>
+                    Las instrucciones condicionales permiten ejecutar un bloque de código
+                    basado en una condición. Las instrucciones incondicionales se ejecutan
+                    sin ninguna condición adicional.
+                </p>
+                <table>
+                    <tr>
+                        <th>Condición</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>JMP</td>
+                        <td>Salto incondicional a una ubicación específica en el programa</td>
+                        <td>JMP L1</td>
+                    </tr>
+                    <tr>
+                        <td>JZ</td>
+                        <td>Salto si el resultado de la comparación es igual a cero</td>
+                        <td>JZ L2</td>
+                    </tr>
+                    <tr>
+                        <td>JNZ</td>
+                        <td>Salto si el resultado de la comparación no es igual a cero</td>
+                        <td>JNZ L3</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="content3" class="animated">
+                <h2>Procedimientos y operaciones básicas</h2>
+                <p>
+                    Los procedimientos son bloques de código reutilizables que pueden ser
+                    invocados desde otras partes del programa. Las operaciones básicas incluyen
+                    suma, resta, multiplicación y división.
+                </p>
+                <table>
+                    <tr>
+                        <th>Procedimiento</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>CALL</td>
+                        <td>Llama a un procedimiento o subrutina</td>
+                        <td>CALL Subrutina1</td>
+                    </tr>
+                    <tr>
+                        <td>RET</td>
+                        <td>Retorna de una subrutina</td>
+                        <td>RET</td>
+                    </tr>
+                    <tr>
+                        <td>INC</td>
+                        <td>Incrementa el valor de un registro o memoria en 1</td>
+                        <td>INC AX</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="content4" class="animated">
+                <h2>Simulación de while, do-while y for</h2>
+                <p>
+                    Las instrucciones de repetición como while, do-while y for permiten
+                    ejecutar un bloque de código múltiples veces hasta que se cumpla una
+                    condición específica.
+                </p>
+                <table>
+                    <tr>
+                        <th>Instrucción</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>WHILE</td>
+                        <td>Ejecuta un bloque de código mientras se cumple una condición</td>
+                        <td>WHILE CX > 0</td>
+                    </tr>
+                    <tr>
+                        <td>DO-WHILE</td>
+                        <td>Ejecuta un bloque de código al menos una vez y luego comprueba una condición</td>
+                        <td>DO</td>
+                    </tr>
+                    <tr>
+                        <td>FOR</td>
+                        <td>Ejecuta un bloque de código un número específico de veces</td>
+                        <td>FOR CX, 1, 10</td>
+                    </tr>
+            </div>
+            <div id="content5" class="animated">
+                <h2>Instrucciones repetitivas</h2>
+                <p>
+                    Las instrucciones repetitivas permiten repetir un bloque de código un
+                    número determinado de veces. Esto es útil para realizar tareas iterativas
+                    como recorrer arreglos o realizar cálculos repetidos.
+                </p>
+                <table>
+  <tr>
+    <th>Instrucción</th>
+    <th>Descripción</th>
+    <th>Ejemplo</th>
+  </tr>
+  <tr>
+    <td>LOOP</td>
+    <td>Repite un bloque de código un número específico de veces</td>
+    <td>LOOP L1</td>
+  </tr>
+  <tr>
+    <td>REPEAT</td>
+    <td>Repite un bloque de código hasta que se cumpla una condición</td>
+    <td>REPEAT</td>
+  </tr>
+  <tr>
+    <td>FOR EACH</td>
+    <td>Itera sobre una colección de elementos y ejecuta un bloque de código para cada elemento</td>
+    <td>FOR EACH elemento IN colección</td>
+  </tr>
+</table>
+            </div>
+        </div>
+    </main>
+
+    <script th:src="@{/js/efecto.js}"></script>
+
+    <footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

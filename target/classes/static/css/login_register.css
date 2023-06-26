@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* add padding on input */
+
+.text-indent {
+    text-indent: .5rem;
+}
+
+
+/* add password hide and show icon */
+
+.password__icon {
+    position: absolute;
+    right: 0;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+
+/* backgroun grey */
+
+.bg-grey-light {
+    background: #f0f0f0;
+}
+
+.bg-grey-light:focus {
+    background: #f0f0f0;
+}
+
+@media (min-width: 1024px) {
+    body {
+        overflow-y: hidden;
+    }
+
+    /* bouncing effect */
+    .bounce {
+        animation: bounce 2s infinite alternate;
+        -webkit-animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(-35px);
+        }
+    }
+
+    @-webkit-keyframes bounce {
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(-35px);
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container .col-12.p-5 {
+        padding: 0px !important;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
