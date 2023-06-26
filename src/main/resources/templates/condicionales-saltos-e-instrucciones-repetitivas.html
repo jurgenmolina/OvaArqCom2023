@@ -4,32 +4,28 @@
 
 <head th:replace="menu/menu :: head">
 <meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
+	<header th:replace="menu/menu :: header"> </header>
 
 	<section th:fragment="section">
-		<!-- top navigation bar -->
-		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
 						<li><a class="nav-link px-3 sidebar-link"
 							data-bs-toggle="collapse" href="#layouts2"> <span
 								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
@@ -40,93 +36,330 @@
 							</span>
 						</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
-									<li><a th:href="@{/condicionales-saltos-e-instrucciones-repetitivas}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)">Etiquetas y comparaciones
-													</a></li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)">Condicionales e incondicionales</a></li>
-												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">Procedimientos y operaciones básicas</a></li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">Simulación de while, do-while y for
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content5"
-													onclick="showContent(this)">Instrucciones repetitivas
-													</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)"
+													id="primerEnlace"> Introducción a las Condiciones, Saltos e Instrucciones Repetitivas</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content2" onclick="showContent(this)">Instrucciones de Comparación y Saltos Condicionales</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content3" onclick="showContent(this)">Saltos Incondicionales </a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content4" onclick="showContent(this)">Instrucciones de Bucles y Repetición </a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content5" onclick="showContent(this)">Programación con Condiciones, Saltos e Instrucciones Repetitivas</a></li>
+												<!-- <li><a href="javascript:void(0)" data-content="content6"
+														onclick="showContent(this)">Examen </a></li> -->
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
-							</div>
-							
-							</li>
+							</div></li>
 					</ul>
-
-
 					<div>
 						<a href="#" class="nav-link px-3 text-secondary"><span
 							class="me-2"><i class="bi bi-table"></i></span> <span
 							class="fw-bold">Calendario</span> </a>
 					</div>
-
+					<button id="toggleSidebarBtn"
+						class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
 				</nav>
 			</div>
+
 		</div>
 	</section>
 
-	</section>
-	<style>
-.section-container {
-	margin-top: 60px;
-}
+	<main class="main-container mb-5">
 
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
+		<div class="row justify-content-between">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/programacionenensamblador">Atras</a>
+			</div>
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
+			</div>
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/cadenas-y-memoria-auxiliar">Siguiente</a>
+			</div>
+		</div>
 
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Condicionales saltos e Intruciones</h1>
+
 		<div class="content">
+
 			<div id="content1" class="animated">
-				<h2>Título 1</h2>
-				<p>Contenido del Título 1</p>
+				<div class="container bg-secondary text-white">
+					<h2>Condicionales, Saltos e Instrucciones Repetitivas</h2>
+					<p class="text-start">En este tema, exploraremos las
+						estructuras de control de flujo en el lenguaje ensamblador.
+						Aprenderemos cómo utilizar condicionales, saltos e instrucciones
+						repetitivas para controlar el flujo de ejecución de un programa.
+						Estas estructuras nos permiten tomar decisiones y repetir acciones
+						en función de condiciones específicas.</p>
+
+					<hr>
+
+					<div id="condicionales">
+						<h4 class="text-start">Condicionales</h4>
+						<p class="text-start">Los condicionales nos permiten ejecutar
+							bloques de código basados en condiciones lógicas. Aprenderemos a
+							utilizar instrucciones como "CMP" (comparar) y "JMP" (saltar)
+							para realizar comprobaciones y saltos condicionales en el código
+							ensamblador. Además, veremos ejemplos de cómo implementar
+							estructuras condicionales como "if-else" y "switch-case".</p>
+					</div>
+
+					<hr>
+
+					<div id="saltos">
+						<h4 class="text-start">Saltos</h4>
+						<p class="text-start">Los saltos nos permiten alterar el flujo
+							de ejecución de un programa y desviarlo a una ubicación
+							específica en el código. Exploraremos instrucciones como "JMP"
+							(saltar incondicionalmente), "JE" (saltar si es igual), "JNE"
+							(saltar si no es igual), entre otras. Veremos ejemplos de cómo
+							utilizar saltos para controlar el flujo de un programa en
+							diferentes escenarios.</p>
+					</div>
+
+					<hr>
+
+					<div id="instrucciones-repetitivas">
+						<h4 class="text-start">Instrucciones Repetitivas</h4>
+						<p class="text-start">Las instrucciones repetitivas nos
+							permiten ejecutar un bloque de código varias veces en función de
+							una condición. Aprenderemos a utilizar instrucciones como "LOOP"
+							(bucle) y "JNZ" (saltar si no es cero) para implementar bucles en
+							el código ensamblador. Exploraremos diferentes tipos de bucles
+							como "while", "do-while" y "for" y veremos ejemplos de cómo
+							utilizarlos en diferentes situaciones.</p>
+					</div>
+
+				</div>
 			</div>
+
 			<div id="content2" class="animated">
-				<h2>Título 2</h2>
-				<p>Contenido del Título 2</p>
+				<div class="container bg-secondary text-white">
+					<h2>Manipulación de Registros y Memoria</h2>
+					<p class="text-start">En este tema, exploraremos cómo manipular
+						registros y memoria en el lenguaje ensamblador. Aprenderemos cómo
+						almacenar datos en registros y acceder a la memoria para leer y
+						escribir información. También veremos técnicas para la
+						manipulación de bits y bytes, así como instrucciones para el
+						movimiento de datos entre registros y memoria.</p>
+
+					<hr>
+
+					<div id="almacenamiento-registros">
+						<h4 class="text-start">Almacenamiento en Registros</h4>
+						<p class="text-start">Los registros son áreas de
+							almacenamiento internas de la CPU que nos permiten manipular y
+							procesar datos de forma eficiente. Aprenderemos a utilizar
+							instrucciones como "MOV" (mover), "ADD" (sumar), "SUB" (restar),
+							entre otras, para almacenar y operar con datos en registros.
+							También exploraremos la estructura de los registros en diferentes
+							arquitecturas de CPU.</p>
+					</div>
+
+					<hr>
+
+					<div id="acceso-memoria">
+						<h4 class="text-start">Acceso a la Memoria</h4>
+						<p class="text-start">La memoria es el componente donde se
+							almacenan los datos y las instrucciones de un programa.
+							Aprenderemos a utilizar instrucciones como "MOV" (mover), "LOAD"
+							(cargar), "STORE" (almacenar), entre otras, para acceder a la
+							memoria y leer/escribir datos. También veremos técnicas para el
+							direccionamiento de memoria y la gestión de datos en diferentes
+							ubicaciones de memoria.</p>
+					</div>
+
+					<hr>
+
+					<div id="manipulacion-bits">
+						<h4 class="text-start">Manipulación de Bits</h4>
+						<p class="text-start">A veces es necesario manipular bits
+							individuales en registros o en memoria. Aprenderemos a utilizar
+							instrucciones como "AND" (AND lógico), "OR" (OR lógico), "NOT"
+							(NOT lógico), entre otras, para realizar operaciones de
+							manipulación de bits. También veremos cómo realizar
+							desplazamientos y rotaciones de bits en registros.</p>
+					</div>
+				</div>
+
+
 			</div>
+
 			<div id="content3" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
+				<div class="container bg-secondary text-white">
+					<h2>Entrada y Salida en Ensamblador</h2>
+					<p class="text-start">En este tema, exploraremos cómo
+						interactuar con dispositivos de entrada y salida en el lenguaje
+						ensamblador. Aprenderemos cómo leer y escribir datos desde/hacia
+						el teclado, la pantalla y otros dispositivos periféricos. También
+						veremos cómo utilizar interrupciones y servicios del sistema
+						operativo para realizar operaciones de entrada/salida.</p>
+
+					<hr>
+
+					<div id="lectura-escritura-caracteres">
+						<h4 class="text-start">Lectura y Escritura de Caracteres</h4>
+						<p class="text-start">Aprenderemos a utilizar instrucciones
+							como "INT 21h" para interactuar con el sistema operativo y
+							realizar operaciones de lectura y escritura de caracteres.
+							Veremos ejemplos de cómo leer caracteres ingresados por el
+							usuario desde el teclado y cómo escribir caracteres en la
+							pantalla. También exploraremos técnicas para formatear y
+							manipular cadenas de caracteres.</p>
+					</div>
+
+					<hr>
+
+					<div id="interacciones-archivo">
+						<h4 class="text-start">Interacciones con Archivos</h4>
+						<p class="text-start">Aprenderemos a utilizar instrucciones y
+							servicios del sistema operativo para leer y escribir datos
+							desde/hacia archivos en el sistema de archivos. Veremos cómo
+							abrir, cerrar, leer y escribir archivos utilizando interrupciones
+							específicas del sistema operativo. También exploraremos técnicas
+							para el manejo de archivos y el control de errores en operaciones
+							de E/S de archivos.</p>
+					</div>
+
+					<hr>
+
+					<div id="manejo-interrupciones">
+						<h4 class="text-start">Manejo de Interrupciones</h4>
+						<p class="text-start">Aprenderemos cómo trabajar con
+							interrupciones y servicios del sistema operativo para realizar
+							operaciones de E/S. Veremos cómo identificar, llamar y manejar
+							interrupciones específicas para realizar operaciones de
+							entrada/salida. También exploraremos el uso de registros y
+							estructuras de control para gestionar y recuperar información de
+							las interrupciones.</p>
+					</div>
+				</div>
+
 			</div>
+
 			<div id="content4" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
+				<div class="container bg-secondary text-white">
+					<h2>Interrupciones y Manejo de Excepciones</h2>
+					<p class="text-start">En este tema, exploraremos el concepto de
+						interrupciones y el manejo de excepciones en el lenguaje
+						ensamblador. Aprenderemos cómo las interrupciones permiten al
+						procesador responder a eventos externos o condiciones específicas,
+						y cómo manejar excepciones para controlar situaciones inesperadas
+						durante la ejecución del programa.</p>
+
+					<hr>
+
+					<div id="interrupciones">
+						<h4 class="text-start">Interrupciones</h4>
+						<p class="text-start">Las interrupciones son señales que
+							indican al procesador que debe detener su flujo normal de
+							ejecución y responder a un evento o condición específica.
+							Aprenderemos cómo funcionan las interrupciones en el lenguaje
+							ensamblador, cómo se generan y cómo se manejan. Veremos ejemplos
+							de interrupciones comunes, como las interrupciones de
+							temporizador y las interrupciones de entrada/salida.</p>
+					</div>
+
+					<hr>
+
+					<div id="manejo-excepciones">
+						<h4 class="text-start">Manejo de Excepciones</h4>
+						<p class="text-start">El manejo de excepciones nos permite
+							controlar situaciones inesperadas o errores durante la ejecución
+							del programa. Aprenderemos cómo identificar y manejar excepciones
+							en el lenguaje ensamblador. Veremos ejemplos de excepciones
+							comunes, como el desbordamiento de pila y la división entre cero,
+							y cómo utilizar instrucciones y estructuras de control para
+							manejar estas excepciones de manera adecuada.</p>
+					</div>
+
+					<hr>
+
+					<div id="rutinas-interrupcion">
+						<h4 class="text-start">Rutinas de Interrupción</h4>
+						<p class="text-start">Las rutinas de interrupción son bloques
+							de código específicos que se ejecutan en respuesta a una
+							interrupción. Aprenderemos cómo implementar rutinas de
+							interrupción en el lenguaje ensamblador, cómo asociarlas a
+							interrupciones específicas y cómo gestionar el flujo de ejecución
+							dentro de una rutina de interrupción. También exploraremos
+							técnicas para el almacenamiento y restauración de registros en
+							rutinas de interrupción.</p>
+					</div>
+				</div>
 			</div>
+
 			<div id="content5" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
+				<div class="container bg-secondary text-white">
+					<h2>Ensamblador y Programación de Bajo Nivel</h2>
+					<p class="text-start">En este tema, exploraremos cómo el
+						lenguaje ensamblador y la programación de bajo nivel nos permiten
+						tener un mayor control y comprensión de la arquitectura del
+						procesador y del hardware subyacente. Aprenderemos cómo escribir
+						programas en lenguaje ensamblador, optimizar el rendimiento y
+						aprovechar al máximo los recursos de la computadora.</p>
+
+					<hr>
+
+					<div id="introduccion-ensamblador">
+						<h4 class="text-start">Introducción al Lenguaje Ensamblador</h4>
+						<p class="text-start">Aprenderemos los conceptos básicos del
+							lenguaje ensamblador, su sintaxis y estructura. Veremos cómo
+							escribir programas en lenguaje ensamblador utilizando
+							instrucciones básicas, como carga, almacenamiento y operaciones
+							aritméticas. También exploraremos las convenciones de llamada y
+							los registros de propósito general en diferentes arquitecturas de
+							procesadores.</p>
+					</div>
+
+					<hr>
+
+					<div id="optimizacion-rendimiento">
+						<h4 class="text-start">Optimización de Rendimiento</h4>
+						<p class="text-start">Aprenderemos técnicas de optimización de
+							rendimiento en programación ensamblador. Veremos cómo mejorar la
+							eficiencia y velocidad de ejecución de nuestros programas
+							utilizando técnicas como el uso de registros, la minimización de
+							accesos a memoria y la optimización de bucles y saltos
+							condicionales. También exploraremos herramientas y técnicas para
+							la medición y análisis del rendimiento de nuestros programas.</p>
+					</div>
+
+					<hr>
+
+					<div id="acceso-hardware">
+						<h4 class="text-start">Acceso a Hardware</h4>
+						<p class="text-start">Aprenderemos cómo interactuar con el
+							hardware a nivel de registro y puertos de E/S en lenguaje
+							ensamblador. Veremos cómo utilizar instrucciones y técnicas
+							específicas para acceder a dispositivos periféricos, como el
+							teclado, la pantalla, el puerto serie, entre otros. También
+							exploraremos el manejo de interrupciones y el acceso directo a
+							memoria en programación de bajo nivel.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
 
-	<footer th:replace="menu/menu :: footer"></footer>
+
+
 </body>
-
+<footer th:replace="menu/menu :: footer"></footer>
 </html>
-</body>
-</html>
-
-
 
 
 

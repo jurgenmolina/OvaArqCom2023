@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-	<meta charset="utf-8">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>	
-<section th:fragment="section">
-		<!-- top navigation bar -->
-		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+	<header th:replace="menu/menu :: header"> </header>
+
+	<section th:fragment="section">
+
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
 						<li><a class="nav-link px-3 sidebar-link"
 							data-bs-toggle="collapse" href="#layouts2"> <span
 								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
@@ -38,88 +36,124 @@
 							</span>
 						</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
-									<li><a th:href="@{/cadenas-y-memoria-auxiliar}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)">Cadenas y Dispositivos de entrada y salida
-													</a></li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)">Representación de números y ascii</a></li>
-												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">Buffers y memoria</a></li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">Dispositivos de almacenamiento auxiliar: Discos Duros, Unidades de estado sólido y Memorias auxiliares (USB)
-													</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)"
+													id="primerEnlace"> Cadenas y Memoria Auxiliar</a></li>
+
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
-							</div>
-							
-							</li>
+							</div></li>
 					</ul>
-
-
 					<div>
 						<a href="#" class="nav-link px-3 text-secondary"><span
 							class="me-2"><i class="bi bi-table"></i></span> <span
 							class="fw-bold">Calendario</span> </a>
 					</div>
-
+					<button id="toggleSidebarBtn"
+						class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
 				</nav>
 			</div>
+
 		</div>
 	</section>
-	<style>
-	
-.section-container {
-  margin-top: 60px;
-}
 
-.main-container {
- padding-top: 100px;
- margin-left: 300px;
-}
-	</style>
+	<main class="main-container mb-5">
 
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Cadenas y memorias</h1>	
-			<div class="content">
-			<div id="content1" class="animated">
-				<h2>Título 1</h2>
-				<p>Contenido del Título 1</p>
+		<div class="row justify-content-between">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger"
+					href="/condicionales-saltos-e-instrucciones-repetitivas">Atras</a>
 			</div>
-			<div id="content2" class="animated">
-				<h2>Título 2</h2>
-				<p>Contenido del Título 2</p>
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
 			</div>
-			<div id="content3" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
-			</div>
-			<div id="content4" class="animated">
-				<h2>Título 3</h2>
-				<p>Contenido del Título 3</p>
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/">Siguiente</a>
 			</div>
 		</div>
+
+
+		<div class="content">
+
+			<div id="content1" class="animated">
+				<div class="container bg-secondary text-white">
+					<h2>Cadenas y Memoria Auxiliar</h2>
+					<p class="text-start">En este tema, exploraremos el manejo de
+						cadenas de caracteres y el uso de memoria auxiliar en la
+						programación ensamblador. Aprenderemos cómo manipular y procesar
+						cadenas de caracteres, así como cómo utilizar la memoria auxiliar
+						para almacenar y acceder a grandes cantidades de datos en nuestros
+						programas.</p>
+
+					<hr>
+
+					<div id="manejo-cadenas">
+						<h4 class="text-start">Manejo de Cadenas de Caracteres</h4>
+						<p class="text-start">El manejo de cadenas de caracteres es
+							una parte fundamental de la programación ensamblador.
+							Aprenderemos las técnicas para acceder a los caracteres
+							individuales de una cadena, cómo concatenar y copiar cadenas, y
+							cómo realizar operaciones comunes, como la búsqueda y el
+							reemplazo de subcadenas. También exploraremos técnicas para la
+							conversión de cadenas entre diferentes formatos y
+							representaciones.</p>
+						<!-- Aquí puedes agregar ejemplos de código y ejercicios relacionados con el manejo de cadenas -->
+					</div>
+
+					<hr>
+
+					<div id="memoria-auxiliar">
+						<h4 class="text-start">Memoria Auxiliar</h4>
+						<p class="text-start">La memoria auxiliar es utilizada cuando
+							necesitamos almacenar y acceder a grandes cantidades de datos que
+							no caben completamente en la memoria principal. Aprenderemos cómo
+							utilizar técnicas como la paginación y la segmentación para
+							gestionar la memoria auxiliar de manera eficiente. Exploraremos
+							el uso de registros de desplazamiento y apuntadores para acceder
+							a la memoria auxiliar y cómo optimizar el rendimiento de nuestras
+							operaciones de lectura y escritura.</p>
+						<!-- Aquí puedes agregar ejemplos de código y ejercicios relacionados con el uso de memoria auxiliar -->
+					</div>
+
+					<hr>
+
+					<div id="operaciones-avanzadas">
+						<h4 class="text-start">Operaciones Avanzadas con Cadenas</h4>
+						<p class="text-start">Además de las operaciones básicas,
+							existen operaciones avanzadas que podemos realizar con cadenas de
+							caracteres. Exploraremos cómo realizar operaciones de
+							ordenamiento, filtrado y transformación en cadenas. Aprenderemos
+							a utilizar instrucciones y algoritmos eficientes para llevar a
+							cabo estas operaciones en tiempo óptimo. También abordaremos el
+							manejo de cadenas Unicode y cómo trabajar con cadenas multibyte.
+						</p>
+						<!-- Aquí puedes agregar ejemplos de código y ejercicios relacionados con operaciones avanzadas en cadenas -->
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
 
-	<footer th:replace="menu/menu :: footer"></footer>
+
+	<script src="../static/js/btnsetion.js"></script>
 </body>
-
+<footer th:replace="menu/menu :: footer"></footer>
 </html>
-</body>
-</html>
-
-
-
-
-
 
 
 

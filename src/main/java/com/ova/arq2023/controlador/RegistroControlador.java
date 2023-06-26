@@ -20,8 +20,6 @@ public class RegistroControlador {
     public String iniciarSesion() {
         return "login";
     }
-
-
     @GetMapping("/")
     public String verPaginaDeInicio(Model modelo) {
         try {

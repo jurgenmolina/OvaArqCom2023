@@ -4,33 +4,28 @@
 
 <head th:replace="menu/menu :: head">
 <meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
-
+	<header th:replace="menu/menu :: header"> </header>
 
 	<section th:fragment="section">
-		<!-- top navigation bar -->
-		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
 						<li><a class="nav-link px-3 sidebar-link"
 							data-bs-toggle="collapse" href="#layouts2"> <span
 								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
@@ -41,394 +36,235 @@
 							</span>
 						</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
-									<li><a th:href="@{/direccionamiento}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)"> MODOS DE OPERACIÓN DE LAS ARQUITECTURAS</a></li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)"> DIRECCIONAMIENTO EN MODO REAL
-													</a></li>
-												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">DIRECCIONAMIENTO EN MODO PROTEGIDO</a>
-												</li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">TABLAS DE DESCRIPTORES</a></li>
-														
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)"
+													id="primerEnlace"> Introducción a la Arquitectura de
+														Computadores</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content2" onclick="showContent(this)">Sistemas
+														numéricos: Hexadecimal, Octal, Decimal y Binario</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content3" onclick="showContent(this)">IEEE
+														754 Punto Flotante y Números negativos </a></li>
+												
+												<!-- <li><a href="javascript:void(0)" data-content="content6"
+														onclick="showContent(this)">Examen </a></li> -->
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
-								
-							</div>
-							
-							</li>
+							</div></li>
 					</ul>
-
-
 					<div>
 						<a href="#" class="nav-link px-3 text-secondary"><span
 							class="me-2"><i class="bi bi-table"></i></span> <span
 							class="fw-bold">Calendario</span> </a>
 					</div>
-
+					<button id="toggleSidebarBtn"
+						class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
 				</nav>
 			</div>
+
 		</div>
 	</section>
-	
 
-	</section>
-	<style>
-.section-container {
-	margin-top: 60px;
-}
+	<main class="main-container mb-5">
 
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
-
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Direccionaminetos</h1>
-		<div class="content">
-			<div id="content1" class="animated">
-				<div class="container my-5">
-  <h2>Modo Real y Modo Protegido</h2>
-  <p>En la arquitectura x86, se utilizan dos modos de operación para la CPU: el Modo Real y el Modo Protegido.</p>
-  
-  <h3>Modo Real</h3>
-  <p>El Modo Real es el modo de operación original de los procesadores x86 y es compatible con versiones antiguas del sistema operativo DOS. En este modo, el procesador tiene acceso a toda la memoria física del sistema y puede ejecutar cualquier instrucción que sea compatible con la arquitectura x86.</p>
-  
-  <h3>Modo Protegido</h3>
-  <p>El Modo Protegido es un modo de operación más avanzado que fue introducido en los procesadores 386. En este modo, el procesador protege la memoria del sistema y previene que las aplicaciones accedan a áreas de memoria que no les corresponden. Además, el Modo Protegido permite la ejecución de aplicaciones multitarea y multiproceso.</p>
-  
-  <h3>Diferencias entre Modo Real y Modo Protegido</h3>
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>Característica</th>
-        <th>Modo Real</th>
-        <th>Modo Protegido</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Tamaño máximo de memoria</td>
-        <td>1 MB</td>
-        <td>Depende del sistema operativo</td>
-      </tr>
-      <tr>
-        <td>Acceso a la memoria</td>
-        <td>Acceso completo a toda la memoria física del sistema</td>
-        <td>Acceso limitado a áreas específicas de memoria</td>
-      </tr>
-      <tr>
-        <td>Protección de memoria</td>
-        <td>No hay protección de memoria</td>
-        <td>Protección de memoria mediante la segmentación y paginación</td>
-      </tr>
-      <tr>
-        <td>Compatibilidad con versiones antiguas del sistema operativo DOS</td>
-        <td>Sí</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <h3>Cambio entre Modo Real y Modo Protegido</h3>
-  <p>El cambio entre Modo Real y Modo Protegido se realiza mediante una instrucción especial llamada "JUMP", que permite que el procesador salte a una nueva posición en la memoria y cambie de modo de operación.</p>
-</div>
-				
+		<div class="row justify-content-between">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Atras</a>
 			</div>
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
+			</div>
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger"
+					href="/virtualización-emuladores-y-entornosdearquitectura">Siguiente</a>
+			</div>
+		</div>
+
+
+		<div class="content">
+
+			<div id="content1" class="animated">
+				<div class="container bg-secondary text-white">
+					<h2>Direcciones en Arquitectura de Computadoras</h2>
+					<p class="text-start">En este tema, exploraremos el concepto de
+						direcciones en arquitectura de computadoras y su importancia en el
+						funcionamiento de los sistemas informáticos. Las direcciones
+						juegan un papel fundamental en la forma en que se accede y se
+						manejan los datos en la memoria.</p>
+
+					<hr>
+
+					<h4 class="text-start">Representación de Direcciones</h4>
+					<p class="text-start">Las direcciones en arquitectura de
+						computadoras se representan de diferentes formas, dependiendo del
+						sistema utilizado. Algunas arquitecturas utilizan direcciones de
+						memoria de tamaño fijo, mientras que otras utilizan direcciones
+						segmentadas o paginadas. Comprender cómo se representan las
+						direcciones es esencial para programar y diseñar sistemas
+						informáticos eficientes.</p>
+
+					<h4 class="text-start">Modos de Direccionamiento</h4>
+					<p class="text-start">Los modos de direccionamiento determinan
+						cómo se accede a los datos e instrucciones en la memoria. Los
+						diferentes modos de direccionamiento incluyen direccionamiento
+						directo, direccionamiento indirecto, direccionamiento inmediato y
+						direccionamiento relativo, entre otros. Cada modo tiene sus
+						ventajas y desventajas, y se utiliza en diferentes situaciones
+						según los requisitos del programa.</p>
+
+					<h4 class="text-start">Memoria Virtual</h4>
+					<p class="text-start">La memoria virtual es una técnica
+						utilizada por los sistemas operativos para proporcionar a los
+						programas la ilusión de disponer de una cantidad de memoria mayor
+						que la físicamente disponible. Esta técnica utiliza un esquema de
+						traducción de direcciones para asignar y gestionar las direcciones
+						virtuales en relación con las direcciones físicas reales. La
+						memoria virtual permite ejecutar programas de mayor tamaño y
+						mejorar la eficiencia del sistema.</p>
+
+					<h4 class="text-start">Acceso a Memoria</h4>
+					<p class="text-start">El acceso a la memoria implica la lectura
+						y escritura de datos en direcciones específicas de la memoria.
+						Para garantizar un acceso correcto y eficiente a la memoria, es
+						necesario tener en cuenta aspectos como la alineación de datos,
+						los ciclos de reloj requeridos y las restricciones de acceso en
+						arquitecturas multiprocesador. El diseño de algoritmos y
+						estructuras de datos eficientes también es crucial para optimizar
+						el acceso a la memoria.</p>
+				</div>
+			</div>
+
 			<div id="content2" class="animated">
-				<div class="container">
-    <h2>Interrupciones</h2>
-    <p>Las interrupciones son eventos que pueden ser generados por hardware o software, y que interrumpen el flujo normal de ejecución de un programa. Su uso permite una mejor gestión de recursos y una mayor flexibilidad en el diseño de sistemas.</p>
-    <p>Existen varios tipos de interrupciones, como las de hardware, que son generadas por dispositivos externos al procesador, o las de software, que son generadas por el propio programa en ejecución. Las interrupciones también pueden ser máscarales, lo que significa que pueden ser habilitadas o deshabilitadas por el sistema.</p>
-    <h3>Tabla de tipos de interrupciones</h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Descripción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Hardware</td>
-                <td>Generadas por dispositivos externos al procesador, como teclados, mouse, discos duros, entre otros.</td>
-            </tr>
-            <tr>
-                <td>Software</td>
-                <td>Generadas por el propio programa en ejecución, como por ejemplo cuando se realiza una división por cero.</td>
-            </tr>
-            <tr>
-                <td>Máscarales</td>
-                <td>Pueden ser habilitadas o deshabilitadas por el sistema, lo que permite un mayor control sobre su uso.</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>Recursos adicionales</h3>
-    <ul>
-        <li><a href="https://es.wikipedia.org/wiki/Interrupci%C3%B3n_(inform%C3%A1tica)">Interrupciones en la Wikipedia</a></li>
-        <li><a href="https://docs.oracle.com/cd/E19620-01/805-3024/6j3vkd3as/index.html">Interrupciones en sistemas Solaris</a></li>
-        <li><a href="https://www.youtube.com/watch?v=BkLrV7oMNhY">Video sobre interrupciones en sistemas embebidos</a></li>
-    </ul>
-</div>
+
+
+				<div class="container col-lg-8 bg-secondary text-white">
+					<h2>Modos de Direccionamiento en Arquitectura de Computadoras</h2>
+					<p class="text-start">En este tema, exploraremos los diferentes
+						modos de direccionamiento utilizados en arquitectura de
+						computadoras y cómo afectan el acceso y la manipulación de los
+						datos y las instrucciones en la memoria.</p>
+
+					<hr>
+
+					<h4 class="text-start">Direccionamiento Directo</h4>
+					<p class="text-start">El direccionamiento directo es un modo
+						comúnmente utilizado en el cual la dirección del operando se
+						especifica directamente en la instrucción. Esto permite un acceso
+						rápido y eficiente a los datos almacenados en ubicaciones de
+						memoria específicas. El direccionamiento directo es ampliamente
+						utilizado en operaciones que involucran matrices y estructuras de
+						datos estáticas.</p>
+
+					<h4 class="text-start">Direccionamiento Indirecto</h4>
+					<p class="text-start">En el direccionamiento indirecto, la
+						dirección del operando se almacena en un registro o en una
+						ubicación de memoria adicional. La instrucción utiliza esta
+						dirección almacenada para acceder al operando real en la memoria.
+						El direccionamiento indirecto es útil cuando se necesita acceder a
+						datos almacenados en ubicaciones de memoria variables o cuando se
+						requiere una mayor flexibilidad en el acceso a los operandos.</p>
+
+					<h4 class="text-start">Direccionamiento Inmediato</h4>
+					<p class="text-start">En el direccionamiento inmediato, el
+						operando se especifica directamente en la instrucción misma. El
+						valor del operando se carga directamente en un registro o se
+						utiliza en una operación aritmética o lógica. El direccionamiento
+						inmediato es útil cuando se trabaja con valores constantes o
+						cuando se requiere una operación rápida en una cantidad fija de
+						datos.</p>
+
+					<h4 class="text-start">Direccionamiento Relativo</h4>
+					<p class="text-start">El direccionamiento relativo utiliza una
+						dirección relativa a una posición actual o a un punto de
+						referencia específico. La instrucción calcula la dirección
+						efectiva sumando o restando un desplazamiento relativo a una
+						dirección base o a un registro específico. El direccionamiento
+						relativo es útil para acceder a datos en estructuras de datos
+						indexadas o para realizar bucles y saltos condicionales en
+						programas.</p>
+				</div>
+				<
+
 
 			</div>
 			<div id="content3" class="animated">
-				<div class="container mt-5">
-  <h2 class="text-center">Comandos de símbolo del sistema y PowerShell</h2>
-  <hr>
-  <div class="row">
-    <div class="col-lg-6">
-      <h4>Símbolo del sistema</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>cd</td>
-            <td>Cambiar directorio</td>
-          </tr>
-          <tr>
-            <td>dir</td>
-            <td>Listar archivos y directorios</td>
-          </tr>
-          <tr>
-            <td>md</td>
-            <td>Crear directorio</td>
-          </tr>
-          <tr>
-            <td>rd</td>
-            <td>Eliminar directorio</td>
-          </tr>
-          <tr>
-            <td>copy</td>
-            <td>Copiar archivos</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-lg-6">
-      <h4>PowerShell</h4>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Get-ChildItem</td>
-            <td>Listar archivos y directorios</td>
-          </tr>
-          <tr>
-            <td>New-Item</td>
-            <td>Crear archivo o directorio</td>
-          </tr>
-          <tr>
-            <td>Remove-Item</td>
-            <td>Eliminar archivo o directorio</td>
-          </tr>
-          <tr>
-            <td>Copy-Item</td>
-            <td>Copiar archivos</td>
-          </tr>
-          <tr>
-            <td>Get-Process</td>
-            <td>Listar procesos en ejecución</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-lg-12">
-      <h4>Recursos adicionales</h4>
-      <ul>
-        <li><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Comandos de Windows</a></li>
-        <li><a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1">Documentación de PowerShell</a></li>
-        <li><a href="https://www.youtube.com/watch?v=soO4RqFj7B4">Curso de PowerShell en YouTube</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+				<div class="container bg-secondary text-white">
+					<h2>Memoria Virtual en Arquitectura de Computadoras</h2>
+					<p class="text-start">En este tema, exploraremos el concepto de
+						memoria virtual y su importancia en la gestión de la memoria en
+						los sistemas informáticos. La memoria virtual es una técnica
+						utilizada por los sistemas operativos para proporcionar una
+						ilusión de memoria más grande que la memoria física disponible.</p>
+
+					<hr>
+
+					<h4 class="text-start">Paginación</h4>
+					<p class="text-start">La paginación es una técnica de memoria
+						virtual que divide la memoria en bloques de tamaño fijo llamados
+						páginas. Cada página se asigna a un marco de página en la memoria
+						física o se guarda en el almacenamiento secundario, como un disco
+						duro. La paginación permite cargar solo las páginas necesarias en
+						la memoria física en función de la demanda, lo que ayuda a
+						optimizar el uso de la memoria y permite ejecutar programas más
+						grandes.</p>
+
+					<h4 class="text-start">Segmentación</h4>
+					<p class="text-start">La segmentación es otra técnica de
+						memoria virtual que divide la memoria en segmentos lógicos más
+						grandes y flexibles. Cada segmento puede contener diferentes
+						partes de un programa, como el código, los datos y la pila. Los
+						segmentos se asignan a bloques de memoria física o se guardan en
+						el almacenamiento secundario. La segmentación ofrece una mayor
+						flexibilidad en la gestión de la memoria, pero puede resultar en
+						fragmentación y requerir una gestión más compleja.</p>
+
+					<h4 class="text-start">Tablas de Página y Tablas de Segmentos</h4>
+					<p class="text-start">Para realizar el mapeo entre las
+						direcciones virtuales y físicas, los sistemas operativos utilizan
+						tablas de página y tablas de segmentos. Estas tablas contienen
+						entradas que indican la correspondencia entre las direcciones
+						virtuales y físicas, así como información adicional para el
+						control de acceso y la protección de la memoria. Las tablas de
+						página y tablas de segmentos permiten a los sistemas operativos
+						realizar la traducción de direcciones durante la ejecución de
+						programas.</p>
+
+					<h4 class="text-start">Ventajas y Desventajas</h4>
+					<p class="text-start">La memoria virtual ofrece varias
+						ventajas, como permitir la ejecución de programas más grandes que
+						la memoria física disponible, facilitar la compartición de memoria
+						entre diferentes procesos y proporcionar protección y aislamiento
+						entre procesos. Sin embargo, también presenta desventajas, como el
+						aumento del tiempo de acceso a la memoria debido a la traducción
+						de direcciones y el posible uso excesivo de memoria secundaria.</p>
+
+					<!-- Puedes agregar más subtemas y descripciones aquí -->
+				</div>
 
 			</div>
-			<div id="content4" class="animated">
-				<div class="container">
-					<h1>Direccionamientos e Introducción al S.O.</h1>
 
-					<h2>Unidad 1: Creación de baterías</h2>
-  <p>En esta unidad se abordan los siguientes temas:</p>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-        <th>Recursos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Direccionamiento lógico y físico</td>
-        <td>Se explican las diferencias entre el direccionamiento lógico y el físico, y cómo se relacionan.</td>
-        <td>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=4xX8JlcXoP8">Video explicativo</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Direccionamiento_l%C3%B3gico">Artículo de Wikipedia</a></li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td>Introducción al S.O.</td>
-        <td>Se presenta una introducción a los sistemas operativos, su historia y su importancia en el funcionamiento de los sistemas de cómputo.</td>
-        <td>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=1Kecu7XZK4w">Video explicativo</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Sistema_operativo">Artículo de Wikipedia</a></li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <h2>Recursos adicionales</h2>
-  <ul>
-    <li><a href="https://www.udemy.com/course/sistemas-operativos-para-ingenieria-de-software-y-sistemas/">Curso en Udemy sobre sistemas operativos</a></li>
-    <li><a href="https://www.amazon.com/-/es/Andrew-S-Tanenbaum-ebook/dp/B07VRS84ZM">Libro "Sistemas Operativos Modernos" de Andrew S. Tanenbaum</a></li>
-  </ul>
-  
-</div>
 
-			</div>
-			<div id="content5" class="animated">
-			<div class="container mt-5">
-  <h2>Proceso de Arranque y carga del S.O.</h2>
-  <p>En esta unidad se estudia el proceso de arranque y carga del Sistema Operativo (S.O.), el cual se divide en varias etapas que se describen a continuación:</p>
-  
-  <table class="table table-striped mt-3">
-    <thead>
-      <tr>
-        <th>Etapa</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>BIOS</td>
-        <td>El BIOS (Basic Input/Output System) es el primer programa que se ejecuta al encender la computadora. Se encarga de realizar las pruebas de hardware y detectar los dispositivos de almacenamiento para cargar el Sistema Operativo.</td>
-      </tr>
-      <tr>
-        <td>MBR</td>
-        <td>El MBR (Master Boot Record) es una pequeña porción del disco duro que se utiliza para almacenar el cargador de arranque (bootloader) del S.O. Se encuentra en el primer sector del disco duro y se encarga de cargar el bootloader del S.O. que se encuentra en otra parte del disco duro.</td>
-      </tr>
-      <tr>
-        <td>Bootloader</td>
-        <td>El bootloader es el programa que se encarga de cargar el núcleo (kernel) del S.O. en la memoria RAM. También permite al usuario seleccionar el S.O. que desea iniciar en caso de que existan varios sistemas operativos instalados en el mismo equipo.</td>
-      </tr>
-      <tr>
-        <td>Núcleo</td>
-        <td>El núcleo del S.O. es el componente principal que se encarga de controlar los recursos del sistema (CPU, memoria, dispositivos de entrada/salida, etc.) y proporcionar una interfaz de programación para que las aplicaciones puedan interactuar con el hardware.</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p>Para profundizar en el proceso de arranque y carga del S.O., se recomienda revisar los siguientes recursos:</p>
-  
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=5QY6_UYOH4g">Video explicativo sobre el proceso de arranque de un Sistema Operativo</a></li>
-    <li><a href="https://www.profesionalreview.com/2018/09/06/proceso-arranque-windows/">Artículo sobre el proceso de arranque en Windows</a></li>
-    <li><a href="https://www.redeszone.net/tutoriales/sistemas-operativos/proceso-arranque-linux/">Tutorial sobre el proceso de arranque en Linux</a></li>
-  </ul>
-</div>
-			
-			</div>
-			<div id="content6" class="animated">
-				<div class="container my-5">
-  <h2 class="mb-4">Mapa de la memoria</h2>
-  
-  <p>En esta unidad se explican los conceptos básicos relacionados con el mapa de memoria, que es una representación de la organización de la memoria de una computadora. A continuación, se presenta un resumen de los temas tratados en la unidad:</p>
-  
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Concepto</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Dirección de memoria</td>
-        <td>Es una referencia única a una ubicación de la memoria.</td>
-      </tr>
-      <tr>
-        <td>Espacio de direcciones</td>
-        <td>Es el conjunto de todas las posibles direcciones de memoria que pueden ser referenciadas por un programa.</td>
-      </tr>
-      <tr>
-        <td>Tamaño de palabra</td>
-        <td>Es el número de bits que se pueden procesar simultáneamente en una operación aritmética o lógica.</td>
-      </tr>
-      <tr>
-        <td>Mapa de bits</td>
-        <td>Es una representación gráfica del uso de la memoria, donde cada bit representa una ubicación de memoria y su valor indica si está libre o ocupada.</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p>Para profundizar en estos temas y otros relacionados con la organización de la memoria, se recomienda consultar los siguientes recursos:</p>
-  
-  <ul>
-    <li><a href="https://es.wikipedia.org/wiki/Direcci%C3%B3n_de_memoria">Wikipedia: Dirección de memoria</a></li>
-    <li><a href="https://es.wikipedia.org/wiki/Espacio_de_direcciones">Wikipedia: Espacio de direcciones</a></li>
-    <li><a href="https://es.wikipedia.org/wiki/Tama%C3%B1o_de_palabra">Wikipedia: Tamaño de palabra</a></li>
-    <li><a href="https://es.wikipedia.org/wiki/Mapa_de_bits">Wikipedia: Mapa de bits</a></li>
-  </ul>
-  
-  <div class="row mt-5">
-    <div class="col-md-6">
-      <img src="/images/mapa-de-bits.png" alt="Mapa de bits" class="img-fluid">
-      <p class="text-center"><em>Ejemplo de un mapa de bits</em></p>
-    </div>
-    <div class="col-md-6">
-      <img src="/images/direccion-de-memoria.png" alt="Dirección de memoria" class="img-fluid">
-      <p class="text-center"><em>Ejemplo de dirección de memoria</em></p>
-    </div>
-  </div>
-</div>
-				
-			</div>
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-        <a class="btn btn-outline-danger" href="/virtualización-emuladores-y-entornosdearquitectura">Siguiente Unidad</a>
-      </div>
-      <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-        <a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Atras Unidad</a>
-      </div>
 		</div>
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
 
-	<footer th:replace="menu/menu :: footer"></footer>
+
+	<script src="../static/js/btnsetion.js"></script>
 </body>
-
+<footer th:replace="menu/menu :: footer"></footer>
 </html>
-</body>
-</html>
-
 
 
 

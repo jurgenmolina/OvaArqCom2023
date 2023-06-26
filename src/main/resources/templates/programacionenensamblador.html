@@ -4,34 +4,28 @@
 
 <head th:replace="menu/menu :: head">
 <meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
-<body>
+<body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header"></header>
+	<header th:replace="menu/menu :: header"> </header>
 
-
-	
 	<section th:fragment="section">
-		<!-- top navigation bar -->
-		<!-- offcanvas -->
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
-			tabindex="-1" id="sidebar">
+
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
-
 						<li class="my-2">
-							<!-- Espaciado	 -->
+							<!-- Espaciado-->
 						</li>
-
 						<li>
 							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
 								Navegación</div>
 						</li>
-
 						<!-- Menu gestionar Temática -->
-
 						<li><a class="nav-link px-3 sidebar-link"
 							data-bs-toggle="collapse" href="#layouts2"> <span
 								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
@@ -42,280 +36,401 @@
 							</span>
 						</a>
 							<div class="collapse show" id="layouts2">
-								<ul class="navbar-nav ps-3 mt-3">
-									<li><a th:href="@{/programaciónenensamblador}"
-										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)" data-content="content1"
-													onclick="showContent(this)">Entornos de desarrollo</a></li>
-												<li><a  href="javascript:void(0)" data-content="content2"
-													onclick="showContent(this)">Generación de fuentes, ensamblado y desensamblado
-													</a></li>
-												<li><a href="javascript:void(0)" data-content="content3"
-													onclick="showContent(this)">Compilación, enlazamiento y archivos ejecutables
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content4"
-													onclick="showContent(this)">Depuración de ejecutables en memoria
-													</a></li>
-													<li><a href="javascript:void(0)" data-content="content5"
-													onclick="showContent(this)">Comandos básicos, recorrido de la memoria y procesador
-													</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)"
+													id="primerEnlace">  Introducción a la Programación en Ensamblador</a>
+													</li>
+												<li><a href="javascript:void(0)"
+													data-content="content2" onclick="showContent(this)"> Manipulación de Datos en Ensamblador</a>
+													</li>
+												<li><a href="javascript:void(0)"
+													data-content="content3" onclick="showContent(this)">Control de Flujo en Ensamblador </a>
+													</li>
+												<li><a href="javascript:void(0)"
+													data-content="content4" onclick="showContent(this)">Subrutinas y Procedimientos en Ensamblador</a>
+													</li>
+												<li><a href="javascript:void(0)"
+													data-content="content5" onclick="showContent(this)">Acceso a la Memoria en Ensamblador </a>
+													</li>
+														<li><a href="javascript:void(0)"
+													data-content="content6" onclick="showContent(this)">Entrada y Salida en Ensamblador </a>
+													</li>
+														
+														<li><a href="javascript:void(0)"
+													data-content="content7" onclick="showContent(this)">Ejemplos codigo depuracion </a>
+													</li>
+												
 											</ul>
-										</div></li>
-
+										</div>
+									</li>
 								</ul>
-							</div>
-							
-							</li>
+							</div></li>
 					</ul>
-
-
 					<div>
 						<a href="#" class="nav-link px-3 text-secondary"><span
 							class="me-2"><i class="bi bi-table"></i></span> <span
 							class="fw-bold">Calendario</span> </a>
 					</div>
-
+					<button id="toggleSidebarBtn"
+						class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
 				</nav>
 			</div>
+
 		</div>
 	</section>
-	<style>
-.section-container {
-	margin-top: 60px;
-}
 
-.main-container {
-	padding-top: 100px;
-	margin-left: 300px;
-}
-</style>
+	<main class="main-container mb-5">
 
-	<main class="main-container  ">
-		<!-- DESARROLLA EL OVA AQUI -->
-		<h1>Programacion en Ensamblador</h1>
-		<div class="content">
-			<div id="content1" class="animated">
-				<div>
-		<h2>Introducción a la programación en ensamblador</h2>
-		<h3>Unidad: Entornos de desarrollo</h3>
-		<p>En la programación de sistemas y software de bajo nivel, la programación en ensamblador es esencial para entender cómo funcionan las instrucciones de la CPU. A continuación, se presenta un resumen de los temas de esta unidad y algunos recursos útiles:</p>
-		<table>
-			<tr>
-				<th>Tema</th>
-				<th>Descripción</th>
-				<th>Recursos</th>
-			</tr>
-			<tr>
-				<td>Introducción a la programación en ensamblador</td>
-				<td>Definición de ensamblador y su importancia en la programación de sistemas y software de bajo nivel</td>
-				<td><a href="https://es.wikipedia.org/wiki/Lenguaje_ensamblador" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Entornos de desarrollo para programación en ensamblador</td>
-				<td>Descripción de los entornos de desarrollo más populares para programar en ensamblador</td>
-				<td><a href="https://www.ghidra-sre.org/" target="_blank">Ghidra</a>, <a href="https://visualstudio.microsoft.com/es/downloads/" target="_blank">Visual Studio</a></td>
-			</tr>
-			<tr>
-				<td>Tipos de datos en ensamblador</td>
-				<td>Tipos de datos y su representación en ensamblador</td>
-				<td><a href="https://es.wikipedia.org/wiki/Tipos_de_datos" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Instrucciones básicas en ensamblador</td>
-				<td>Descripción de las instrucciones básicas en ensamblador, como carga de datos, almacenamiento y operaciones aritméticas</td>
-				<td><a href="https://www.cs.cmu.edu/~fp/courses/15122-f10/lectures/06-instructions.pdf" target="_blank">Carnegie Mellon University</a></td>
-			</tr>
-		</table>
-	</div>
+		<div class="row justify-content-between">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger"
+					href="/virtualización-emuladores-y-entornosdearquitectura">Atras</a>
 			</div>
-			<div id="content2" class="animated">
-				<div class="container my-5">
-  <h2 class="text-center">Introducción a la programación en ensamblador</h2>
-  <h3 class="my-4">Unidad: Generación de fuentes, ensamblado y desensamblado</h3>
-  <div class="row">
-    <div class="col-md-6">
-      <h4 class="text-center">Temas</h4>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Introducción al ensamblador</li>
-        <li class="list-group-item">Generación de fuentes</li>
-        <li class="list-group-item">Proceso de ensamblado</li>
-        <li class="list-group-item">Desensamblado de código</li>
-        <li class="list-group-item">Uso de registros y memoria</li>
-        <li class="list-group-item">Directivas de ensamblado</li>
-        <li class="list-group-item">Instrucciones de ensamblado</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h4 class="text-center">Recursos</h4>
-      <div class="card">
-        <img src="ensamblador.jpg" class="card-img-top" alt="Imagen de ensamblador">
-        <div class="card-body">
-          <h5 class="card-title">Curso de programación en ensamblador</h5>
-          <p class="card-text">Este curso ofrece una introducción completa al ensamblador, incluyendo la generación de fuentes y el proceso de ensamblado.</p>
-          <a href="#" class="btn btn-danger">Ir al curso</a>
-        </div>
-      </div>
-      <div class="card my-4">
-        <img src="registro.jpg" class="card-img-top" alt="Imagen de registro">
-        <div class="card-body">
-          <h5 class="card-title">Uso de registros en ensamblador</h5>
-          <p class="card-text">Este artículo detalla el uso de registros y memoria en ensamblador.</p>
-          <a href="#" class="btn btn-danger">Leer artículo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> 
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
+			</div>
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger"
+					href="/condicionales-saltos-e-instrucciones-repetitivas">Siguiente</a>
+			</div>
+		</div>
+
+
+		<div class="content">
+
+			<div id="content1" class="animated">
+				<div class="container bg-secondary text-white">
+					<h2>Programación en Ensamblador</h2>
+					<p class="text-start">En este tema, exploraremos la
+						programación en ensamblador, que es un lenguaje de programación de
+						bajo nivel utilizado para escribir programas que se ejecutan
+						directamente en el hardware de una computadora. La programación en
+						ensamblador permite un control preciso y detallado sobre el
+						funcionamiento de la computadora, ya que se trabaja a nivel de
+						instrucciones y registros.</p>
+
+					<hr>
+
+					<h4 class="text-start">Estructura y Sintaxis del Ensamblador</h4>
+					<p class="text-start">El ensamblador utiliza una sintaxis
+						específica para escribir instrucciones y operaciones. Se utilizan
+						mnemónicos para representar cada instrucción y se emplean
+						registros y direcciones de memoria para acceder a los datos. Es
+						importante comprender la estructura y la sintaxis del ensamblador
+						para poder programar de manera efectiva en este lenguaje.</p>
+
+					<h4 class="text-start">Operaciones Aritméticas y Lógicas</h4>
+					<p class="text-start">En ensamblador, se pueden realizar
+						operaciones aritméticas y lógicas directamente en los registros de
+						la CPU. Se utilizan instrucciones específicas para realizar sumas,
+						restas, multiplicaciones, divisiones, operaciones lógicas AND, OR,
+						XOR, desplazamientos y comparaciones. Estas operaciones permiten
+						manipular y procesar datos de manera eficiente.</p>
+
+					<h4 class="text-start">Acceso a Memoria</h4>
+					<p class="text-start">El acceso a memoria es esencial en la
+						programación en ensamblador, ya que se pueden leer y escribir
+						datos en ubicaciones específicas de memoria. Se utilizan
+						instrucciones de carga (load) y almacenamiento (store) para
+						transferir datos entre registros y memoria. Además, se pueden
+						utilizar punteros y desplazamientos para acceder a datos
+						almacenados en estructuras y arreglos en memoria.</p>
+
+					<h4 class="text-start">Control de Flujo y Saltos</h4>
+					<p class="text-start">El control de flujo en ensamblador se
+						logra mediante instrucciones de salto condicional e incondicional.
+						Estas instrucciones permiten realizar bifurcaciones en el flujo de
+						ejecución del programa, como saltar a una etiqueta, realizar
+						bucles y condicionales, y llamar a subrutinas. El control de flujo
+						es crucial para implementar algoritmos y estructuras de control en
+						programas en ensamblador.</p>
+
+					<!-- Puedes agregar más subtemas y descripciones aquí -->
+				</div>
+			</div>
+
+			<div id="content2" class="animated ">
+
+
+				<div class="container  col-lg-8 bg-secondary text-white">
+
+					<h2>Instrucciones de Control en Programación en Ensamblador</h2>
+					<p class="text-start">En este tema, exploraremos las
+						instrucciones de control utilizadas en la programación en
+						ensamblador. Estas instrucciones permiten el control del flujo de
+						ejecución de un programa, realizando saltos condicionales e
+						incondicionales, bucles y llamadas a subrutinas.</p>
+
+					<hr>
+
+					<h4 class="text-start">Saltos Incondicionales</h4>
+					<p class="text-start">Las instrucciones de salto incondicional
+						permiten transferir el control del programa a una ubicación
+						específica del código sin ninguna condición. Se utilizan
+						mnemónicos como "JMP" (jump) para realizar este tipo de saltos.
+						Estas instrucciones son útiles para implementar bifurcaciones y
+						saltos a etiquetas o subrutinas en el código.</p>
+
+					<h4 class="text-start">Saltos Condicionales</h4>
+					<p class="text-start">Las instrucciones de salto condicional
+						permiten transferir el control del programa a una ubicación
+						específica del código solo si se cumple una condición determinada.
+						Se utilizan mnemónicos como "JE" (jump if equal), "JNE" (jump if
+						not equal), "JG" (jump if greater), entre otros, para realizar
+						este tipo de saltos. Estas instrucciones son útiles para
+						implementar estructuras de control como condicionales y bucles en
+						ensamblador.</p>
+
+					<h4 class="text-start">Llamadas a Subrutinas</h4>
+					<p class="text-start">Las instrucciones de llamadas a
+						subrutinas permiten transferir el control del programa a una
+						subrutina específica y luego regresar al punto de origen una vez
+						que la subrutina haya terminado su ejecución. Se utilizan
+						mnemónicos como "CALL" (call) y "RET" (return) para realizar estas
+						operaciones. Las llamadas a subrutinas son útiles para modularizar
+						el código y reutilizar funciones en diferentes partes del
+						programa.</p>
+
+					<h4 class="text-start">Bucles</h4>
+					<p class="text-start">Los bucles permiten repetir una secuencia
+						de instrucciones varias veces hasta que se cumpla una condición de
+						finalización. En ensamblador, los bucles se implementan mediante
+						instrucciones de salto condicional y contadores de repetición. Se
+						pueden utilizar mnemónicos como "LOOP" (loop) y "CMP" (compare)
+						para controlar y ajustar el flujo de ejecución en los bucles. Los
+						bucles son fundamentales para realizar operaciones repetitivas y
+						procesamiento de datos en ensamblador.</p>
+				</div>
+
 			</div>
 			<div id="content3" class="animated">
-				<div class="container mt-3">
-  <h2>Introducción a la programación en ensamblador</h2>
-  <h3>Unidad: Compilación, enlazamiento y archivos ejecutables</h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-        <th>Recursos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Compilación y enlazamiento</td>
-        <td>Explicación del proceso de compilación y enlazamiento de programas escritos en lenguaje ensamblador</td>
-        <td>
-          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
-          <br>
-          <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=concepts-link-editing">IBM Knowledge Center</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Archivos ejecutables</td>
-        <td>Descripción de los archivos ejecutables y cómo se ejecutan programas escritos en lenguaje ensamblador</td>
-        <td>
-          <a href="https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm">Tutorialspoint</a>
-          <br>
-          <a href="https://www.gnu.org/software/binutils/">GNU Binutils</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-				
+
+
+				<div class="container  col-lg-8 bg-secondary text-white">
+					<h2>Acceso a Datos en Programación en Ensamblador</h2>
+					<p class="text-start">En este tema, exploraremos cómo acceder y
+						manipular datos en la programación en ensamblador. El acceso a los
+						datos es una parte fundamental de cualquier programa, y en
+						ensamblador se utilizan instrucciones específicas para realizar
+						operaciones de lectura y escritura en registros y memoria.</p>
+
+					<hr>
+
+					<h4 class="text-start">Movimiento de Datos</h4>
+					<p class="text-start">El movimiento de datos es una operación
+						común en la programación en ensamblador, y se utiliza para
+						transferir valores entre registros y memoria. Se utilizan
+						instrucciones de carga (load) y almacenamiento (store) para mover
+						datos desde y hacia ubicaciones de memoria específicas. Además, se
+						pueden utilizar instrucciones de transferencia directa entre
+						registros para manipular y realizar cálculos con los datos.</p>
+
+					<h4 class="text-start">Acceso a Memoria</h4>
+					<p class="text-start">El acceso a memoria es esencial en la
+						programación en ensamblador, ya que permite leer y escribir datos
+						en ubicaciones específicas de memoria. Se utilizan instrucciones
+						de carga (load) y almacenamiento (store) para transferir datos
+						entre registros y memoria. Además, se pueden utilizar punteros y
+						desplazamientos para acceder a datos almacenados en estructuras y
+						arreglos en memoria.</p>
+
+					<h4 class="text-start">Operaciones Aritméticas y Lógicas</h4>
+					<p class="text-start">En ensamblador, se pueden realizar
+						operaciones aritméticas y lógicas directamente en los registros de
+						la CPU. Se utilizan instrucciones específicas para realizar sumas,
+						restas, multiplicaciones, divisiones, operaciones lógicas AND, OR,
+						XOR, desplazamientos y comparaciones. Estas operaciones permiten
+						manipular y procesar los datos almacenados en registros y memoria.
+					</p>
+
+					<h4 class="text-start">Conversiones de Datos</h4>
+					<p class="text-start">En ocasiones, es necesario convertir los
+						datos entre diferentes formatos, como convertir un número entero a
+						un número de punto flotante o viceversa. En ensamblador, se pueden
+						utilizar instrucciones y algoritmos específicos para realizar
+						estas conversiones. Las conversiones de datos son importantes para
+						garantizar que los datos se manipulen y utilicen de manera
+						correcta y coherente en un programa.</p>
+				</div>
 			</div>
+
 			<div id="content4" class="animated">
-				<div class="container mt-5">
-  <h2>Introducción a la programación en ensamblador</h2>
-  <h3>Unidad: Depuración de ejecutables en memoria</h3>
-  <p>En esta unidad se aborda el proceso de depuración de ejecutables en memoria y se enseña a utilizar herramientas como <strong>gdb</strong> para identificar y corregir errores en programas escritos en ensamblador.</p>
-  <h4>Temas de la unidad</h4>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Tema</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Depuración en ensamblador</td>
-        <td>Introducción a las técnicas y herramientas de depuración de programas escritos en ensamblador</td>
-      </tr>
-      <tr>
-        <td>Uso de gdb</td>
-        <td>Uso de la herramienta gdb para depurar programas en ensamblador</td>
-      </tr>
-      <tr>
-        <td>Identificación de errores</td>
-        <td>Identificación de errores comunes en programas en ensamblador y cómo corregirlos</td>
-      </tr>
-    </tbody>
-  </table>
-  <h4>Recursos recomendados</h4>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <img src="imagen1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Debugging with GDB</h5>
-          <p class="card-text">Libro sobre el uso de gdb para depurar programas en C y ensamblador</p>
-          <a href="#" class="btn btn-danger">Ver recurso</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-        <img src="imagen2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">GDB Tutorial</h5>
-          <p class="card-text">Tutorial en línea sobre el uso de gdb para depurar programas en ensamblador</p>
-          <a href="#" class="btn btn-danger">Ver recurso</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+				<div class="container  col-lg-8 bg-secondary text-white">
+									<h2>Interrupciones y Excepciones en Programación en Ensamblador</h2>
+					        <p class="text-start">
+					            En este tema, exploraremos las interrupciones y excepciones en la programación en ensamblador. Las interrupciones y excepciones son eventos que pueden ocurrir durante la ejecución de un programa y requieren una respuesta o acción especial por parte del sistema o del programador.
+					        </p>
+					        
+					        <hr>
+					        
+					        <h4 class="text-start">Interrupciones de Hardware</h4>
+					        <p class="text-start">
+					            Las interrupciones de hardware son eventos generados por dispositivos externos, como teclados, ratones, temporizadores y dispositivos de almacenamiento. Estas interrupciones pueden ocurrir en cualquier momento durante la ejecución del programa y requieren una respuesta inmediata. En ensamblador, se utilizan instrucciones y rutinas especiales para manejar y responder a las interrupciones de hardware.
+					        </p>
+					        
+					        <h4 class="text-start">Excepciones de Software</h4>
+					        <p class="text-start">
+					            Las excepciones de software son eventos generados por el propio programa debido a condiciones o situaciones excepcionales, como divisiones entre cero, desbordamiento de registros o violaciones de acceso a memoria. Estas excepciones requieren una acción específica por parte del programador para manejar y corregir el error. En ensamblador, se utilizan instrucciones y rutinas de manejo de excepciones para capturar y responder a estas situaciones inesperadas.
+					        </p>
+					        
+					        <h4 class="text-start">Rutinas de Manejo de Interrupciones y Excepciones</h4>
+					        <p class="text-start">
+					            Las rutinas de manejo de interrupciones y excepciones son bloques de código especiales que se ejecutan cuando se produce una interrupción o excepción. Estas rutinas son responsables de realizar las acciones necesarias para responder y resolver la situación, como guardar y restaurar el estado del programa, realizar operaciones específicas o generar respuestas adecuadas. En ensamblador, se definen y configuran estas rutinas para manejar correctamente las interrupciones y excepciones.
+					        </p>
+					        
+					        <h4 class="text-start">Control y Prioridad de Interrupciones</h4>
+					        <p class="text-start">
+					            El control y la prioridad de las interrupciones son aspectos importantes a considerar al trabajar con interrupciones de hardware. En ensamblador, se utilizan técnicas y configuraciones específicas para controlar y asignar prioridades a las interrupciones, de modo que se puedan gestionar adecuadamente y garantizar el correcto funcionamiento del sistema.
+					        </p>
+				
+				
+				</div>
+			</div>
+
+			<div id="content5" class="animated">
+				<div class="container  col-lg-8 bg-secondary text-white">
+											<h2>Optimización de Código en Programación en Ensamblador</h2>
+				        <p class="text-start">
+				            En este tema, exploraremos técnicas y estrategias para optimizar el código en programación en ensamblador. La optimización del código es un proceso clave para mejorar el rendimiento y la eficiencia de los programas, aprovechando al máximo los recursos del sistema y minimizando el tiempo de ejecución.
+				        </p>
+				        
+				        <hr>
+				        
+				        <h4 class="text-start">Reducción de Instrucciones</h4>
+				        <p class="text-start">
+				            La reducción de instrucciones es una técnica que consiste en simplificar y minimizar el número de instrucciones necesarias para realizar una operación. Se busca eliminar instrucciones redundantes, combinar operaciones similares y utilizar instrucciones más eficientes. Esta técnica puede mejorar el rendimiento y reducir el tamaño del código generado.
+				        </p>
+				        
+				        <h4 class="text-start">Optimización de Bucles</h4>
+				        <p class="text-start">
+				            Los bucles son una parte común en la programación en ensamblador, y optimizar su rendimiento es fundamental. Se pueden aplicar técnicas como la eliminación de cuellos de botella, la reducción del número de iteraciones y la optimización de las operaciones dentro del bucle para mejorar la eficiencia y minimizar el tiempo de ejecución. También se pueden utilizar instrucciones especiales, como instrucciones SIMD (Single Instruction, Multiple Data), para realizar operaciones en paralelo en conjuntos de datos.
+				        </p>
+				        
+				        <h4 class="text-start">Utilización Eficiente de Registros</h4>
+				        <p class="text-start">
+				            Los registros son recursos valiosos en la programación en ensamblador, y utilizarlos de manera eficiente puede mejorar el rendimiento del programa. Se deben minimizar las operaciones de carga y almacenamiento en memoria, aprovechar al máximo los registros disponibles y planificar cuidadosamente el uso de los registros en las operaciones. También se pueden utilizar técnicas como la asignación de registros específicos para variables críticas y la optimización de los accesos a memoria.
+				        </p>
+				        
+				        <h4 class="text-start">Aprovechamiento de Características de la Arquitectura</h4>
+				        <p class="text-start">
+				            Cada arquitectura de procesador tiene características y funcionalidades específicas que se pueden aprovechar para optimizar el código. Es importante conocer estas características y utilizar las instrucciones y modos de direccionamiento adecuados para maximizar el rendimiento. También se pueden utilizar técnicas como la predicción de saltos, la paralelización de instrucciones y la explotación de la memoria caché para mejorar el rendimiento global del programa.
+				        </p>
+				
+				
+				</div>
 
 			</div>
-			<div id="content5" class="animated">
-				<div class="container my-5">
-	<h2 class="text-center">Comandos básicos, recorrido de la memoria y procesador</h2>
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>Temas</th>
-				<th>Descripción</th>
-				<th>Recursos</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Arquitectura del procesador</td>
-				<td>Conceptos básicos del procesador y su arquitectura</td>
-				<td><a href="https://es.wikipedia.org/wiki/Arquitectura_de_la_CPU" target="_blank">Wikipedia</a></td>
-			</tr>
-			<tr>
-				<td>Sistemas numéricos</td>
-				<td>Hexadecimal, Octal, Decimal y Binario</td>
-				<td><a href="https://www.ecured.cu/Sistemas_Numericos_(Inform%C3%A1tica)" target="_blank">EcuRed</a></td>
-			</tr>
-			<tr>
-				<td>Registros del procesador</td>
-				<td>Tipos de registros y su uso en el procesador</td>
-				<td><a href="https://www.monografias.com/trabajos97/registros-procesador/registros-procesador.shtml" target="_blank">Monografías</a></td>
-			</tr>
-			<tr>
-				<td>Memoria del procesador</td>
-				<td>Tipos de memoria y su uso en el procesador</td>
-				<td><a href="https://es.wikipedia.org/wiki/Memoria_computacional" target="_blank">Wikipedia</a></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+			
+			<div id="content6" class="animated">
+				<div class="container  col-lg-8 bg-secondary text-white">
+				
+										<h2>Depuración de Errores en Programación en Ensamblador</h2>
+						        <p class="text-start">
+						            En este tema, aprenderemos técnicas y herramientas para depurar y solucionar errores en programas escritos en ensamblador. La depuración es un proceso fundamental en el desarrollo de software, que nos permite identificar y corregir problemas y fallos en el código para asegurar un funcionamiento correcto y eficiente del programa.
+						        </p>
+						        
+						        <hr>
+						        
+						        <h4 class="text-start">Métodos de Depuración</h4>
+						        <p class="text-start">
+						            Existen diferentes métodos y enfoques para depurar programas en ensamblador. Se explorarán técnicas como el uso de impresiones y mensajes de depuración, la ejecución paso a paso, el seguimiento de registros y variables, y el análisis de volcados de memoria. Estas herramientas nos permitirán comprender y rastrear el flujo de ejecución del programa, identificar errores y realizar ajustes necesarios.
+						        </p>
+						        
+						        <h4 class="text-start">Uso de Herramientas de Depuración</h4>
+						        <p class="text-start">
+						            Ensamblador se puede depurar utilizando herramientas específicas que proporcionan funcionalidades adicionales. Se explorarán herramientas de depuración como debuggers y emuladores que permiten examinar el estado de los registros, la memoria y los valores de las variables en tiempo real. Estas herramientas son valiosas para identificar y solucionar errores complejos en el código.
+						        </p>
+						        
+						        <h4 class="text-start">Identificación y Resolución de Errores Comunes</h4>
+						        <p class="text-start">
+						            Se abordarán errores comunes que pueden ocurrir al programar en ensamblador y se proporcionarán estrategias para su identificación y resolución. Algunos ejemplos de errores incluyen problemas de sintaxis, errores de lógica, desbordamientos de pila y errores de acceso a memoria. Aprenderemos a reconocer estos errores y a utilizar las herramientas y técnicas de depuración para encontrar soluciones efectivas.
+						        </p>
+						        
+						        <h4 class="text-start">Prácticas de Depuración Eficientes</h4>
+						        <p class="text-start">
+						            Se compartirán prácticas recomendadas para realizar una depuración eficiente en ensamblador. Estas prácticas incluyen la planificación y organización del proceso de depuración, la documentación adecuada de los problemas y soluciones encontradas, la creación de casos de prueba para validar la corrección del código y el seguimiento sistemático de los errores y mejoras realizadas.
+						        </p>
+							
+							</div>
+			
+						</div>
+						
+						<div id="content7" class="animated">
+							<div class="container  col-lg-8 bg-secondary text-white">
+							 <h2>Ejercicios de Ensamblador</h2>
+			        
+			        <hr>
+			        
+			        <h4 >Ejercicio 1: Suma de dos números</h4>
+			        <p >
+			            Escribe un programa en ensamblador que sume dos números y muestre el resultado. Los números se almacenarán en registros y el resultado se mostrará en pantalla. A continuación se muestra el código resuelto en ensamblador:
+			        </p>
+			        <p>
+			            MOV AX, 5    ; Primer número
+			            MOV BX, 7    ; Segundo número
+			            ADD AX, BX   ; Suma de los números
+			            MOV CX, AX   ; Guardar el resultado en CX
+			            ; Mostrar el resultado en pantalla (código adicional)
+			            MOV AH, 2    ; Función de impresión en pantalla
+			            MOV DL, 'El resultado es: '   ; Mensaje a mostrar
+			            INT 21h      ; Llamada al servicio de impresión en pantalla
+			            MOV AH, 2    ; Función de impresión en pantalla
+			            MOV DL, '0'  ; Mostrar dígito cero antes del resultado
+			            INT 21h      ; Llamada al servicio de impresión en pantalla
+			            ADD CL, 30h  ; Convertir el resultado a formato ASCII
+			            MOV AH, 2    ; Función de impresión en pantalla
+			            MOV DL, CL   ; Mostrar el resultado
+			            INT 21h      ; Llamada al servicio de impresión en pantalla
+			        </p>
+			        
+			        <h4 >Ejercicio 2: Factorial de un número</h4>
+			        <p >
+			            Escribe un programa en ensamblador que calcule el factorial de un número dado y lo muestre en pantalla. El número se ingresará por el usuario y el resultado se calculará utilizando un bucle. A continuación se muestra el código resuelto en ensamblador:
+			        </p>
+			        <p >
+			            MOV CX, 1     ; Inicializar el contador
+			            MOV AX, 1     ; Inicializar el resultado
+			            MOV BX, 5     ; Número ingresado por el usuario (ejemplo: 5)
+			            
+			            LOOP_START:
+			            MUL CX        ; Multiplicar el resultado por el contador
+			            INC CX        ; Incrementar el contador
+			            CMP CX, BX    ; Comparar el contador con el número ingresado
+			            JBE LOOP_START   ; Volver al inicio del bucle si el contador es menor o igual al número
+			            
+			            ; Mostrar el resultado en pantalla (código adicional)
+			            MOV AH, 2     ; Función de impresión en pantalla
+			            MOV DL, 'El factorial es: '   ; Mensaje a mostrar
+			            INT 21h       ; Llamada al servicio de impresión en pantalla
+			            MOV AH, 2     ; Función de impresión en pantalla
+			            MOV DL, '0'   ; Mostrar dígito cero antes del resultado
+			            INT 21h       ; Llamada al servicio de impresión en pantalla
+			            ADD AL, 30h   ; Convertir el resultado a formato ASCII
+			            MOV AH, 2     ; Función de impresión en pantalla
+			            MOV DL, AL    ; Mostrar el resultado
+			            INT 21h       ; Llamada al servicio de impresión en pantalla
+			        </p>
+				
+				
+				</div>
 
 			</div>
 		</div>
 	</main>
-	<script th:src="@{/js/efecto.js}"></script>
-	<footer th:replace="menu/menu :: footer"></footer>
+
+
+	<script src="../static/js/btnsetion.js"></script>
 </body>
-
+<footer th:replace="menu/menu :: footer"></footer>
 </html>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

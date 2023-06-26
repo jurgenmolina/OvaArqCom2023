@@ -1,166 +1,215 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-  <meta charset="utf-8">
-
-
-  <link rel="stylesheet" type="text/css" th:href="@{css/efecto.css}" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
 <body onload="showContent(document.getElementById('primerEnlace'))">
 
-  <header th:replace="menu/menu :: header"></header>
+	<header th:replace="menu/menu :: header"> </header>
 
-  <section th:fragment="section">
-    <div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar" style="margin-top: 30px">
-      <div class="offcanvas-body p-0">
-        <nav class="navbar-white">
-          <ul class="navbar-nav">
-            <li class="my-2">
-              <!-- Espaciado-->
-            </li>
-            <li>
-              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
-                Navegación</div>
-            </li>
-            <!-- Menu gestionar Temática -->
-            <li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span class="me-2"><i
-                    class="bi bi-book-half text-dark "></i></span> <span
-                  class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
-                  <span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
-                  </span>
-                </span>
-              </a>
-              <div class="collapse show" id="layouts2">
-                <ul class="navbar-nav ps-3 " style="margin-top: 10px">
-                  <li>
-                    <div class="sidebar">
-                      <ul>
-                        <li><a href="javascript:void(0)" data-content="content1" onclick="showContent(this)"
-                            id="primerEnlace">
-                            Componentes Internos
-                            ›
-                            Tarjetas Madres
-                          </a></li>
-                        <li><a href="javascript:void(0)" data-content="content2" onclick="showContent(this)"> Placa Base
-                        <li><a href="javascript:void(0)" data-content="content3" onclick="showContent(this)">Memoria Ram
-                          </a> </li>
-                        <li><a href="javascript:void(0)" data-content="content4" onclick="showContent(this)">Memorias
-                          </a></li>
-                        <li><a href="javascript:void(0)" data-content="content5" onclick="showContent(this)">Informacion
-                            de Memorias DDR2</a></li>
-                        <!-- <li><a href="javascript:void(0)" data-content="content6"
-														onclick="showContent(this)">Examen </a></li> -->
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <div>
-            <a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i class="bi bi-table"></i></span> <span
-                class="fw-bold">Calendario</span> </a>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <script th:src="@{/js/Efecto.js}"></script>
-  </section>
+	<section th:fragment="section">
 
-  </main>
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+						<li class="my-2">
+							<!-- Espaciado-->
+						</li>
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+						<!-- Menu gestionar Temática -->
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
+									<li>
+										<div class="sidebar">
+											<ul>
+												<li>
+                                            <a href="javascript:void(0)" data-content="content1"
+                                                onclick="showContent(this)" id="primerEnlace">Introducción a la Tarjeta Madre</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-content="content2"
+                                                onclick="showContent(this)">Arquitectura y Componentes de la Tarjeta Madre</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-content="content3"
+                                                onclick="showContent(this)">Instalación y Mantenimiento de la Tarjeta Madre</a>
+                                        </li>
+												
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div></li>
+					</ul>
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+					<button id="toggleSidebarBtn"
+						class="btn btn-outline-primary fixed-bottom-end m-3">
+						<i class="bi bi-list"></i>
+					</button>
+				</nav>
+			</div>
 
-  <div class="main-container mb-5">
-    <h1>Memoria RAM</h1>
-    <div>
-      <p>
-        La memoria principal o RAM (Random Access Memory) es donde el ordenador guarda los datos que está
-        utilizando en el momento. Está conformada internamente por millones de registros y biestables. La
-        diferencia entre la RAM y otros tipos de memoria de almacenamiento es que la RAM es mucho más rápida y se
-        borra al apagar el ordenador.
-      </p>
-      <p>
-        Clasificación RAM por su estructura eléctrica:
-      </p>
-      <ul>
-        <li>SRAM: RAM Sincrónica o Estática, utiliza tecnología MOS (Oxido de Metal) y es la más rápida.</li>
-        <li>DRAM: RAM Dinámica, utiliza condensadores y es la RAM normal de los computadores.</li>
-      </ul>
-      <p>
-        Aquí tienes algunas imágenes relacionadas con la memoria RAM:
-      </p>
-      <div>
-        <img src="https://example.com/image1.jpg" alt="Imagen 1">
-        <img src="https://example.com/image2.jpg" alt="Imagen 2">
-        <img src="https://example.com/image3.jpg" alt="Imagen 3">
-      </div>
-      <p>
-        Si deseas obtener más información sobre la memoria RAM, puedes buscar en los siguientes enlaces:
-      </p>
-      <ul>
-        <li><a href="https://www.ejemplo1.com" target="_blank">Enlace 1</a></li>
-        <li><a href="https://www.ejemplo2.com" target="_blank">Enlace 2</a></li>
-        <li><a href="https://www.ejemplo3.com" target="_blank">Enlace 3</a></li>
-      </ul>
-    </div>
-  </div>
-  </div>
+		</div>
+	</section>
 
-  </div>
+	<main class="main-container mb-5">
 
-  <div id="content4" class="animated">
-    <div class="main-container mb-5">
-      <h1 style="padding: 10px">Memoria RAM</h1>
-      <div>
-        <p>
-          Físicamente, en la tarjeta madre, la memoria RAM se clasifica según el tipo de ranura:
+		<div class="row justify-content-between">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+				<a class="btn btn-outline-danger" href="/introArqui">Atras</a>
+			</div>
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
+			</div>
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+				<a class="btn btn-outline-danger" href="/direccionamientos">Siguiente</a>
+			</div>
+		</div>
+
+
+		<div class="content">
+
+			<div id="content1" class="animated">
+				<div class="container bg-secondary text-white">
+					<p class="text-start">
+						<b class="bg-danger">Introducción a la Tarjeta Madre</b> <br>
+						La tarjeta madre es uno de los componentes fundamentales de una
+						computadora. En este tema, aprenderás sobre la función de la
+						tarjeta madre, sus componentes principales y su importancia en el
+						funcionamiento del sistema informático. También explorarás los
+						diferentes tipos de tarjetas madre disponibles en el mercado y
+						cómo elegir la adecuada para tus necesidades.
+					</p>
+					<!-- Puedes añadir una imagen de internet -->
+					<img src="ruta_imagen" alt="Tarjeta Madre" class="img-fluid">
+
+					<hr>
+
+					<b class="bg-danger">Arquitectura y Componentes de la Tarjeta
+						Madre</b>
+					<hr>
+					<p class="text-start">En este subtema, profundizarás en la
+						arquitectura interna de una tarjeta madre y los diferentes
+						componentes que la componen. Aprenderás sobre el chipset, los
+						puertos de conexión, los zócalos del procesador, los slots de
+						memoria y otros elementos clave de una tarjeta madre. También
+						explorarás cómo estos componentes se interconectan y cómo influyen
+						en el rendimiento y la capacidad de expansión del sistema.</p>
+
+					<hr>
+
+					<b class="bg-danger">Instalación y Mantenimiento de la Tarjeta
+						Madre</b>
+					<hr>
+					<p class="text-start">En este último subtema, te guiaré a
+						través de los pasos necesarios para la correcta instalación y
+						mantenimiento de una tarjeta madre. Aprenderás cómo identificar
+						los diferentes puertos y conectores en la tarjeta madre, cómo
+						realizar la instalación física correctamente y cómo conectar los
+						cables y periféricos necesarios. También explorarás las mejores
+						prácticas para el mantenimiento periódico de la tarjeta madre y
+						cómo solucionar problemas comunes que puedan surgir.</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="content2" class="animated">
+    <div class="container bg-secondary text-white">
+        <p class="text-start">
+            <b class="bg-danger">Arquitectura y Componentes de la Tarjeta Madre</b>
+            <br>
+            La tarjeta madre es uno de los componentes más importantes de una computadora, ya que actúa como el "cerebro" del sistema. En este tema, exploraremos la arquitectura interna de una tarjeta madre y los diferentes componentes que la componen.
         </p>
-        <ul>
-          <li>DIPP y SIPP: Encapsulado de doble línea. 1 DIPP por cada bit.</li>
-          <li>SIMM: Simple módulo de memoria en línea. Interfaz de 30 y 72 pines.</li>
-          <li>DIMM: Doble módulo de memoria en línea. Equivale a dos SIMM. Interfaz de 168 pines.</li>
-          <li>RIMM: Módulo de memoria en única línea de Rambus. 184 pines.</li>
-          <li>RDIMM: Módulos de Memoria con Contactos Duales Registrados.</li>
-          <li>UDIMM: Módulo de Memoria con contactos sin registro.</li>
-          <li>LRDIMM: Módulo de Memoria con Contactos Duales con Registros y de Carga Reducida.</li>
-        </ul>
-
-        <p>
-          Aquí tienes un enlace donde puedes obtener más información sobre los módulos RDIMM y LRDIMM: <a
-            href="https://www.dasher.com/server-memory-rdimm-vs-lrdimm-and-when-to-use-them/" target="_blank">Enlace</a>
+        
+        <hr>
+        
+        <h4 class="text-start">Chipset</h4>
+        <p class="text-start">
+            El chipset es uno de los componentes clave de la tarjeta madre. Consiste en un conjunto de circuitos integrados que se encargan de coordinar y controlar las diferentes funciones del sistema. El chipset se divide en dos partes principales: el Northbridge y el Southbridge. El Northbridge se encarga de la comunicación entre el procesador, la memoria RAM y la tarjeta gráfica, mientras que el Southbridge se encarga de la gestión de los periféricos y las interfaces de almacenamiento.
         </p>
-      </div>
+        
+        <h4 class="text-start">Zócalo del Procesador</h4>
+        <p class="text-start">
+            El zócalo del procesador es el lugar donde se coloca el procesador en la tarjeta madre. Existen diferentes tipos de zócalos, cada uno compatible con un determinado tipo de procesador. Es importante asegurarse de que el procesador sea compatible con el zócalo de la tarjeta madre antes de realizar la instalación. Además, el zócalo del procesador también influye en el rendimiento del sistema, ya que determina la velocidad de transferencia de datos entre el procesador y la memoria RAM.
+        </p>
+        
+        <h4 class="text-start">Slots de Memoria</h4>
+        <p class="text-start">
+            Los slots de memoria son los lugares donde se insertan los módulos de memoria RAM en la tarjeta madre. Estos slots pueden variar en cantidad y tipo, dependiendo del modelo de la tarjeta madre. Es importante tener en cuenta las especificaciones de la tarjeta madre y los requisitos de memoria del sistema al elegir los módulos de memoria adecuados y al instalarlos en los slots correspondientes.
+        </p>
+        
+        <!-- Puedes añadir más componentes y descripciones aquí -->
     </div>
-  </div>
+</div>
+		
 
-
-  <div id="content5" class="animated">
-    <div class="container">
-
+		<div id="content3" class="animated">
+    <div class="container bg-secondary text-white">
+        <p class="text-start">
+            <b class="bg-danger">Instalación y Mantenimiento de la Tarjeta Madre</b>
+            <br>
+            En este tema, exploraremos los pasos necesarios para realizar una correcta instalación y mantenimiento de la tarjeta madre en un sistema informático.
+        </p>
+        
+        <hr>
+        
+        <h4 class="text-start">Preparación y Verificación</h4>
+        <p class="text-start">
+            Antes de instalar una tarjeta madre, es importante realizar algunas tareas de preparación y verificación. Esto incluye verificar la compatibilidad de la tarjeta madre con el chasis de la computadora, asegurarse de tener los tornillos y otros elementos necesarios, y verificar la integridad de la tarjeta madre y sus componentes.
+        </p>
+        
+        <h4 class="text-start">Instalación Física</h4>
+        <p class="text-start">
+            El proceso de instalación física implica abrir el chasis de la computadora, localizar el área donde se instalará la tarjeta madre y fijarla de manera segura utilizando los tornillos correspondientes. Es importante tener cuidado al manipular la tarjeta madre para evitar daños estáticos y asegurarse de que esté correctamente alineada con los puertos y conectores del chasis.
+        </p>
+        
+        <h4 class="text-start">Conexiones y Cableado</h4>
+        <p class="text-start">
+            Después de instalar la tarjeta madre, es necesario realizar las conexiones y el cableado adecuados. Esto incluye conectar los cables de alimentación, los cables de datos (como los cables SATA) y los cables de los periféricos (como el cable USB o el cable de audio). Es importante seguir las instrucciones del fabricante de la tarjeta madre y verificar que las conexiones se realicen de manera correcta y segura.
+        </p>
+        
+        <h4 class="text-start">Mantenimiento y Solución de Problemas</h4>
+        <p class="text-start">
+            Una vez instalada la tarjeta madre, es importante realizar un mantenimiento periódico para garantizar su correcto funcionamiento. Esto puede incluir la limpieza de los contactos y los ventiladores, así como la actualización del BIOS y los controladores. Además, aprenderemos cómo solucionar problemas comunes relacionados con la tarjeta madre, como problemas de arranque, errores de memoria y problemas de reconocimiento de dispositivos.
+        </p>
+        
+        <!-- Puedes añadir más pasos y descripciones aquí -->
     </div>
-  </div>
+</div>
+		</div>
 
-  <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-    <a class="btn btn-outline-danger" href="/direccionamientos">Siguiente Unidad</a>
-  </div>
-  <div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
-    <a class="btn btn-outline-danger" href="/introArqui">Atras Unidad</a>
-  </div>
-  </div>
+		
+	</main>
 
-  <!-- <div id="content6" class="animated">
-				<iframe src="https://jonnyedwardjs.h5p.com/content/1291955784468827708/embed"
-					aria-label="¿Qué es la cache en la estructura interna del procesador?" width="600" height="637"
-					frameborder="0" allowfullscreen="allowfullscreen"
-					allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe>
-				<script src="https://jonnyedwardjs.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
-			</div> -->
-  </div>
-  </main>
-  <script th:src="@{/js/Efecto.js}"></script>
- 
+
+	<script src="../static/js/btnsetion.js"></script>
 </body>
 <footer th:replace="menu/menu :: footer"></footer>
-
 </html>
