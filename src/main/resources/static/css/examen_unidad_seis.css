@@ -43,7 +43,7 @@
     color: #F91646;
     padding: 15px 30px;
     outline: none;
-    border: none;
+    border: 1px solid #F91646;
     border-radius: 5px;
     background: #fff;
     cursor: pointer;
@@ -288,7 +288,7 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #007bff;
+    background: #F91646;
     border: 1px solid #007bff;
     line-height: 10px;
     opacity: 0;
@@ -298,7 +298,9 @@ footer button{
 }
 
 footer button:hover{
-    background: #0263ca;
+    background: white;
+    border: 1px solid #F91646;
+    color:#F91646;
 }
 
 footer button.show{
