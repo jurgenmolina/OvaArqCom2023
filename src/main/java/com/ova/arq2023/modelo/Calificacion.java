@@ -1,5 +1,7 @@
 package com.ova.arq2023.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,25 +15,27 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "respuestas")
-
-@Getter
 @Setter
-public class Respuesta {
+@Getter
+@Entity
+@Table(name = "calificaciones")
+public class Calificacion implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "respuesta")
-    private String respuesta;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    private Usuario idUsuario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pregunta_id")
-    private Pregunta pregunta;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_tema", referencedColumnName = "id")
+    private Tema idTema;
 
-    @Column(name = "es_correcta")
-    private Boolean esCorrecta;
+    @Column(name = "calificacion")
+    private int calificacion;
 
     // Constructor, getters y setters
 }

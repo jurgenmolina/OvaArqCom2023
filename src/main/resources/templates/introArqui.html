@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" 
-xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="menu/menu :: head">
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="../static/css/sectionIntro.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sectionIntro.css">
 </head>
 
 <body onload="showContent(document.getElementById('primerEnlace'))">
 
-	<header th:replace="menu/menu :: header">	
-	</header>
+	<header th:replace="menu/menu :: header"> </header>
 
 	<section th:fragment="section">
-		
-		<div class="offcanvas offcanvas-start sidebar-nav bg-white " tabindex="-1" id="sidebar"
-			style="margin-top: 30px">
+
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white "
+			tabindex="-1" id="sidebar" style="margin-top: 30px">
 			<div class="offcanvas-body p-0">
 				<nav class="navbar-white">
 					<ul class="navbar-nav">
@@ -27,160 +26,176 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 								Navegación</div>
 						</li>
 						<!-- Menu gestionar Temática -->
-						<li><a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#layouts2"> <span
-									class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
-									class="bd-toc-link text-secondary fw-bold ">Temática</span><span class="ms-auto">
-									<span class="right-icon"> <i class="bi bi-chevron-down text-dark"></i>
-									</span>
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
 								</span>
-							</a>
+							</span>
+						</a>
 							<div class="collapse show" id="layouts2">
 								<ul class="navbar-nav ps-3 " style="margin-top: 10px">
 									<li>
 										<div class="sidebar">
 											<ul>
-												<li><a href="javascript:void(0)" data-content="content1"
-														onclick="showContent(this)" id="primerEnlace">
-														Introducción a la Arquitectura de Computadores</a></li>
-												<li><a href="javascript:void(0)" data-content="content2"
-														onclick="showContent(this)">Sistemas
+												<li><a href="javascript:void(0)"
+													data-content="content1" onclick="showContent(this)"
+													id="primerEnlace"> Introducción a la Arquitectura de
+														Computadores</a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content2" onclick="showContent(this)">Sistemas
 														numéricos: Hexadecimal, Octal, Decimal y Binario</a></li>
-												<li><a href="javascript:void(0)" data-content="content3"
-														onclick="showContent(this)">IEEE
+												<li><a href="javascript:void(0)"
+													data-content="content3" onclick="showContent(this)">IEEE
 														754 Punto Flotante y Números negativos </a></li>
-												<li><a href="javascript:void(0)" data-content="content4"
-														onclick="showContent(this)">Representación
+												<li><a href="javascript:void(0)"
+													data-content="content4" onclick="showContent(this)">Representación
 														de los datos y almacenamiento </a></li>
-												<li><a href="javascript:void(0)" data-content="content5"
-														onclick="showContent(this)">Estructura
+												<li><a href="javascript:void(0)"
+													data-content="content5" onclick="showContent(this)">Estructura
 														interna del procesador: Unidad de Control, Unidad
 														Aritmética y Lógica, Registros, Cache </a></li>
+												<li><a href="javascript:void(0)"
+													data-content="content6" onclick="showContent(this)">Primer
+														Examen </a></li>
 												<!-- <li><a href="javascript:void(0)" data-content="content6"
 														onclick="showContent(this)">Examen </a></li> -->
 											</ul>
 										</div>
 									</li>
 								</ul>
-							</div>
-						</li>
+							</div></li>
 					</ul>
 					<div>
-						<a href="#" class="nav-link px-3 text-secondary"><span class="me-2"><i
-									class="bi bi-table"></i></span> <span class="fw-bold">Calendario</span> </a>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
 					</div>
-					<button id="toggleSidebarBtn" class="btn btn-outline-primary fixed-bottom-end m-3">
-						<i class="bi bi-list"></i>
-					</button>
+
 				</nav>
 			</div>
-			
+
 		</div>
 	</section>
 
 	<main class="main-container mb-5">
 
 		<div class="row justify-content-between">
-			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-start mt-1">
 				<a class="btn btn-outline-danger" href="/">Atras</a>
 			</div>
-			<div class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
-				<h2 class="bg-danger text-white p-2 text-center">Introducción a la arquitectura de computadores</h2>
+			<div
+				class="col-sm-6 col-md-8 d-flex flex-column align-items-center mt-1">
+				<h2 class="bg-danger text-white p-2 text-center">Introducción a
+					la arquitectura de computadores</h2>
 			</div>
-			<div class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
+			<div
+				class="col-sm-3 col-md-2 d-flex flex-row align-items-center justify-content-end mt-1">
 				<a class="btn btn-outline-danger" href="/tarjetamadreymemoria">Siguiente</a>
 			</div>
 		</div>
-		
+
 
 		<div class="content">
 
 			<div id="content1" class="animated">
 				<div class="container bg-secondary text-white">
 					<p class="text-start">
-						<b class="bg-danger">Resumen</b>
-						<br>La arquitectura de computadoras es el estudio de cómo los sistemas
-						informáticos están
-						diseñados y organizados, tanto a nivel de hardware como de software. La arquitectura
-						de computadoras se centra en el diseño de los componentes de la computadora, como
-						la unidad central de procesamiento (CPU), la memoria, los dispositivos de entrada y
-						salida, y cómo se comunican y trabajan juntos.
-						<br>
-						El diseño de la arquitectura de computadoras tiene un impacto significativo en el
-						rendimiento y la eficiencia de los sistemas informáticos. Por ejemplo, una CPU que
-						pueda procesar más instrucciones por segundo permitirá una mayor velocidad de
-						procesamiento. Una memoria con una mayor capacidad y velocidad de acceso
-						permitirá una mejor administración de datos y una mayor capacidad de
-						almacenamiento.
-						<br>
-						Además, la arquitectura de computadoras también es importante para la seguridad y la
-						fiabilidad de los sistemas informáticos. Los sistemas informáticos modernos utilizan
-						técnicas avanzadas de arquitectura de hardware y software para proteger la privacidad
-						y la seguridad de los datos y prevenir ataques informáticos.
-						<br>
-						Los arquitectos de computadoras son los profesionales encargados de diseñar, evaluar
-						y optimizar la arquitectura de los sistemas informáticos. Trabajan en la industria de la
-						tecnología, la investigación y el desarrollo, y otros campos relacionados con la
-						tecnología. Ellos trabajan en colaboración con otros profesionales de la informática,
-						como ingenieros de hardware, programadores de software y diseñadores de interfaces
-						de usuario para crear sistemas informáticos eficientes y efectivos.
+						<b class="bg-danger">Resumen</b> <br>La arquitectura de
+						computadoras es el estudio de cómo los sistemas informáticos están
+						diseñados y organizados, tanto a nivel de hardware como de
+						software. La arquitectura de computadoras se centra en el diseño
+						de los componentes de la computadora, como la unidad central de
+						procesamiento (CPU), la memoria, los dispositivos de entrada y
+						salida, y cómo se comunican y trabajan juntos. <br> El diseño
+						de la arquitectura de computadoras tiene un impacto significativo
+						en el rendimiento y la eficiencia de los sistemas informáticos.
+						Por ejemplo, una CPU que pueda procesar más instrucciones por
+						segundo permitirá una mayor velocidad de procesamiento. Una
+						memoria con una mayor capacidad y velocidad de acceso permitirá
+						una mejor administración de datos y una mayor capacidad de
+						almacenamiento. <br> Además, la arquitectura de computadoras
+						también es importante para la seguridad y la fiabilidad de los
+						sistemas informáticos. Los sistemas informáticos modernos utilizan
+						técnicas avanzadas de arquitectura de hardware y software para
+						proteger la privacidad y la seguridad de los datos y prevenir
+						ataques informáticos. <br> Los arquitectos de computadoras
+						son los profesionales encargados de diseñar, evaluar y optimizar
+						la arquitectura de los sistemas informáticos. Trabajan en la
+						industria de la tecnología, la investigación y el desarrollo, y
+						otros campos relacionados con la tecnología. Ellos trabajan en
+						colaboración con otros profesionales de la informática, como
+						ingenieros de hardware, programadores de software y diseñadores de
+						interfaces de usuario para crear sistemas informáticos eficientes
+						y efectivos.
 					</p>
 					<hr>
 					<b class="bg-danger">Lenguaje Ensamblador</b>
 					<hr>
 					<p class="text-start">
-						El lenguaje ensamblador x86 es un lenguaje de programación de bajo nivel que se
-						utiliza para programar procesadores Intel x86, que se encuentran en la mayoría de los
-						sistemas informáticos actuales. En el lenguaje ensamblador, las instrucciones de
-						programación se escriben en un formato que es legible por el procesador. El lenguaje
-						ensamblador x86 se utiliza a menudo en la programación de sistemas operativos,
-						controladores de dispositivos, y otras aplicaciones donde el rendimiento y la eficiencia
-						son críticos.
-						<br>
-						En la programación de ensamblador x86, cada instrucción se corresponde con una
-						operación específica que el procesador puede ejecutar. Por ejemplo, una instrucción
-						podría ser "MOV AX, BX", que significa mover el contenido del registro BX al registro
-						AX. Las instrucciones se organizan en secciones o bloques de código, y se pueden
-						utilizar etiquetas para permitir saltos condicionales e incondicionales en el código.
-						El lenguaje ensamblador x86 también proporciona acceso directo al hardware de la
-						computadora, lo que lo hace ideal para la programación de controladores de
-						dispositivos y aplicaciones de bajo nivel. Además, la programación en ensamblador x86
-						puede ser muy eficiente en términos de velocidad de ejecución, ya que el código
-						generado se ejecuta directamente en el procesador, sin necesidad de un intérprete o un
-						compilador que pueda ralentizar la ejecución.
-						<br>
-						Aunque la programación en ensamblador x86 puede ser muy poderosa y eficiente,
-						también puede ser muy compleja y propensa a errores. El lenguaje ensamblador es muy
-						detallado y no proporciona las abstracciones y estructuras de control de flujo que se
-						encuentran en los lenguajes de programación de alto nivel. Por lo tanto, se requiere un
-						alto nivel de conocimiento y habilidad para programar eficazmente en ensamblador
-						x86.
+						El lenguaje ensamblador x86 es un lenguaje de programación de bajo
+						nivel que se utiliza para programar procesadores Intel x86, que se
+						encuentran en la mayoría de los sistemas informáticos actuales. En
+						el lenguaje ensamblador, las instrucciones de programación se
+						escriben en un formato que es legible por el procesador. El
+						lenguaje ensamblador x86 se utiliza a menudo en la programación de
+						sistemas operativos, controladores de dispositivos, y otras
+						aplicaciones donde el rendimiento y la eficiencia son críticos. <br>
+						En la programación de ensamblador x86, cada instrucción se
+						corresponde con una operación específica que el procesador puede
+						ejecutar. Por ejemplo, una instrucción podría ser "MOV AX, BX",
+						que significa mover el contenido del registro BX al registro AX.
+						Las instrucciones se organizan en secciones o bloques de código, y
+						se pueden utilizar etiquetas para permitir saltos condicionales e
+						incondicionales en el código. El lenguaje ensamblador x86 también
+						proporciona acceso directo al hardware de la computadora, lo que
+						lo hace ideal para la programación de controladores de
+						dispositivos y aplicaciones de bajo nivel. Además, la programación
+						en ensamblador x86 puede ser muy eficiente en términos de
+						velocidad de ejecución, ya que el código generado se ejecuta
+						directamente en el procesador, sin necesidad de un intérprete o un
+						compilador que pueda ralentizar la ejecución. <br> Aunque la
+						programación en ensamblador x86 puede ser muy poderosa y
+						eficiente, también puede ser muy compleja y propensa a errores. El
+						lenguaje ensamblador es muy detallado y no proporciona las
+						abstracciones y estructuras de control de flujo que se encuentran
+						en los lenguajes de programación de alto nivel. Por lo tanto, se
+						requiere un alto nivel de conocimiento y habilidad para programar
+						eficazmente en ensamblador x86.
 					</p>
 					<hr>
 					<b class="bg-danger">RISC-V</b>
 					<hr>
-					<pclass="text-start">
-						RISC-V es una arquitectura de conjunto de instrucciones (ISA) de procesador de código
-						abierto. Es un conjunto de instrucciones basado en el enfoque de Reduced Instruction
-						Set Computer (RISC), que significa "computadora con un conjunto de instrucciones
-						reducido". La ISA RISC-V fue diseñada en la Universidad de California, Berkeley en 2010
-						y ha ganado una gran popularidad en la comunidad de la tecnología de hardware.
-						<br>
-						RISC-V ofrece una arquitectura limpia y simple que hace que la implementación de
-						procesadores sea más fácil y eficiente. Además, su diseño modular permite a los
-						fabricantes de chips personalizar los procesadores para cumplir con sus necesidades
-						específicas. La ISA RISC-V también es de código abierto, lo que significa que cualquier
-						persona puede acceder a su diseño, hacer mejoras y distribuir su implementación.
-						Otra ventaja de la ISA RISC-V es que está diseñada para ser escalable desde dispositivos
-						móviles de baja potencia hasta servidores de alta gama, lo que la hace adecuada para
-						una amplia gama de aplicaciones. Además, como es un estándar abierto, las empresas y
-						organizaciones pueden construir y comercializar procesadores RISC-V sin tener que
-						pagar regalías o licencias.
-						<br>
-						En resumen, RISC-V es una arquitectura de conjunto de instrucciones de procesador de
-						código abierto que ofrece simplicidad, modularidad, escalabilidad y economía de
-						licencias. Su popularidad sigue en aumento en la industria de los procesadores, y se
-						espera que tenga un gran impacto en el futuro del hardware de la computadora.
-						</p>
+					<pclass="text-start"> RISC-V es una arquitectura de
+					conjunto de instrucciones (ISA) de procesador de código abierto. Es
+					un conjunto de instrucciones basado en el enfoque de Reduced
+					Instruction Set Computer (RISC), que significa "computadora con un
+					conjunto de instrucciones reducido". La ISA RISC-V fue diseñada en
+					la Universidad de California, Berkeley en 2010 y ha ganado una gran
+					popularidad en la comunidad de la tecnología de hardware. <br>
+					RISC-V ofrece una arquitectura limpia y simple que hace que la
+					implementación de procesadores sea más fácil y eficiente. Además,
+					su diseño modular permite a los fabricantes de chips personalizar
+					los procesadores para cumplir con sus necesidades específicas. La
+					ISA RISC-V también es de código abierto, lo que significa que
+					cualquier persona puede acceder a su diseño, hacer mejoras y
+					distribuir su implementación. Otra ventaja de la ISA RISC-V es que
+					está diseñada para ser escalable desde dispositivos móviles de baja
+					potencia hasta servidores de alta gama, lo que la hace adecuada
+					para una amplia gama de aplicaciones. Además, como es un estándar
+					abierto, las empresas y organizaciones pueden construir y
+					comercializar procesadores RISC-V sin tener que pagar regalías o
+					licencias. <br>
+					En resumen, RISC-V es una arquitectura de conjunto de instrucciones
+					de procesador de código abierto que ofrece simplicidad,
+					modularidad, escalabilidad y economía de licencias. Su popularidad
+					sigue en aumento en la industria de los procesadores, y se espera
+					que tenga un gran impacto en el futuro del hardware de la
+					computadora.
+					</p>
 				</div>
 			</div>
 
@@ -189,42 +204,44 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 					<div class="row">
 						<div class="col-lg-8 bg-secondary text-white">
 							<h3 class="bg-danger text-white">Sistemas numéricos</h3>
-							<p>Los sistemas numéricos son métodos para representar y manipular números en la
-								arquitectura de computadores. El sistema más común es el decimal (0-9), pero también se
-								utilizan sistemas binarios (0 y 1), octales (0-7) y hexadecimales (0-9, A-F). Cada
-								sistema tiene reglas y propiedades específicas. La comprensión de estos sistemas es
-								esencial en la arquitectura de computadores para realizar operaciones y representar
-								información de manera eficiente.</p>
+							<p>Los sistemas numéricos son métodos para representar y
+								manipular números en la arquitectura de computadores. El sistema
+								más común es el decimal (0-9), pero también se utilizan sistemas
+								binarios (0 y 1), octales (0-7) y hexadecimales (0-9, A-F). Cada
+								sistema tiene reglas y propiedades específicas. La comprensión
+								de estos sistemas es esencial en la arquitectura de computadores
+								para realizar operaciones y representar información de manera
+								eficiente.</p>
 
 							<!-- Contenido principal -->
 							<b class="bg-danger">Bit</b>
-							<p>La palabra bit fue utilizada por primera vez en la década de los 30, sorprendentemente,
-								para designar
-								partes de información (bits of information). Simplificando, un bit es exactamente eso:
-								una combinación de
-								dos dígitos que se junta con otros dígitos del mismo tipo para generar la información
+							<p>La palabra bit fue utilizada por primera vez en la década
+								de los 30, sorprendentemente, para designar partes de
+								información (bits of information). Simplificando, un bit es
+								exactamente eso: una combinación de dos dígitos que se junta con
+								otros dígitos del mismo tipo para generar la información
 								completa.</p>
 
-							<p>Toda la memoria del ordenador se compone de dispositivos electrónicos que pueden adoptar
-								únicamente
-								dos estados, que representamos matemáticamente por 0 y 1. Cualquiera de estas unidades
-								de
-								información se denomina <b>bit</b>, contracción de «binary digit» en inglés.
+							<p>
+								Toda la memoria del ordenador se compone de dispositivos
+								electrónicos que pueden adoptar únicamente dos estados, que
+								representamos matemáticamente por 0 y 1. Cualquiera de estas
+								unidades de información se denomina <b>bit</b>, contracción de
+								«binary digit» en inglés.
 							</p>
 
-							<p><b class="bg-danger">NIBBLE: </b> 4 bits</p>
+							<p>
+								<b class="bg-danger">NIBBLE: </b> 4 bits
+							</p>
 
 							<b class="bg-danger">BYTE</b>
-							<p>Cada grupo de 8 bits se conoce como byte u
-								octeto. Es la unidad de almacenamiento en
-								memoria, la cual está constituida por un
-								elevado número de posiciones que almacenan
-								bytes. La cantidad de memoria de que dispone
-								un sistema se mide en: (24 Oct 1922 –
-								Aleman - Leer Werner Buchholz en 1957)
-								“Mordisco”
-								<br>
-								<b>1 Byte = 4 bits para el IBM 7030.</b>
+							<p>
+								Cada grupo de 8 bits se conoce como byte u octeto. Es la unidad
+								de almacenamiento en memoria, la cual está constituida por un
+								elevado número de posiciones que almacenan bytes. La cantidad de
+								memoria de que dispone un sistema se mide en: (24 Oct 1922 –
+								Aleman - Leer Werner Buchholz en 1957) “Mordisco” <br> <b>1
+									Byte = 4 bits para el IBM 7030.</b>
 							</p>
 
 							<table class="table table-danger table-striped">
@@ -265,50 +282,52 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							<h3 class="bg-danger text-white">Websites para conversiones</h3>
 							<ul>
 								<li><a class="text-white"
-										href="http://www.periodni.com/es/sistema_de_numeracion_convertidor.html">http://www.periodni.com
-										/es/sistema_de_numeracion_convertidor.html</a>
-								</li>
+									href="http://www.periodni.com/es/sistema_de_numeracion_convertidor.html">http://www.periodni.com
+										/es/sistema_de_numeracion_convertidor.html</a></li>
 								<li><a class="text-white"
-										href="http://wims.unice.fr/wims/es_tool~number~baseconv.es.html">http://wims.unice.fr/wims
-										/es_tool~number~baseconv.es.html</a>
-								</li>
+									href="http://wims.unice.fr/wims/es_tool~number~baseconv.es.html">http://wims.unice.fr/wims
+										/es_tool~number~baseconv.es.html</a></li>
 							</ul>
 
 							<h3 class="bg-danger text-white">Websites complementarias</h3>
 							<ul>
 								<li><a class="text-white"
-										href="https://es.khanacademy.org/math/pre-algebra/applying-math-reasoning-topic/alternate-number-bases/v/number-systems-introduction">https://es.khanacademy.org/math/pre-algebra/applying-math-reasoning-topic/alternate-number-bases/v/number-systems-introduction</a>
+									href="https://es.khanacademy.org/math/pre-algebra/applying-math-reasoning-topic/alternate-number-bases/v/number-systems-introduction">https://es.khanacademy.org/math/pre-algebra/applying-math-reasoning-topic/alternate-number-bases/v/number-systems-introduction</a>
 								</li>
 								<li><a class="text-white"
-										href="https://es.wikipedia.org/wiki/Sistema_binario">https://es.wikipedia.org/wiki/Sistema_binario</a>
+									href="https://es.wikipedia.org/wiki/Sistema_binario">https://es.wikipedia.org/wiki/Sistema_binario</a>
 								</li>
 								<li><a class="text-white"
-										href="http://www.areatecnologia.com/sistema-binario.htm">http://www.areatecnologia.com/sistema-binario.htm</a>
+									href="http://www.areatecnologia.com/sistema-binario.htm">http://www.areatecnologia.com/sistema-binario.htm</a>
 								</li>
 								<li><a class="text-white"
-										href="https://www.disfrutalasmatematicas.com/numeros/">https://www.disfrutalasmatematicas.com/numeros/</a>
+									href="https://www.disfrutalasmatematicas.com/numeros/">https://www.disfrutalasmatematicas.com/numeros/</a>
 								</li>
 							</ul>
 
 							<h3 class="bg-danger text-white">Videos complementarios</h3>
 							<ul>
-								<li><a class="text-white" href="https://www.youtube.com/watch?v=l6uSJdm-uus">UTPL
-										Conversión de sistemas
-										numéricos</a></li>
 								<li><a class="text-white"
-										href="https://www.youtube.com/watch?v=jdp91beSm5g">Conversiones sistemas
-										numéricos #1 Introducción, métodos y conceptos básicos.</a></li>
+									href="https://www.youtube.com/watch?v=l6uSJdm-uus">UTPL
+										Conversión de sistemas numéricos</a></li>
 								<li><a class="text-white"
-										href="https://www.youtube.com/watch?v=h7tEf4pnANc">Conversiones entre sistemas
-										numéricos #2 Cifras decimales en cadenas numéricas.</a></li>
+									href="https://www.youtube.com/watch?v=jdp91beSm5g">Conversiones
+										sistemas numéricos #1 Introducción, métodos y conceptos
+										básicos.</a></li>
 								<li><a class="text-white"
-										href="https://www.youtube.com/watch?v=k-1AK5s6M-k">Conversiones entre sistemas
-										numericos #3 Metodos alternativos Decimal a binario</a></li>
+									href="https://www.youtube.com/watch?v=h7tEf4pnANc">Conversiones
+										entre sistemas numéricos #2 Cifras decimales en cadenas
+										numéricas.</a></li>
 								<li><a class="text-white"
-										href="https://www.youtube.com/watch?v=Q2ddN4I89Z4">Conversiones entre sistemas
-										numéricos #4 Compresión y descompresión Binaria. Hexadecimal y octal.</a></li>
+									href="https://www.youtube.com/watch?v=k-1AK5s6M-k">Conversiones
+										entre sistemas numericos #3 Metodos alternativos Decimal a
+										binario</a></li>
 								<li><a class="text-white"
-										href="https://es.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/number-systems-introduction">https://es.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/number-systems-introduction</a>
+									href="https://www.youtube.com/watch?v=Q2ddN4I89Z4">Conversiones
+										entre sistemas numéricos #4 Compresión y descompresión
+										Binaria. Hexadecimal y octal.</a></li>
+								<li><a class="text-white"
+									href="https://es.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/number-systems-introduction">https://es.khanacademy.org/math/algebra-home/alg-intro-to-algebra/algebra-alternate-number-bases/v/number-systems-introduction</a>
 								</li>
 							</ul>
 						</div>
@@ -317,7 +336,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 					<div class="row">
 						<div class="col-lg-4 bg-secondary text-white">
-							<h3 class="bg-danger text-white">Unidades para la representación de un dato almacenado</h3>
+							<h3 class="bg-danger text-white">Unidades para la
+								representación de un dato almacenado</h3>
 							<ul class="list-group bg-danger">
 								<li class="list-group-item">Kilobytes (1 KB = 1000 Bytes)</li>
 								<li class="list-group-item">Megabytes (1 MB = 1000 KB)</li>
@@ -334,14 +354,18 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							</ul>
 						</div>
 						<div class="col-lg-8 bg-secondary text-white">
-							<h3 class="bg-danger text-white">Unidades básicas de información</h3>
-							<img src="http://2.bp.blogspot.com/_raEL387YB8s/TVCUpB0HCGI/AAAAAAAAAA8/e82vvdtiXxc/s1600/unidades.JPG"
-								alt="Unidades de información" style="display: block; margin: 0 auto;" class="img-fluid">
+							<h3 class="bg-danger text-white">Unidades básicas de
+								información</h3>
+							<img
+								src="http://2.bp.blogspot.com/_raEL387YB8s/TVCUpB0HCGI/AAAAAAAAAA8/e82vvdtiXxc/s1600/unidades.JPG"
+								alt="Unidades de información"
+								style="display: block; margin: 0 auto;" class="img-fluid">
 							<hr>
-							<p><b>PALABRA:</b> 2 Bytes o a partir de la arquitectura del PC se puede decir que es 4 u 8
-								Bytes, para nuestra
-								materia sería 16 bits, o 32 o 64 bits.
-								<b>PALABRA DOBLE:</b> 4 Bytes <b>PALABRA CUADRUPLE:</b> 8 Bytes <b>PÁRRAFO:</b> 16 Bytes
+							<p>
+								<b>PALABRA:</b> 2 Bytes o a partir de la arquitectura del PC se
+								puede decir que es 4 u 8 Bytes, para nuestra materia sería 16
+								bits, o 32 o 64 bits. <b>PALABRA DOBLE:</b> 4 Bytes <b>PALABRA
+									CUADRUPLE:</b> 8 Bytes <b>PÁRRAFO:</b> 16 Bytes
 							</p>
 						</div>
 					</div>
@@ -350,21 +374,22 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 						<h3 class="bg-danger text-white">Sistemas Numéricos</h3>
 						<div class="col-md-6">
 							<b class="bg-danger text-white">Sistema Decimal</b>
-							<p>
-								El sistema decimal es el sistema numérico más comúnmente utilizado en nuestra vida
-								cotidiana. Se basa en la representación de valores utilizando diez símbolos diferentes:
-								0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. Cada posición en un número decimal tiene un valor
-								asociado en función de su posición. El dígito más a la derecha representa las unidades,
-								el siguiente representa las decenas, luego las centenas y así sucesivamente.
+							<p>El sistema decimal es el sistema numérico más comúnmente
+								utilizado en nuestra vida cotidiana. Se basa en la
+								representación de valores utilizando diez símbolos diferentes:
+								0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. Cada posición en un número
+								decimal tiene un valor asociado en función de su posición. El
+								dígito más a la derecha representa las unidades, el siguiente
+								representa las decenas, luego las centenas y así sucesivamente.
 							</p>
 							<!-- Agregar más información relevante sobre el sistema decimal -->
 
-							<b class="bg-danger text-white">Ejemplo de Conversión Decimal a Binario</b>
-							<p>
-								Para convertir un número decimal a binario, se puede utilizar el método de la división
-								sucesiva. A continuación, se muestra una tabla de conversión decimal a binario para el
-								número decimal 27.
-							</p>
+							<b class="bg-danger text-white">Ejemplo de Conversión Decimal
+								a Binario</b>
+							<p>Para convertir un número decimal a binario, se puede
+								utilizar el método de la división sucesiva. A continuación, se
+								muestra una tabla de conversión decimal a binario para el número
+								decimal 27.</p>
 							<table class="table table-danger table-striped">
 								<thead>
 									<tr>
@@ -407,26 +432,25 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 									</tr>
 								</tbody>
 							</table>
-							<p>
-								El número binario equivalente al número decimal 27 es 11011.
-							</p>
+							<p>El número binario equivalente al número decimal 27 es
+								11011.</p>
 						</div>
 
 						<div class="col-md-6">
 							<b class="bg-danger text-white">Sistema Hexadecimal</b>
-							<p>
-								El sistema hexadecimal es ampliamente utilizado en informática y programación. Utiliza
-								dieciséis símbolos diferentes para representar valores: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A,
-								B, C, D, E y F. Los dígitos A a F representan los valores del 10 al 15 respectivamente.
-							</p>
+							<p>El sistema hexadecimal es ampliamente utilizado en
+								informática y programación. Utiliza dieciséis símbolos
+								diferentes para representar valores: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+								9, A, B, C, D, E y F. Los dígitos A a F representan los valores
+								del 10 al 15 respectivamente.</p>
 							<!-- Agregar más información relevante sobre el sistema hexadecimal -->
 
-							<b class="bg-danger text-white">Ejemplo de Conversión Hexadecimal a Binario</b>
-							<p>
-								Para convertir un número hexadecimal a binario, se puede asociar cada dígito hexadecimal
-								con su equivalente binario. A continuación, se muestra una tabla de conversión
-								hexadecimal a binario para el número hexadecimal 2A.
-							</p>
+							<b class="bg-danger text-white">Ejemplo de Conversión
+								Hexadecimal a Binario</b>
+							<p>Para convertir un número hexadecimal a binario, se puede
+								asociar cada dígito hexadecimal con su equivalente binario. A
+								continuación, se muestra una tabla de conversión hexadecimal a
+								binario para el número hexadecimal 2A.</p>
 							<table class="table table-danger table-striped">
 								<thead>
 									<tr>
@@ -445,29 +469,27 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 									</tr>
 								</tbody>
 							</table>
-							<p>
-								El número binario equivalente al número hexadecimal 2A es 00101010.
-							</p>
+							<p>El número binario equivalente al número hexadecimal 2A es
+								00101010.</p>
 						</div>
 					</div>
 
 					<div class="row bg-secondary text-white">
 						<div class="col-md-6">
 							<b class="bg-danger text-white">Sistema Octal</b>
-							<p>
-								El sistema octal utiliza ocho símbolos diferentes: 0, 1, 2, 3, 4, 5, 6 y 7. Es menos
-								comúnmente utilizado en comparación con el sistema decimal y el sistema hexadecimal.
-								Cada posición en un número octal tiene un valor asociado en función de su posición, de
-								manera similar al sistema decimal.
-							</p>
+							<p>El sistema octal utiliza ocho símbolos diferentes: 0, 1,
+								2, 3, 4, 5, 6 y 7. Es menos comúnmente utilizado en comparación
+								con el sistema decimal y el sistema hexadecimal. Cada posición
+								en un número octal tiene un valor asociado en función de su
+								posición, de manera similar al sistema decimal.</p>
 							<!-- Agregar más información relevante sobre el sistema octal -->
 
-							<b class="bg-danger text-white">Ejemplo de Conversión Octal a Binario</b>
-							<p>
-								Para convertir un número octal a binario, se puede asociar cada dígito octal con su
-								equivalente binario. A continuación, se muestra una tabla de conversión octal a binario
-								para el número octal 63.
-							</p>
+							<b class="bg-danger text-white">Ejemplo de Conversión Octal a
+								Binario</b>
+							<p>Para convertir un número octal a binario, se puede asociar
+								cada dígito octal con su equivalente binario. A continuación, se
+								muestra una tabla de conversión octal a binario para el número
+								octal 63.</p>
 							<table class="table table-danger table-striped">
 								<thead>
 									<tr>
@@ -486,32 +508,28 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 									</tr>
 								</tbody>
 							</table>
-							<p>
-								El número binario equivalente al número octal 63 es 110011.
-							</p>
+							<p>El número binario equivalente al número octal 63 es
+								110011.</p>
 						</div>
 
 						<div class="col-md-6">
 							<b class="bg-danger text-white">Sistema Binario</b>
-							<p>
-								El sistema binario es fundamental en la computación y en la electrónica digital. Utiliza
-								solo dos símbolos: 0 y 1. Cada posición en un número binario tiene un valor asociado en
-								función de su posición, al igual que los otros sistemas numéricos.
-							</p>
+							<p>El sistema binario es fundamental en la computación y en
+								la electrónica digital. Utiliza solo dos símbolos: 0 y 1. Cada
+								posición en un número binario tiene un valor asociado en función
+								de su posición, al igual que los otros sistemas numéricos.</p>
 							<!-- Agregar más información relevante sobre el sistema binario -->
 
-							<b class="bg-danger text-white">Ejemplo de Conversión Binario a Decimal</b>
-							<p>
-								Para convertir un número binario a decimal, se puede multiplicar cada dígito binario por
-								la potencia correspondiente de 2 y sumar los resultados. A continuación, se muestra un
-								ejemplo de conversión del número binario 11011 a decimal.
-							</p>
-							<p>
-								(1 × 2^4) + (1 × 2^3) + (0 × 2^2) + (1 × 2^1) + (1 × 2^0) = 16 + 8 + 0 + 2 + 1 = 27
-							</p>
-							<p>
-								El número decimal equivalente al número binario 11011 es 27.
-							</p>
+							<b class="bg-danger text-white">Ejemplo de Conversión Binario
+								a Decimal</b>
+							<p>Para convertir un número binario a decimal, se puede
+								multiplicar cada dígito binario por la potencia correspondiente
+								de 2 y sumar los resultados. A continuación, se muestra un
+								ejemplo de conversión del número binario 11011 a decimal.</p>
+							<p>(1 × 2^4) + (1 × 2^3) + (0 × 2^2) + (1 × 2^1) + (1 × 2^0)
+								= 16 + 8 + 0 + 2 + 1 = 27</p>
+							<p>El número decimal equivalente al número binario 11011 es
+								27.</p>
 						</div>
 					</div>
 				</div>
@@ -520,62 +538,77 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 			<div id="content3" class="animated">
 				<div class="container">
 					<div class="row bg-secondary text-white p-2">
-						<h2 class="display-6 bg-danger text-white p-2">Números reales (punto flotante)</h2>
+						<h2 class="display-6 bg-danger text-white p-2">Números reales
+							(punto flotante)</h2>
 						<div class="col-lg-6">
 							<h2>Web Online</h2>
 							<ul class="list-group">
-								<li class="list-group-item bg-secondary text-white p-2"><a class="text-white"
-										href="http://www.zator.com/Cpp/E2_2_4a1.htm">http://www.zator.com/Cpp/E2_2_4a1.htm</a>
+								<li class="list-group-item bg-secondary text-white p-2"><a
+									class="text-white" href="http://www.zator.com/Cpp/E2_2_4a1.htm">http://www.zator.com/Cpp/E2_2_4a1.htm</a>
 								</li>
-								<li class="list-group-item bg-secondary text-white p-2"><a class="text-white"
-										href="http://www.h-schmidt.net/FloatConverter/IEEE754.html">http://www.h-schmidt.net/FloatConverter/IEEE754.html</a>
+								<li class="list-group-item bg-secondary text-white p-2"><a
+									class="text-white"
+									href="http://www.h-schmidt.net/FloatConverter/IEEE754.html">http://www.h-schmidt.net/FloatConverter/IEEE754.html</a>
 								</li>
-								<li class="list-group-item bg-secondary text-white p-2"><a class="text-white"
-										href="http://informatica.uv.es/seguia/FAC/Teoria/IEEE-754.html">http://informatica.uv.es/seguia/FAC/Teoria/IEEE-754.html</a>
+								<li class="list-group-item bg-secondary text-white p-2"><a
+									class="text-white"
+									href="http://informatica.uv.es/seguia/FAC/Teoria/IEEE-754.html">http://informatica.uv.es/seguia/FAC/Teoria/IEEE-754.html</a>
 								</li>
 							</ul>
 						</div>
 						<div class="col-lg-6">
 							<h2>Para Android</h2>
-							<p>Descarga la aplicación desde <a class="text-white"
+							<p>
+								Descarga la aplicación desde <a class="text-white"
 									href="https://play.google.com/store/apps/details?id=de.FrankM.Tools.ieee754Dez&hl=es_CO&gl=US">Google
-									Play Store</a>.</p>
+									Play Store</a>.
+							</p>
 
 							<h2>Para PC</h2>
-							<p>Descarga la aplicación desde <a class="text-white"
-									href="https://sourceforge.net/projects/ieeecalc/">SourceForge</a>.</p>
+							<p>
+								Descarga la aplicación desde <a class="text-white"
+									href="https://sourceforge.net/projects/ieeecalc/">SourceForge</a>.
+							</p>
 						</div>
 
 						<div class="mt-5">
 							<h2>Leer también</h2>
 							<ul class="list-group">
-								<li class="list-group-item bg-secondary text-white p-2"><a class="text-white"
-										href="https://es.wikipedia.org/wiki/Coma_flotante">https://es.wikipedia.org/wiki/Coma_flotante</a>
+								<li class="list-group-item bg-secondary text-white p-2"><a
+									class="text-white"
+									href="https://es.wikipedia.org/wiki/Coma_flotante">https://es.wikipedia.org/wiki/Coma_flotante</a>
 								</li>
-								<li class="list-group-item bg-secondary text-white p-2"><a class="text-white"
-										href="https://en.wikipedia.org/wiki/IEEE_754">https://en.wikipedia.org/wiki/IEEE_754</a>
+								<li class="list-group-item bg-secondary text-white p-2"><a
+									class="text-white"
+									href="https://en.wikipedia.org/wiki/IEEE_754">https://en.wikipedia.org/wiki/IEEE_754</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="row bg-secondary text-white p-2">
-						<h2 class="bg-danger text-white p-2">Representación en la memoria de un PC</h2>
-						<p>El Estándar Internacional de los Ingenieros Eléctricos y Electrónicos (IEEE) Norma 754 define
-							la representación en punto flotante de un número en dos formas:</p>
-						<img th:src="@{/img/ieee.JPG}" alt="Representación en punto flotante" class="img-fluid">
+						<h2 class="bg-danger text-white p-2">Representación en la
+							memoria de un PC</h2>
+						<p>El Estándar Internacional de los Ingenieros Eléctricos y
+							Electrónicos (IEEE) Norma 754 define la representación en punto
+							flotante de un número en dos formas:</p>
+						<img th:src="@{/img/ieee.JPG}"
+							alt="Representación en punto flotante" class="img-fluid">
 					</div>
 
 					<div class="row bg-secondary text-white p-2">
 						<hr>
-						<h2 class="display-6 bg-danger text-white p-2">Representación normalizada de un número</h2>
+						<h2 class="display-6 bg-danger text-white p-2">Representación
+							normalizada de un número</h2>
 						<hr>
 						<div class="col-lg-12">
-							<p>Consiste en que la mantisa no tiene parte entera y la primera cifra o dígito a la derecha
-								de la coma es distinto de cero, salvo en la representación del número cero.</p>
+							<p>Consiste en que la mantisa no tiene parte entera y la
+								primera cifra o dígito a la derecha de la coma es distinto de
+								cero, salvo en la representación del número cero.</p>
 							<h4>Ejemplo:</h4>
 							<p>Base 10</p>
 							<ul>
-								<li>734.5 * 10^0 = 73.45 * 10^1 = 7.345 * 10^2 = 0.7345 * 10^3</li>
+								<li>734.5 * 10^0 = 73.45 * 10^1 = 7.345 * 10^2 = 0.7345 *
+									10^3</li>
 							</ul>
 							<p>Base 2</p>
 							<ul>
@@ -593,35 +626,41 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 					<div class="row bg-secondary text-white p-2">
 						<hr>
-						<h2 class="display-6 bg-danger text-white p-2">Representación de un número en el estándar IEE
-							754
-						</h2>
+						<h2 class="display-6 bg-danger text-white p-2">Representación
+							de un número en el estándar IEE 754</h2>
 						<hr>
 						<div class="col-lg-12">
-							<p>Para la representación de un número en punto flotante siguiendo el estándar, se deben
-								seguir los siguientes pasos:</p>
+							<p>Para la representación de un número en punto flotante
+								siguiendo el estándar, se deben seguir los siguientes pasos:</p>
 							<ol>
 								<li>Normalizar el número entero.</li>
 								<li>Polarizar el exponente.</li>
 								<li>Convertir la mantisa a binario.</li>
 								<li>Representarlo según la precisión (Sencilla o Doble).</li>
 							</ol>
-							<p>PASO 1: Normalización - Es ajustar un número a 1 pero menor que 2 y mayor que cero.</p>
+							<p>PASO 1: Normalización - Es ajustar un número a 1 pero
+								menor que 2 y mayor que cero.</p>
 							<ul>
-								<li>16.5 * 2^0 = 8.25 * 2^1 = 4.125 * 2^2 = 2.0625 * 2^3 = 1.03125 * 2^4</li>
-								<li>21.6 * 2^0 = 10.8 * 2^1 = 5.4 * 2^2 = 2.7 * 2^3 = 1.35 * 2^4</li>
+								<li>16.5 * 2^0 = 8.25 * 2^1 = 4.125 * 2^2 = 2.0625 * 2^3 =
+									1.03125 * 2^4</li>
+								<li>21.6 * 2^0 = 10.8 * 2^1 = 5.4 * 2^2 = 2.7 * 2^3 = 1.35
+									* 2^4</li>
 							</ul>
-							<p>PASO 2: Consiste en definir la forma de representar el número, si es con precisión
-								sencilla se trabaja con 127 y si es con doble precisión se trabaja con 1023. A este
-								valor definido por la precisión se le suma el exponente logrado en la normalización.</p>
+							<p>PASO 2: Consiste en definir la forma de representar el
+								número, si es con precisión sencilla se trabaja con 127 y si es
+								con doble precisión se trabaja con 1023. A este valor definido
+								por la precisión se le suma el exponente logrado en la
+								normalización.</p>
 							<ul>
 								<li>Nuevo exponente</li>
-								<li>16.5 = 1.03125 * 2^4 Exponente es 4 Con precisión sencilla sería 127 + 4 = 131</li>
+								<li>16.5 = 1.03125 * 2^4 Exponente es 4 Con precisión
+									sencilla sería 127 + 4 = 131</li>
 								<li>Con doble precisión sería 1023 + 4 = 1027</li>
 								<li>Con cuádruple precisión sería 16383 + 4 = 16387</li>
 								<li>Con octuple precisión sería 262143 + 4 = 262147</li>
 							</ul>
-							<p>PASO 3: Convertir el número decimal a su respectivo valor binario.</p>
+							<p>PASO 3: Convertir el número decimal a su respectivo valor
+								binario.</p>
 							<ul>
 								<li>Siguiendo el ejemplo anterior tenemos que: 1.03125</li>
 								<li>0.03125 * 2 = 0.0625</li>
@@ -631,16 +670,21 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 								<li>0.5 * 2 = 1</li>
 								<li>Por lo tanto, 0.03125 es igual a 0.00001</li>
 							</ul>
-							<p>PASO 4: Representación del número con los valores calculados en los pasos 1 y 2.</p>
+							<p>PASO 4: Representación del número con los valores
+								calculados en los pasos 1 y 2.</p>
 							<ul>
-								<li>Siguiendo el ejemplo anterior y trabajando con precisión sencilla tenemos que:</li>
+								<li>Siguiendo el ejemplo anterior y trabajando con
+									precisión sencilla tenemos que:</li>
 								<li>Paso 1: 16.5 = 1.03125 * 2^4 Exponente es 4</li>
-								<li>Paso 2: Con precisión sencilla sería 127 + 4 = 131 = 10000011</li>
-								<li>Paso 3: Representación del punto decimal 0.3125 = 0.00001</li>
+								<li>Paso 2: Con precisión sencilla sería 127 + 4 = 131 =
+									10000011</li>
+								<li>Paso 3: Representación del punto decimal 0.3125 =
+									0.00001</li>
 							</ul>
 						</div>
 						<div class="col-lg-12">
-							<img th:src="@{/img/mantisa.JPG}" alt="Representación en punto flotante" class="img-fluid">
+							<img th:src="@{/img/mantisa.JPG}"
+								alt="Representación en punto flotante" class="img-fluid">
 						</div>
 					</div>
 
@@ -654,40 +698,33 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 						<div class="col">
 							<div class="bg-secondary p-4 text-white">
 								<h2 class="bg-danger p-2">NOTA DE LA MEMORIA</h2>
-								<p>
-									Little endian y Big endian se refieren al orden que las máquinas asignan a los bytes
-									que representan números
-									o valores numéricos. Una máquina little endian asigna los bytes menos significativos
-									en el extremo más bajo
-									de la memoria, mientras que una máquina big endian asigna los bytes menos
-									significativos en el extremo
-									más alto. En los computadores, cada byte se identifica con su posición en la memoria
-									(dirección). Cuando se
-									manejan números de más de un byte, estos bytes también deben estar ordenados de
-									menor a mayor,
-									indicando la posición del byte menos significativo y del byte más significativo. De
-									este modo, un byte con el
-									número decimal 27 se almacenaría en una máquina little endian igual que en una
-									máquina big endian, ya
-									que sólo ocupa un byte. Sin embargo, para números más grandes los bytes que los
-									representan se
-									almacenarían en distinto orden en cada arquitectura. Este aspecto es particularmente
-									importante en la
-									programación en lenguaje ensamblador o en código máquina, ya que algunas máquinas
-									consideran el byte
-									situado en la dirección más baja de la memoria el menos significativo (arquitectura
-									little endian, como los
-									procesadores Intel) mientras que otras consideran que ése es el byte más
-									significativo (arquitectura big
-									endian, como los procesadores Motorola).
-								</p>
-								<p>
-									Por ejemplo, consideremos el número hexadecimal entero AABBCCDD, de 32 bits (4
-									bytes), localizado en la
-									dirección 100 de la memoria. El número ocuparía las posiciones desde la 100 a la
-									103, pero dependiendo de
-									si la máquina es little o big endian, los bytes se almacenarían de diferente manera:
-								</p>
+								<p>Little endian y Big endian se refieren al orden que las
+									máquinas asignan a los bytes que representan números o valores
+									numéricos. Una máquina little endian asigna los bytes menos
+									significativos en el extremo más bajo de la memoria, mientras
+									que una máquina big endian asigna los bytes menos
+									significativos en el extremo más alto. En los computadores,
+									cada byte se identifica con su posición en la memoria
+									(dirección). Cuando se manejan números de más de un byte, estos
+									bytes también deben estar ordenados de menor a mayor, indicando
+									la posición del byte menos significativo y del byte más
+									significativo. De este modo, un byte con el número decimal 27
+									se almacenaría en una máquina little endian igual que en una
+									máquina big endian, ya que sólo ocupa un byte. Sin embargo,
+									para números más grandes los bytes que los representan se
+									almacenarían en distinto orden en cada arquitectura. Este
+									aspecto es particularmente importante en la programación en
+									lenguaje ensamblador o en código máquina, ya que algunas
+									máquinas consideran el byte situado en la dirección más baja de
+									la memoria el menos significativo (arquitectura little endian,
+									como los procesadores Intel) mientras que otras consideran que
+									ése es el byte más significativo (arquitectura big endian, como
+									los procesadores Motorola).</p>
+								<p>Por ejemplo, consideremos el número hexadecimal entero
+									AABBCCDD, de 32 bits (4 bytes), localizado en la dirección 100
+									de la memoria. El número ocuparía las posiciones desde la 100 a
+									la 103, pero dependiendo de si la máquina es little o big
+									endian, los bytes se almacenarían de diferente manera:</p>
 								<div class="text-center">
 									<h5>Little-endian (como Intel)</h5>
 									<p>100 101 102 103</p>
@@ -696,26 +733,19 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 									<p>100 101 102 103</p>
 									<p>... AA BB CC DD ...</p>
 								</div>
-								<p>
-									Independiente de si la máquina es de arquitectura little endian o big endian, los
-									bits dentro de cada byte
-									siempre están en el mismo orden, con el bit más significativo a la izquierda y el
-									menos significativo a la
-									derecha. Los registros del procesador, que pueden ser de 4 a 64 bits, y más, también
-									tienen sus bits en el
-									mismo orden en ambos tipos de máquina. La diferencia entre little y big endian solo
-									existe externamente,
-									en el orden en que los bytes se representan en memoria.
-								</p>
-								<p>
-									• Secuencia inversa de la memoria por PALABRA se maneja en los microprocesadores
-									INTEL y
-									AMD y se conoce como little endian.
-								</p>
-								<p>
-									• En los procesadores Motorota NO se invierte la memoria y se conoce como big
-									endian.
-								</p>
+								<p>Independiente de si la máquina es de arquitectura little
+									endian o big endian, los bits dentro de cada byte siempre están
+									en el mismo orden, con el bit más significativo a la izquierda
+									y el menos significativo a la derecha. Los registros del
+									procesador, que pueden ser de 4 a 64 bits, y más, también
+									tienen sus bits en el mismo orden en ambos tipos de máquina. La
+									diferencia entre little y big endian solo existe externamente,
+									en el orden en que los bytes se representan en memoria.</p>
+								<p>• Secuencia inversa de la memoria por PALABRA se maneja
+									en los microprocesadores INTEL y AMD y se conoce como little
+									endian.</p>
+								<p>• En los procesadores Motorota NO se invierte la memoria
+									y se conoce como big endian.</p>
 							</div>
 						</div>
 					</div>
@@ -723,27 +753,18 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 						<div class="col">
 							<div class="bg-secondary p-4 text-white">
 								<h2 class="bg-danger p-2">REPRESENTACIÓN DE CARACTERES</h2>
-								<p>
-									Es una abstracción de datos:
-									Arquitectura del Computador Ing Sistemas UFPS
-									Material de Apoyo Mati Epp Is Ing. Miguel Fabian Robles A. UFPS
-									www.roblestecnologia.com
-								</p>
-								<p>
-									• El CPU solamente sabe procesar números
-									• Otros datos deben representarse en términos numéricos
-									Código de carácter: define una tabla de correspondencias entre caracteres y números
-									asignados
-								</p>
-								<p>
-									• EBCDIC: Antiguo, usado en Mainframes.
-									• ASCII: es de 7 bits (0 a 127), en PC's se extiende a 256
-									• ISO 8859-1
-									• Unicode Nuevo estándar 8, 16 y 32 bits.
-									Unicode define tres formas de codificación bajo el nombre UTF o Formato de
-									Transformación Unicode
-									(Unicode Transformation Format):10
-								</p>
+								<p>Es una abstracción de datos: Arquitectura del Computador
+									Ing Sistemas UFPS Material de Apoyo Mati Epp Is Ing. Miguel
+									Fabian Robles A. UFPS www.roblestecnologia.com</p>
+								<p>• El CPU solamente sabe procesar números • Otros datos
+									deben representarse en términos numéricos Código de carácter:
+									define una tabla de correspondencias entre caracteres y números
+									asignados</p>
+								<p>• EBCDIC: Antiguo, usado en Mainframes. • ASCII: es de 7
+									bits (0 a 127), en PC's se extiende a 256 • ISO 8859-1 •
+									Unicode Nuevo estándar 8, 16 y 32 bits. Unicode define tres
+									formas de codificación bajo el nombre UTF o Formato de
+									Transformación Unicode (Unicode Transformation Format):10</p>
 								<div class="text-center">
 									<h5>Esquema de codificación Endianness Admite BOM</h5>
 									<table class="table table-danger table-bordered">
@@ -793,29 +814,25 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 										</tbody>
 									</table>
 								</div>
-								<p>
-									BCD: Decimal codificado Binario --------------- Se almacena en forma empaquetada o
-									desempaquetada.
-									BCH: Hexadecimal codificado Binario --------- No. Hex donde cada dígito se
-									representa en 4 bits.
-									BCO: Octal codificado Binario ------------------ No. Oct donde cada dígito se
-									representa en 3 bits.
-								</p>
-								<p>
-									BCD DECIMAL CODIFICADO BINARIO
-									Se utiliza para la representación de los números decimales bajo dos normas:
-									Empaquetado: Agrupa por Byte dos dígitos.
-									Desempaquetado: Representa cada dígito por Byte.
-								</p>
+								<p>BCD: Decimal codificado Binario --------------- Se
+									almacena en forma empaquetada o desempaquetada. BCH:
+									Hexadecimal codificado Binario --------- No. Hex donde cada
+									dígito se representa en 4 bits. BCO: Octal codificado Binario
+									------------------ No. Oct donde cada dígito se representa en 3
+									bits.</p>
+								<p>BCD DECIMAL CODIFICADO BINARIO Se utiliza para la
+									representación de los números decimales bajo dos normas:
+									Empaquetado: Agrupa por Byte dos dígitos. Desempaquetado:
+									Representa cada dígito por Byte.</p>
 								<div class="text-center">
 									<h5>VIDEOS Punto flotante</h5>
 									<ol>
 										<li><a class="text-white"
-												href="https://www.youtube.com/watch?v=42sh9tXKnj4">Conversión de un
-												número decimal a Formato IEEE 754</a></li>
+											href="https://www.youtube.com/watch?v=42sh9tXKnj4">Conversión
+												de un número decimal a Formato IEEE 754</a></li>
 										<li><a class="text-white"
-												href="https://www.youtube.com/watch?v=npUau98vgP0">Conversión de formato
-												IEEE 754 a número decimal</a></li>
+											href="https://www.youtube.com/watch?v=npUau98vgP0">Conversión
+												de formato IEEE 754 a número decimal</a></li>
 									</ol>
 								</div>
 							</div>
@@ -831,14 +848,14 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							<div class="card w-100">
 								<div class="card-body">
 									<h2 class="card-title">Arquitectura Von Neumann</h2>
-									<p class="card-text">
-										Nombre de la estructuración utilizada en los ordenadores actuales; desde 1945
-										con UNIVAC.
-										Arquitectura diferenciadora entre hardware y software que él creó (Jhon Von
-										Neumann es junto con Alan Turing padre de la informática moderna, y curiosamente
-										el gran precursor de los virus informáticos en sus estudios sobre autómatas
-										autorreproductores que John Conway continuó en 1970 con el juego "Life",
-										antecesor a su vez de los algoritmos genéticos).
+									<p class="card-text">Nombre de la estructuración utilizada
+										en los ordenadores actuales; desde 1945 con UNIVAC.
+										Arquitectura diferenciadora entre hardware y software que él
+										creó (Jhon Von Neumann es junto con Alan Turing padre de la
+										informática moderna, y curiosamente el gran precursor de los
+										virus informáticos en sus estudios sobre autómatas
+										autorreproductores que John Conway continuó en 1970 con el
+										juego "Life", antecesor a su vez de los algoritmos genéticos).
 									</p>
 								</div>
 							</div>
@@ -849,24 +866,24 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							<div class="card w-100">
 								<div class="card-body">
 									<h2 class="card-title">Arquitectura Harvard</h2>
-									<p class="card-text">
-										La arquitectura Harvard es una arquitectura de computadora con pistas de
-										almacenamiento y de señal físicamente separadas para las instrucciones y para
-										los datos. El término proviene de la computadora Harvard Mark I basada en relés,
-										que almacenaba las instrucciones sobre cintas perforadas (de 24 bits de ancho) y
-										los datos en interruptores electromecánicos. Estas primeras máquinas tenían
-										almacenamiento de datos totalmente contenido dentro de la unidad central de
-										proceso, y no proporcionaban acceso al almacenamiento de instrucciones como
-										datos. Los programas necesitaban ser cargados por un operador; el procesador no
-										podría arrancar por sí mismo.
-									</p>
-									<p class="card-text">
-										Hoy en día, la mayoría de los procesadores implementan dichas vías de señales
-										separadas por motivos de rendimiento, pero en realidad implementan una
-										arquitectura Harvard modificada, para que puedan soportar tareas tales como la
-										carga de un programa desde una unidad de disco como datos para su posterior
-										ejecución.
-									</p>
+									<p class="card-text">La arquitectura Harvard es una
+										arquitectura de computadora con pistas de almacenamiento y de
+										señal físicamente separadas para las instrucciones y para los
+										datos. El término proviene de la computadora Harvard Mark I
+										basada en relés, que almacenaba las instrucciones sobre cintas
+										perforadas (de 24 bits de ancho) y los datos en interruptores
+										electromecánicos. Estas primeras máquinas tenían
+										almacenamiento de datos totalmente contenido dentro de la
+										unidad central de proceso, y no proporcionaban acceso al
+										almacenamiento de instrucciones como datos. Los programas
+										necesitaban ser cargados por un operador; el procesador no
+										podría arrancar por sí mismo.</p>
+									<p class="card-text">Hoy en día, la mayoría de los
+										procesadores implementan dichas vías de señales separadas por
+										motivos de rendimiento, pero en realidad implementan una
+										arquitectura Harvard modificada, para que puedan soportar
+										tareas tales como la carga de un programa desde una unidad de
+										disco como datos para su posterior ejecución.</p>
 								</div>
 							</div>
 						</div>
@@ -877,14 +894,14 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 						<div class="col">
 							<div class="card w-100">
 								<div class="card-body">
-									<p>
-										La Unidad de Control es donde se controlan, interpretan y ejecutan todas las
-										operaciones del usuario del computador y propias de él mismo. Entre sus
-										funciones están:
-									</p>
+									<p>La Unidad de Control es donde se controlan, interpretan
+										y ejecutan todas las operaciones del usuario del computador y
+										propias de él mismo. Entre sus funciones están:</p>
 									<ul class="list-group">
-										<li class="list-group-item">Tomar las instrucciones de memoria</li>
-										<li class="list-group-item">Decodificar e interpretar la instrucción</li>
+										<li class="list-group-item">Tomar las instrucciones de
+											memoria</li>
+										<li class="list-group-item">Decodificar e interpretar la
+											instrucción</li>
 										<li class="list-group-item">Ejecutar la instrucción</li>
 									</ul>
 								</div>
@@ -894,45 +911,53 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							<div class="card w-100">
 								<div class="card-body">
 									<ul class="list-group">
-										<li class="list-group-item">Contador de programa: Contiene la dirección de la
-											siguiente instrucción a ejecutarse.</li>
-										<li class="list-group-item">Registro de instrucción: Contiene la instrucción que
-											se va a ejecutar.</li>
-										<li class="list-group-item">Decodificador: Interpreta y analiza la instrucción
-											que se va a ejecutar para emitir señales.</li>
-										<li class="list-group-item">Reloj: Sincronismo del proceso.</li>
-										<li class="list-group-item">Secuenciador: Genera las órdenes sincronizadas con
-											el pulso del reloj.</li>
+										<li class="list-group-item">Contador de programa:
+											Contiene la dirección de la siguiente instrucción a
+											ejecutarse.</li>
+										<li class="list-group-item">Registro de instrucción:
+											Contiene la instrucción que se va a ejecutar.</li>
+										<li class="list-group-item">Decodificador: Interpreta y
+											analiza la instrucción que se va a ejecutar para emitir
+											señales.</li>
+										<li class="list-group-item">Reloj: Sincronismo del
+											proceso.</li>
+										<li class="list-group-item">Secuenciador: Genera las
+											órdenes sincronizadas con el pulso del reloj.</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<img src="/img/uc.JPG" alt="Representación en punto flotante" class="img-fluid">
+							<img src="/img/uc.JPG" alt="Representación en punto flotante"
+								class="img-fluid">
 						</div>
 					</div>
 
 
 
 					<div class="row">
-						<h1 class="card-title bg-danger text-white">Unidad Aritmético Lógica</h1>
-						<p class="card-text">Realiza todas las operaciones matemáticas y lógicas del procesador.</p>
+						<h1 class="card-title bg-danger text-white">Unidad Aritmético
+							Lógica</h1>
+						<p class="card-text">Realiza todas las operaciones matemáticas
+							y lógicas del procesador.</p>
 						<div class="col-lg-12">
-							<img src="/img/alu.JPG" alt="Representación en punto flotante" class="img-fluid">
+							<img src="/img/alu.JPG" alt="Representación en punto flotante"
+								class="img-fluid">
 						</div>
 						<div class="col-md-6">
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title">Circuito Operacional</h5>
-									<p class="card-text">Contiene los registros necesarios para realizar las operaciones
-										con los datos procedentes de una instrucción anterior o nueva instrucción.</p>
+									<p class="card-text">Contiene los registros necesarios para
+										realizar las operaciones con los datos procedentes de una
+										instrucción anterior o nueva instrucción.</p>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title">Flags</h5>
-									<p class="card-text">Registro de banderas, donde se guarda los valores particulares
-										de la instrucción ejecutada.</p>
+									<p class="card-text">Registro de banderas, donde se guarda
+										los valores particulares de la instrucción ejecutada.</p>
 								</div>
 							</div>
 						</div>
@@ -940,164 +965,178 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title">Reg 1 y Reg 2</h5>
-									<p class="card-text">Almacenan los datos y operandos de las instrucciones.</p>
+									<p class="card-text">Almacenan los datos y operandos de las
+										instrucciones.</p>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title">Acumulador</h5>
-									<p class="card-text">Almacena el resultado de la última instrucción que se ha
-										ejecutado.</p>
+									<p class="card-text">Almacena el resultado de la última
+										instrucción que se ha ejecutado.</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="card w-100">
 								<div class="card-body">
-									<h5 class="card-title bg-danger text-white">Clasificación de los Procesadores a
-										Nivel Interno</h5>
-									<p class="card-text">En función de las instrucciones que son capaces de ejecutar los
-										procesadores se clasifican en:</p>
+									<h5 class="card-title bg-danger text-white">Clasificación
+										de los Procesadores a Nivel Interno</h5>
+									<p class="card-text">En función de las instrucciones que
+										son capaces de ejecutar los procesadores se clasifican en:</p>
 									<ul class="list-group">
-										<li class="list-group-item">CISC: Ordenador con un conjunto complejo de
-											instrucciones.</li>
-										<li class="list-group-item">RISC: Ordenador con un conjunto reducido de
-											instrucciones (Una instrucción por ciclo de reloj).</li>
-										<li class="list-group-item">RISC Superescalar: Ordenador con un conjunto
-											reducido de instrucciones (Más de una instrucción por ciclo de reloj).</li>
+										<li class="list-group-item">CISC: Ordenador con un
+											conjunto complejo de instrucciones.</li>
+										<li class="list-group-item">RISC: Ordenador con un
+											conjunto reducido de instrucciones (Una instrucción por ciclo
+											de reloj).</li>
+										<li class="list-group-item">RISC Superescalar: Ordenador
+											con un conjunto reducido de instrucciones (Más de una
+											instrucción por ciclo de reloj).</li>
 									</ul>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
-									<h5 class="card-title bg-danger text-white">Arquitecturas 16, 32 y 64 bits</h5>
-									<p class="card-text">La arquitectura x86 fue lanzada por Intel con el procesador
-										Intel 8086 en el año 1978 como una arquitectura de 16 bits. Esta arquitectura de
-										Intel evolucionó a una arquitectura de 32 bits cuando apareció el procesador
-										Intel 80386 en el año 1985, denominada inicialmente i386 o x86-32 y finalmente
-										IA-32. Desde 1999 hasta el 2003, AMD amplió esta arquitectura de 32 bits de
-										Intel a una de 64 bits y la llamó x86-64 en los primeros documentos y
-										posteriormente AMD64. Intel adoptó las extensiones de la arquitectura de AMD
-										bajo el nombre de IA-32e o EM64T, y finalmente la denominó Intel 64. La
-										arquitectura x86-64 (AMD64 o Intel 64) de 64 bits da un soporte mucho mayor al
-										espacio de direcciones virtuales y físicas, proporciona registros de propósito
-										general de 64 bits y otras mejoras.</p>
+									<h5 class="card-title bg-danger text-white">Arquitecturas
+										16, 32 y 64 bits</h5>
+									<p class="card-text">La arquitectura x86 fue lanzada por
+										Intel con el procesador Intel 8086 en el año 1978 como una
+										arquitectura de 16 bits. Esta arquitectura de Intel evolucionó
+										a una arquitectura de 32 bits cuando apareció el procesador
+										Intel 80386 en el año 1985, denominada inicialmente i386 o
+										x86-32 y finalmente IA-32. Desde 1999 hasta el 2003, AMD
+										amplió esta arquitectura de 32 bits de Intel a una de 64 bits
+										y la llamó x86-64 en los primeros documentos y posteriormente
+										AMD64. Intel adoptó las extensiones de la arquitectura de AMD
+										bajo el nombre de IA-32e o EM64T, y finalmente la denominó
+										Intel 64. La arquitectura x86-64 (AMD64 o Intel 64) de 64 bits
+										da un soporte mucho mayor al espacio de direcciones virtuales
+										y físicas, proporciona registros de propósito general de 64
+										bits y otras mejoras.</p>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title bg-danger text-white">Reloj</h5>
-									<p class="card-text">El reloj interno es un componente del microprocesador que emite
-										una serie de pulsos eléctricos a intervalos constantes llamados ciclos. Se basa
-										en la teoría binaria para marcar el ritmo, el cual se considera como 1 al estado
-										de encendido y 0 al estado de apagado. La velocidad de cambio se denomina en
-										hercios (Hz) y define la velocidad de funcionamiento del microprocesador.</p>
+									<p class="card-text">El reloj interno es un componente del
+										microprocesador que emite una serie de pulsos eléctricos a
+										intervalos constantes llamados ciclos. Se basa en la teoría
+										binaria para marcar el ritmo, el cual se considera como 1 al
+										estado de encendido y 0 al estado de apagado. La velocidad de
+										cambio se denomina en hercios (Hz) y define la velocidad de
+										funcionamiento del microprocesador.</p>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title bg-danger text-white">Ciclo de CPU</h5>
-									<p class="card-text">Es un pulso electromagnético que genera el oscilador de cuarzo.
-										El funcionamiento de este reloj es comparable con un metrónomo con su péndulo
-										que oscila de izquierda a derecha. El intervalo de tiempo que el péndulo tarda
-										en recorrer esa distancia y regresar a su punto inicial se denomina ciclo. Todos
-										los microprocesadores poseen un oscilador o reloj que, al igual que el
-										metrónomo, marca el número de ciclos por segundo.</p>
+									<p class="card-text">Es un pulso electromagnético que
+										genera el oscilador de cuarzo. El funcionamiento de este reloj
+										es comparable con un metrónomo con su péndulo que oscila de
+										izquierda a derecha. El intervalo de tiempo que el péndulo
+										tarda en recorrer esa distancia y regresar a su punto inicial
+										se denomina ciclo. Todos los microprocesadores poseen un
+										oscilador o reloj que, al igual que el metrónomo, marca el
+										número de ciclos por segundo.</p>
 								</div>
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
 									<h5 class="card-title">DETALLES DE LOS PROCESADORES</h5>
-									<h6 class="card-subtitle mb-2 bg-danger text-white">BIU: Unidad de interfaz de bus
-									</h6>
-									<p class="card-text">Su función es estar continuamente accediendo a la memoria,
-										trayendo de ella las instrucciones para ser ejecutadas por el procesador
-										(Fetch).</p>
+									<h6 class="card-subtitle mb-2 bg-danger text-white">BIU:
+										Unidad de interfaz de bus</h6>
+									<p class="card-text">Su función es estar continuamente
+										accediendo a la memoria, trayendo de ella las instrucciones
+										para ser ejecutadas por el procesador (Fetch).</p>
 									<div class="row">
 										<div class="col-md-6">
 											<strong>Registros de segmentos:</strong>
-											<p>Estos registros son localidades de 16, 32 y 64 bits dedicados a las
-												funciones de acceso a memoria (Real y Protegida).</p>
+											<p>Estos registros son localidades de 16, 32 y 64 bits
+												dedicados a las funciones de acceso a memoria (Real y
+												Protegida).</p>
 										</div>
 										<div class="col-md-6">
 											<strong>Cola de prefetch:</strong>
-											<p>Almacena instrucciones anticipadas de la memoria principal para acelerar
-												el acceso posterior.</p>
+											<p>Almacena instrucciones anticipadas de la memoria
+												principal para acelerar el acceso posterior.</p>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
 											<strong>Generador de direcciones físicas:</strong>
-											<p>Genera las direcciones físicas necesarias para acceder a los datos en
-												memoria.</p>
+											<p>Genera las direcciones físicas necesarias para acceder
+												a los datos en memoria.</p>
 										</div>
 										<div class="col-md-6">
 											<strong>Bus C:</strong>
-											<p>Es el bus de comunicación utilizado para transferir datos y direcciones
-												entre los componentes del procesador.</p>
+											<p>Es el bus de comunicación utilizado para transferir
+												datos y direcciones entre los componentes del procesador.</p>
 
 										</div>
 									</div>
-									<h6 class="card-subtitle mb-2 bg-danger text-white">EU: Unidad de Ejecución</h6>
-									<p class="card-text">Realiza todas las operaciones matemáticas y lógicas del
-										procesador. Contiene el circuito operacional, flags, registros y
-										acumulador.</p>
+									<h6 class="card-subtitle mb-2 bg-danger text-white">EU:
+										Unidad de Ejecución</h6>
+									<p class="card-text">Realiza todas las operaciones
+										matemáticas y lógicas del procesador. Contiene el circuito
+										operacional, flags, registros y acumulador.</p>
 									<div class="row">
 										<div class="card mt-3">
 											<div class="card-body">
 												<h6 class="card-subtitle mb-2">a. Unidad de control</h6>
-												<p class="card-text">La Unidad de Control es la sección del procesador
-													que
-													contiene la lógica de funcionamiento del mismo. Genera la secuencia
-													de
-													estados del procesador y decodifica las instrucciones para
-													determinar
-													los pasos de ejecución.</p>
+												<p class="card-text">La Unidad de Control es la sección
+													del procesador que contiene la lógica de funcionamiento del
+													mismo. Genera la secuencia de estados del procesador y
+													decodifica las instrucciones para determinar los pasos de
+													ejecución.</p>
 											</div>
 										</div>
 										<div class="card mt-3">
 											<div class="card-body">
-												<h6 class="card-subtitle mb-2">b. Registros de propósito general</h6>
-												<p class="card-text">Los registros de propósito general son utilizados
-													para
-													ejecutar operaciones aritméticas y lógicas. Ejemplos de registros de
-													propósito general son AX, BX, CX, DX.</p>
+												<h6 class="card-subtitle mb-2">b. Registros de
+													propósito general</h6>
+												<p class="card-text">Los registros de propósito general
+													son utilizados para ejecutar operaciones aritméticas y
+													lógicas. Ejemplos de registros de propósito general son AX,
+													BX, CX, DX.</p>
 											</div>
 										</div>
 										<div class="card mt-3">
 											<div class="card-body">
 												<h6 class="card-subtitle mb-2">c. Registros de índice</h6>
-												<p class="card-text">Los registros de índice se utilizan en combinación
-													con
-													los registros de segmento para el acceso a memoria y para el manejo
-													de
-													arreglos. Ejemplos de registros de índice son SI (Source Index) y DI
-													(Destination Index).</p>
+												<p class="card-text">Los registros de índice se utilizan
+													en combinación con los registros de segmento para el acceso
+													a memoria y para el manejo de arreglos. Ejemplos de
+													registros de índice son SI (Source Index) y DI (Destination
+													Index).</p>
 											</div>
 										</div>
 										<div class="card mt-3">
 											<div class="card-body">
-												<h6 class="card-subtitle mb-2">d. ALU: Unidad aritmética-lógica</h6>
-												<p class="card-text">La ALU es la Unidad Aritmética-Lógica que realiza
-													operaciones aritméticas y lógicas en el procesador. Recibe operandos
-													a
-													través del Bus A y genera los resultados correspondientes.</p>
+												<h6 class="card-subtitle mb-2">d. ALU: Unidad
+													aritmética-lógica</h6>
+												<p class="card-text">La ALU es la Unidad
+													Aritmética-Lógica que realiza operaciones aritméticas y
+													lógicas en el procesador. Recibe operandos a través del Bus
+													A y genera los resultados correspondientes.</p>
 											</div>
 										</div>
 										<div class="card mt-3">
 											<div class="card-body">
 												<h6 class="card-subtitle mb-2">e. Registro de Banderas</h6>
-												<p class="card-text">El Registro de Banderas es un conjunto de bits
-													utilizados para indicar eventos o condiciones dentro del procesador,
-													como resultados de operaciones o estados especiales.</p>
+												<p class="card-text">El Registro de Banderas es un
+													conjunto de bits utilizados para indicar eventos o
+													condiciones dentro del procesador, como resultados de
+													operaciones o estados especiales.</p>
 											</div>
 										</div>
 										<div class="card mt-3">
 											<div class="card-body">
 												<h6 class="card-subtitle mb-2">f. Bus A</h6>
-												<p class="card-text">El Bus A es utilizado para el intercambio de datos
-													entre la ALU y otros componentes del procesador, permitiendo la
-													transferencia de operandos y resultados.</p>
+												<p class="card-text">El Bus A es utilizado para el
+													intercambio de datos entre la ALU y otros componentes del
+													procesador, permitiendo la transferencia de operandos y
+													resultados.</p>
 											</div>
 										</div>
 									</div>
@@ -1105,30 +1144,35 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 							</div>
 							<div class="card w-100">
 								<div class="card-body">
-									<h5 class="card-title bg-danger text-white">DESPLAZAMIENTO EN SEGMENTOS</h5>
-									<p class="card-text">En todo programa, las localidades de memoria están
-										referenciadas a partir de una dirección inicial del segmento. El desplazamiento
-										es la distancia en bytes desde la dirección inicial del segmento. Un
-										desplazamiento de dos bytes (16 bits) puede estar en un rango de 0000H a FFFFH,
-										es decir, de 0 a 65535 en decimal.</p>
-									<p class="card-text">Ejemplo: Si la dirección inicial es 052B0H en el DS que se
-										refiere al Segmento de Datos (Inicio) y el desplazamiento es 0046H dentro del
-										Segmento de Datos (es la próxima instrucción), la dirección real será una suma
-										hexadecimal de la dirección inicial y el desplazamiento, que en este caso sería
-										52F6H.</p>
+									<h5 class="card-title bg-danger text-white">DESPLAZAMIENTO
+										EN SEGMENTOS</h5>
+									<p class="card-text">En todo programa, las localidades de
+										memoria están referenciadas a partir de una dirección inicial
+										del segmento. El desplazamiento es la distancia en bytes desde
+										la dirección inicial del segmento. Un desplazamiento de dos
+										bytes (16 bits) puede estar en un rango de 0000H a FFFFH, es
+										decir, de 0 a 65535 en decimal.</p>
+									<p class="card-text">Ejemplo: Si la dirección inicial es
+										052B0H en el DS que se refiere al Segmento de Datos (Inicio) y
+										el desplazamiento es 0046H dentro del Segmento de Datos (es la
+										próxima instrucción), la dirección real será una suma
+										hexadecimal de la dirección inicial y el desplazamiento, que
+										en este caso sería 52F6H.</p>
 								</div>
 							</div>
 
 							<div class="card w-100 mt-3">
 								<div class="card-body">
 									<h5 class="card-title bg-danger text-white">MEMORIA CACHÉ</h5>
-									<p class="card-text">La memoria caché se utiliza para facilitar una transferencia
-										aún más rápida de instrucciones y datos al procesador. Es un área de
-										almacenamiento de alta velocidad que mejora el rendimiento del sistema al
-										contener las instrucciones y datos que es probable que el procesador requiera
-										enseguida. A diferencia de la RAM, la memoria caché es considerablemente más
-										rápida pero tiene una capacidad mucho menor. Esto ayuda a optimizar el caudal de
-										proceso, es decir, la velocidad con la que el sistema puede realizar el trabajo.
+									<p class="card-text">La memoria caché se utiliza para
+										facilitar una transferencia aún más rápida de instrucciones y
+										datos al procesador. Es un área de almacenamiento de alta
+										velocidad que mejora el rendimiento del sistema al contener
+										las instrucciones y datos que es probable que el procesador
+										requiera enseguida. A diferencia de la RAM, la memoria caché
+										es considerablemente más rápida pero tiene una capacidad mucho
+										menor. Esto ayuda a optimizar el caudal de proceso, es decir,
+										la velocidad con la que el sistema puede realizar el trabajo.
 									</p>
 								</div>
 							</div>
@@ -1140,12 +1184,25 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 				</div>
 			</div>
 		</div>
+		
+		<div id="content6" class="animated">
+			<div class="container bg-secondary text-white">
+		<h2>Primer Examen </h2>	
+		
+			<iframe src="https://nobullyng.h5p.com/content/1291992240150498918/embed" aria-label="Primer Examen" width="800" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://nobullyng.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+		
+		
+			
+			
+			</div>
 		</div>
 		</div>
+
+		
 	</main>
 
-	
-	<script src="../static/js/btnsetion.js"></script> 
+
+	<script src="../static/js/btnsetion.js"></script>
 </body>
 <footer th:replace="menu/menu :: footer"></footer>
 </html>

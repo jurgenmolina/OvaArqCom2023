@@ -11,20 +11,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Getter
+@Setter
 public class Tema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String contenido;
-    
+
     @ManyToOne
     @JoinColumn(name = "unidad_id")
     private Unidad unidad;
 
-	
-    
     // Constructor, getters y setters
 }
