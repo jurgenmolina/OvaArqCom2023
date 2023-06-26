@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="menu/menu :: head">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<header th:replace="menu/menu :: header"></header>
+
+
+	
+	
+<section th:fragment="section">
+		<!-- top navigation bar -->
+		<!-- offcanvas -->
+		<div class="offcanvas offcanvas-start sidebar-nav bg-white  mt-4 "
+			tabindex="-1" id="sidebar">
+			<div class="offcanvas-body p-0">
+				<nav class="navbar-white">
+					<ul class="navbar-nav">
+
+						<li class="my-2">
+							<!-- Espaciado	 -->
+						</li>
+
+						<li>
+							<div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+								Navegación</div>
+						</li>
+
+						<!-- Menu gestionar Temática -->
+
+						<li><a class="nav-link px-3 sidebar-link"
+							data-bs-toggle="collapse" href="#layouts2"> <span
+								class="me-2"><i class="bi bi-book-half text-dark "></i></span> <span
+								class="bd-toc-link text-secondary fw-bold ">Temática</span><span
+								class="ms-auto"> <span class="right-icon"> <i
+										class="bi bi-chevron-down text-dark"></i>
+								</span>
+							</span>
+						</a>
+							<div class="collapse show" id="layouts2">
+								<ul class="navbar-nav ps-3 mt-3">
+									<li><a th:href="@{/cadenas-y-memoria-auxiliar}"
+										class="nav-link px-3 text-secondary"><span class="me-2"></span> </a>
+										<div class="sidebar">
+											<ul>
+												<li><a href="javascript:void(0)" data-content="content1"
+													onclick="showContent(this)">Cadenas y Dispositivos de entrada y salida
+													</a></li>
+												<li><a  href="javascript:void(0)" data-content="content2"
+													onclick="showContent(this)">Representación de números y ascii</a></li>
+												<li><a href="javascript:void(0)" data-content="content3"
+													onclick="showContent(this)">Buffers y memoria</a></li>
+													<li><a href="javascript:void(0)" data-content="content4"
+													onclick="showContent(this)">Dispositivos de almacenamiento auxiliar: Discos Duros, Unidades de estado sólido y Memorias auxiliares (USB)
+													</a></li>
+											</ul>
+										</div></li>
+
+								</ul>
+							</div>
+							
+							</li>
+					</ul>
+
+
+					<div>
+						<a href="#" class="nav-link px-3 text-secondary"><span
+							class="me-2"><i class="bi bi-table"></i></span> <span
+							class="fw-bold">Calendario</span> </a>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</section>
+	<style>
+	
+.section-container {
+  margin-top: 60px;
+}
+
+.main-container {
+ padding-top: 100px;
+ margin-left: 300px;
+}
+	</style>
+
+	<main class="main-container  ">
+		<!-- DESARROLLA EL OVA AQUI -->
+		<h1>Cadenas y memorias</h1>	
+			<div class="content">
+			<div id="content1" class="animated">
+				<h2>Título 1</h2>
+				<p>Contenido del Título 1</p>
+			</div>
+			<div id="content2" class="animated">
+				<h2>Título 2</h2>
+				<p>Contenido del Título 2</p>
+			</div>
+			<div id="content3" class="animated">
+				<h2>Título 3</h2>
+				<p>Contenido del Título 3</p>
+			</div>
+			<div id="content4" class="animated">
+				<h2>Título 3</h2>
+				<p>Contenido del Título 3</p>
+			</div>
+		</div>
+	</main>
+	<script th:src="@{/js/efecto.js}"></script>
+
+	<footer th:replace="menu/menu :: footer"></footer>
+</body>
+
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

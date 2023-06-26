@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class SistemaNumericoControlador {
+public class CadenasMemoriaAuxiliar{
 
-    @GetMapping("/sistemanumerico")
-	public String showSistemasNumericos() {
-		return "sistemanumerico";
+    @GetMapping("/cadenas-y-memoria-auxiliar")
+	public String Inicio() {
+		return "cadenas-y-memoria-auxiliar";
 	}
     
 }

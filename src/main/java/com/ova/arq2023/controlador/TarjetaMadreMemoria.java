@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class puntoFlotanteControlador {
+public class TarjetaMadreMemoria {
 
-    @GetMapping("/puntoflotante")
+    @GetMapping("/tarjetamadreymemoria")
 	public String showSistemasNumericos() {
-		return "puntoflotante";
+		return "tarjetamadreymemorias";
 	}
     
 }
