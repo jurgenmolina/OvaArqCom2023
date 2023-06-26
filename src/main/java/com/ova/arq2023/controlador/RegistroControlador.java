@@ -23,10 +23,15 @@ public class RegistroControlador {
 
     @GetMapping("/")
     public String verPaginaDeInicio(Model modelo) {
+        try {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Usuario usuario = usuarioServicio.SelectUsuario(auth.getName());
         modelo.addAttribute("usuario", usuario);
         return "index";
+        } catch (Exception e) {
+			System.out.println("Error al cargar la página de inicio: " + e.getMessage());
+			return "redirect:/";
+		}
     }
 
     @GetMapping("/loginSuccess")
@@ -38,4 +43,12 @@ public class RegistroControlador {
     public String loginFailure() {
         return "loginFailure";
     }
+
+    @GetMapping("/CourierPrime-Regular.ttf")
+    public String error() {
+        return "redirect:/";
+    }
+
+
+    
 }
